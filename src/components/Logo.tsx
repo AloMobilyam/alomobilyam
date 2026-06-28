@@ -3,6 +3,7 @@ type LogoProps = {
   showText?: boolean;
   variant?: "light" | "dark";
   className?: string;
+  link?: boolean;
 };
 
 export function Logo({
@@ -10,13 +11,14 @@ export function Logo({
   showText = true,
   variant = "light",
   className = "",
+  link = true,
 }: LogoProps) {
   const isDark = variant === "dark";
   const iconSize = compact ? "h-9 w-9" : "h-10 w-10 sm:h-11 sm:w-11";
   const svgSize = compact ? "h-[18px] w-[18px]" : "h-5 w-5 sm:h-6 sm:w-6";
 
-  return (
-    <a href="#" className={`group flex min-w-0 items-center gap-2.5 ${className}`} aria-label="Alo Mobilya ana sayfa">
+  const content = (
+    <>
       <div
         className={`flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-wood-700 to-wood-900 text-cream-50 shadow-md shadow-wood-900/25 ring-1 ring-wood-600/20 transition-transform group-hover:scale-[1.02] ${iconSize}`}
       >
@@ -70,6 +72,20 @@ export function Logo({
           </p>
         </div>
       )}
-    </a>
+    </>
+  );
+
+  if (link) {
+    return (
+      <a href="#" className={`group flex min-w-0 items-center gap-2.5 ${className}`} aria-label="Alo Mobilya ana sayfa">
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={`flex min-w-0 items-center gap-2.5 ${className}`} aria-hidden="true">
+      {content}
+    </div>
   );
 }
