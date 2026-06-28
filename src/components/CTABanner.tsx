@@ -3,7 +3,7 @@ import { CTAButtons } from "./CTAButtons";
 
 export function CTABanner() {
   return (
-    <section className="bg-wood-900 py-10 sm:py-14" aria-label="Hızlı iletişim">
+    <section className="bg-wood-900 py-8 sm:py-14" aria-label="Hızlı iletişim">
       <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
         <h2 className="font-serif text-xl font-bold text-cream-50 sm:text-3xl">
           Hemen Arayın veya WhatsApp&apos;tan Yazın

@@ -5,7 +5,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function OnSiteService() {
   return (
-    <section id="yerinde-servis" className="bg-cream-100 py-16 sm:py-20">
+    <section id="yerinde-servis" className="section-padding bg-cream-100">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>

@@ -25,7 +25,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export function GoogleReviews() {
   return (
-    <section id="yorumlar" className="scroll-mt-16 bg-cream-50 py-14 sm:scroll-mt-20 sm:py-20">
+    <section id="yorumlar" className="section-padding scroll-mt-14 bg-cream-50 sm:scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Müşteri Yorumları"

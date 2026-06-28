@@ -7,44 +7,52 @@ import { PhoneIcon, WhatsAppIcon } from "./icons";
 type CTAButtonsProps = {
   layout?: "stack" | "row";
   size?: "md" | "lg";
+  compact?: boolean;
   className?: string;
 };
 
 export function CTAButtons({
   layout = "stack",
   size = "lg",
+  compact = false,
   className = "",
 }: CTAButtonsProps) {
-  const sizeClasses =
-    size === "lg"
-      ? "px-6 py-4 text-base sm:px-8 sm:py-4 sm:text-lg"
-      : "px-5 py-3.5 text-sm sm:text-base";
+  const sizeClasses = compact
+    ? "px-4 py-2.5 text-sm gap-2 rounded-xl sm:px-6 sm:py-3.5 sm:text-base sm:rounded-2xl sm:gap-3"
+    : size === "lg"
+      ? "px-6 py-3.5 text-sm gap-2 rounded-xl sm:px-8 sm:py-4 sm:text-lg sm:rounded-2xl sm:gap-3"
+      : "px-5 py-3 text-sm gap-2 rounded-xl sm:text-base";
 
-  const layoutClasses = layout === "row" ? "flex-col sm:flex-row" : "flex-col";
+  const iconSize = compact ? "h-4 w-4 sm:h-5 sm:w-5" : size === "lg" ? "h-5 w-5 sm:h-6 sm:w-6" : "h-4 w-4 sm:h-5 sm:w-5";
+
+  const layoutClasses =
+    layout === "row" ? "grid grid-cols-2 sm:flex sm:flex-row" : "grid grid-cols-2 sm:flex sm:flex-col";
 
   return (
-    <div className={`flex w-full gap-3 ${layoutClasses} ${className}`}>
+    <div className={`w-full gap-2 sm:gap-3 ${layoutClasses} ${className}`}>
       <m.a
         href={LINKS.whatsappMessage}
         target="_blank"
         rel="noopener noreferrer"
-        className={`group inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] font-bold text-white shadow-lg shadow-[#25D366]/30 sm:w-auto sm:flex-1 ${sizeClasses}`}
-        whileHover={{ scale: 1.02, boxShadow: "0 12px 32px -4px rgba(37,211,102,0.45)" }}
+        className={`inline-flex w-full items-center justify-center font-semibold text-white bg-[#25D366] shadow-md shadow-[#25D366]/20 sm:w-auto sm:flex-1 sm:font-bold sm:shadow-lg sm:shadow-[#25D366]/30 ${sizeClasses}`}
+        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
-        <WhatsAppIcon className={`${size === "lg" ? "h-6 w-6" : "h-5 w-5"}`} />
-        WhatsApp ile Yaz
+        <WhatsAppIcon className={iconSize} />
+        <span className="sm:hidden">WhatsApp</span>
+        <span className="hidden sm:inline">WhatsApp ile Yaz</span>
       </m.a>
       <m.a
         href={LINKS.tel}
-        className={`group inline-flex w-full items-center justify-center gap-3 rounded-2xl border-2 border-wood-300 bg-white font-bold text-wood-900 shadow-md shadow-wood-900/5 sm:w-auto sm:flex-1 ${sizeClasses}`}
-        whileHover={{ scale: 1.02, borderColor: "#b89b7a", boxShadow: "0 12px 32px -8px rgba(44,24,16,0.15)" }}
+        className={`inline-flex w-full items-center justify-center border-2 border-wood-300 bg-white font-semibold text-wood-900 shadow-sm sm:w-auto sm:flex-1 sm:font-bold sm:shadow-md sm:shadow-wood-900/5 ${sizeClasses}`}
+        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.2 }}
       >
-        <PhoneIcon className={`${size === "lg" ? "h-6 w-6" : "h-5 w-5"}`} />
-        Hemen Ara
+        <PhoneIcon className={iconSize} />
+        <span className="hidden sm:inline">Hemen Ara</span>
+        <span className="sm:hidden">Ara</span>
       </m.a>
     </div>
   );

@@ -8,7 +8,7 @@ import { ServiceIcon } from "./ServiceIcon";
 
 export function Services() {
   return (
-    <section id="hizmetler" className="scroll-mt-16 bg-cream-50 py-14 sm:scroll-mt-20 sm:py-20">
+    <section id="hizmetler" className="section-padding scroll-mt-14 bg-cream-50 sm:scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Hizmetlerimiz"
@@ -17,7 +17,7 @@ export function Services() {
         />
 
         <m.div
-          className="mt-10 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
+          className="mt-6 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
@@ -28,26 +28,22 @@ export function Services() {
               key={service.title}
               variants={fadeInUp}
               whileHover={{
-                y: -6,
-                boxShadow: "0 20px 40px -12px rgba(44, 24, 16, 0.15)",
+                y: -4,
+                boxShadow: "0 16px 32px -10px rgba(44, 24, 16, 0.12)",
                 transition: { duration: 0.25 },
               }}
-              className="group relative overflow-hidden rounded-2xl border border-wood-100 bg-white p-5 shadow-sm sm:p-6"
+              className="group relative overflow-hidden rounded-xl border border-wood-100 bg-white p-3.5 shadow-sm sm:rounded-2xl sm:p-6"
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-wood-100/50 transition-transform duration-300 group-hover:scale-150" />
+              <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full bg-wood-100/50 sm:-right-6 sm:-top-6 sm:h-24 sm:w-24" />
 
-              <m.div
-                className="relative mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-wood-100 to-wood-200 text-wood-700 transition-colors duration-300 group-hover:from-wood-800 group-hover:to-wood-900 group-hover:text-cream-50"
-                whileHover={{ rotate: [0, -8, 8, 0] }}
-                transition={{ duration: 0.4 }}
-              >
-                <ServiceIcon name={service.icon} className="h-6 w-6" />
-              </m.div>
+              <div className="relative mb-2.5 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-wood-100 to-wood-200 text-wood-700 transition-colors duration-300 group-hover:from-wood-800 group-hover:to-wood-900 group-hover:text-cream-50 sm:mb-4 sm:h-12 sm:w-12 sm:rounded-2xl">
+                <ServiceIcon name={service.icon} className="h-4 w-4 sm:h-6 sm:w-6" />
+              </div>
 
-              <h3 className="relative font-serif text-base font-bold text-wood-900 sm:text-lg">
+              <h3 className="relative font-serif text-sm font-bold text-wood-900 sm:text-lg">
                 {service.title}
               </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-wood-600">
+              <p className="relative mt-1 text-xs leading-relaxed text-wood-600 sm:mt-2 sm:text-sm">
                 {service.description}
               </p>
             </m.article>

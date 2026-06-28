@@ -20,10 +20,10 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { value: "500+", label: "Mutlu Müşteri" },
-  { value: "1000+", label: "Tamamlanan İş" },
-  { value: "%100", label: "Müşteri Memnuniyeti" },
-  { value: "7/24", label: "Destek" },
+  { label: "Tecrübeli Usta" },
+  { label: "Yerinde Servis" },
+  { label: "Kaliteli İşçilik" },
+  { label: "Hızlı İletişim" },
 ] as const;
 
 export type Review = {

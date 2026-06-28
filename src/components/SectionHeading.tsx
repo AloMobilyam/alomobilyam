@@ -19,7 +19,7 @@ export function SectionHeading({
     <div className={centered ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
       {eyebrow && (
         <p
-          className={`mb-2 text-sm font-semibold uppercase tracking-widest ${
+          className={`mb-1.5 text-[11px] font-semibold uppercase tracking-widest sm:mb-2 sm:text-sm ${
             isLight ? "text-cream-300" : "text-wood-600"
           }`}
         >
@@ -27,7 +27,7 @@ export function SectionHeading({
         </p>
       )}
       <h2
-        className={`font-serif text-3xl font-bold tracking-tight sm:text-4xl ${
+        className={`font-serif text-[1.375rem] font-bold leading-snug tracking-tight sm:text-3xl lg:text-4xl ${
           isLight ? "text-cream-50" : "text-wood-900"
         }`}
       >
@@ -35,7 +35,7 @@ export function SectionHeading({
       </h2>
       {description && (
         <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
+          className={`mx-auto mt-2 max-w-prose text-base leading-relaxed sm:mt-4 sm:text-lg ${
             isLight ? "text-cream-200" : "text-wood-700"
           }`}
         >

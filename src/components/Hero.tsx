@@ -14,40 +14,38 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(196,165,116,0.2),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(92,64,51,0.05),transparent_50%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-4 pb-6 pt-5 sm:px-6 sm:pb-8 sm:pt-8 lg:px-8 lg:pb-10">
-          <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+        <div className="relative mx-auto max-w-6xl px-4 pb-4 pt-3 sm:px-6 sm:pb-8 sm:pt-8 lg:px-8 lg:pb-10">
+          <div className="grid items-start gap-5 lg:grid-cols-2 lg:items-center lg:gap-12">
             <m.div
-              className="order-2 lg:order-1"
+              className="order-1"
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
               variants={fadeInUp}
             >
-              <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-wood-200/80 bg-white/85 px-3 py-1.5 text-[11px] font-semibold text-wood-700 shadow-sm backdrop-blur-sm sm:text-sm">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+              <p className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-wood-200/80 bg-white/85 px-2.5 py-1 text-[10px] font-semibold text-wood-700 shadow-sm backdrop-blur-sm sm:mb-3 sm:px-3 sm:py-1.5 sm:text-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Mersin geneli yerinde servis
               </p>
 
-              <h1 className="font-serif text-[1.65rem] font-bold leading-[1.12] tracking-tight text-wood-900 sm:text-4xl lg:text-[2.65rem]">
+              <h1 className="max-w-[18ch] font-serif text-[1.625rem] font-bold leading-[1.2] tracking-tight text-wood-900 sm:max-w-none sm:text-4xl sm:leading-tight lg:text-[2.65rem]">
                 Mobilya Tamir, Bakım ve Montajda{" "}
-                <span className="bg-gradient-to-r from-wood-700 to-wood-500 bg-clip-text text-transparent">
-                  Güvenilir Usta
-                </span>
+                <span className="text-wood-700">Güvenilir Usta</span>
               </h1>
 
-              <p className="mt-3 text-[14px] leading-relaxed text-wood-700 sm:mt-4 sm:text-lg">
+              <p className="mt-2.5 max-w-prose text-base leading-relaxed text-wood-700 sm:mt-4 sm:text-lg">
                 {BUSINESS.tagline}. {BUSINESS.owner} ile dolap kurulumundan menteşe
                 değişimine kadar tüm işleriniz adresinizde profesyonelce yapılır.
               </p>
 
-              <div className="mt-5 sm:mt-7">
-                <CTAButtons layout="stack" />
+              <div className="mt-4 sm:mt-7">
+                <CTAButtons layout="stack" compact />
               </div>
 
-              <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[11px] text-wood-600 sm:mt-6 sm:gap-x-5 sm:text-sm">
+              <ul className="mt-4 hidden flex-wrap gap-x-4 gap-y-1.5 text-xs text-wood-600 sm:mt-6 sm:flex sm:gap-x-5 sm:text-sm">
                 {["Yerinde servis", "Usta işi kalite", "Hızlı randevu"].map((item) => (
                   <li key={item} className="flex items-center gap-1.5">
-                    <span className="flex h-4 w-4 items-center justify-center rounded-full bg-emerald-100 text-[10px] text-emerald-700">
+                    <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-100 text-[9px] text-emerald-700">
                       ✓
                     </span>
                     {item}
@@ -56,7 +54,7 @@ export function Hero() {
               </ul>
             </m.div>
 
-            <div className="order-1 lg:order-2">
+            <div className="order-2">
               <HeroShowcase />
             </div>
           </div>
