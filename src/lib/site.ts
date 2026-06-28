@@ -37,24 +37,24 @@ export type Review = {
 export const REVIEWS: Review[] = [
   {
     id: "review-1",
-    name: "Ayşe K.",
+    name: "Örnek Müşteri 1",
     rating: 5,
     text: "Mutfak dolabı kapaklarımız sarkıyordu. Aynı gün gelip mükemmel şekilde ayarladı. Çok memnun kaldık.",
-    date: "2 hafta önce",
+    date: "Örnek yorum",
   },
   {
     id: "review-2",
-    name: "Mehmet Y.",
+    name: "Örnek Müşteri 2",
     rating: 5,
     text: "Çekmece rayları değiştirildi, artık sorunsuz açılıp kapanıyor. Usta işi, tavsiye ederim.",
-    date: "1 ay önce",
+    date: "Örnek yorum",
   },
   {
     id: "review-3",
-    name: "Zeynep A.",
+    name: "Örnek Müşteri 3",
     rating: 5,
     text: "Gardırop kurulumu hızlı ve düzgün yapıldı. WhatsApp'tan yazınca hemen dönüş aldım.",
-    date: "1 ay önce",
+    date: "Örnek yorum",
   },
 ];
 

@@ -21,7 +21,7 @@ export function Footer() {
         >
           <m.div variants={fadeInUp} className="sm:col-span-2 lg:col-span-1">
             <Logo variant="dark" />
-            <p className="mt-4 text-sm leading-relaxed text-cream-300">
+            <p className="mt-4 text-sm leading-relaxed text-cream-200">
               {BUSINESS.owner} — Mersin genelinde yerinde mobilya tamir, bakım ve montaj hizmeti.
             </p>
           </m.div>
@@ -36,7 +36,7 @@ export function Footer() {
                   href={LINKS.whatsappMessage}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-cream-300 transition-colors hover:text-[#25D366]"
+                  className="inline-flex items-center gap-2 text-sm text-cream-100 transition-colors hover:text-[#25D366]"
                 >
                   <WhatsAppIcon className="h-4 w-4" />
                   WhatsApp
@@ -45,7 +45,7 @@ export function Footer() {
               <li>
                 <a
                   href={LINKS.tel}
-                  className="inline-flex items-center gap-2 text-sm text-cream-300 transition-colors hover:text-cream-50"
+                  className="inline-flex items-center gap-2 text-sm text-cream-100 transition-colors hover:text-wood-300"
                 >
                   <PhoneIcon className="h-4 w-4" />
                   {BUSINESS.phone}
@@ -63,7 +63,7 @@ export function Footer() {
                 <li key={service.title}>
                   <a
                     href="#hizmetler"
-                    className="text-sm text-cream-400 transition-colors hover:text-cream-200"
+                    className="text-sm text-cream-100 transition-colors hover:text-wood-300"
                   >
                     {service.title}
                   </a>
@@ -81,7 +81,7 @@ export function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-cream-400 transition-colors hover:text-cream-200"
+                    className="text-sm text-cream-100 transition-colors hover:text-wood-300"
                   >
                     {link.label}
                   </a>
@@ -97,7 +97,7 @@ export function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={viewportOnce}
         >
-          <p className="text-xs text-cream-500">
+          <p className="text-xs text-cream-300">
             © {year} {BUSINESS.name}. Tüm hakları saklıdır.
           </p>
         </m.div>
