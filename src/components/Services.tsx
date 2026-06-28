@@ -1,5 +1,10 @@
+"use client";
+
+import { m } from "framer-motion";
 import { SERVICES } from "@/lib/site";
+import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
 import { SectionHeading } from "./SectionHeading";
+import { ServiceIcon } from "./ServiceIcon";
 
 export function Services() {
   return (
@@ -11,24 +16,43 @@ export function Services() {
           description="Ev ve ofis mobilyalarınız için tamir, bakım, onarım ve montaj işlemlerini Mersin genelinde yerinde gerçekleştiriyoruz."
         />
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <m.div
+          className="mt-10 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={staggerContainer}
+        >
           {SERVICES.map((service) => (
-            <article
+            <m.article
               key={service.title}
-              className="group rounded-2xl border border-wood-100 bg-white p-6 shadow-sm transition-all hover:border-wood-200 hover:shadow-md"
+              variants={fadeInUp}
+              whileHover={{
+                y: -6,
+                boxShadow: "0 20px 40px -12px rgba(44, 24, 16, 0.15)",
+                transition: { duration: 0.25 },
+              }}
+              className="group relative overflow-hidden rounded-2xl border border-wood-100 bg-white p-5 shadow-sm sm:p-6"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-wood-100 text-wood-700 transition-colors group-hover:bg-wood-800 group-hover:text-cream-50">
-                <span className="text-lg font-bold">✦</span>
-              </div>
-              <h3 className="font-serif text-lg font-bold text-wood-900">
+              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-wood-100/50 transition-transform duration-300 group-hover:scale-150" />
+
+              <m.div
+                className="relative mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-wood-100 to-wood-200 text-wood-700 transition-colors duration-300 group-hover:from-wood-800 group-hover:to-wood-900 group-hover:text-cream-50"
+                whileHover={{ rotate: [0, -8, 8, 0] }}
+                transition={{ duration: 0.4 }}
+              >
+                <ServiceIcon name={service.icon} className="h-6 w-6" />
+              </m.div>
+
+              <h3 className="relative font-serif text-base font-bold text-wood-900 sm:text-lg">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-wood-600">
+              <p className="relative mt-2 text-sm leading-relaxed text-wood-600">
                 {service.description}
               </p>
-            </article>
+            </m.article>
           ))}
-        </div>
+        </m.div>
       </div>
     </section>
   );

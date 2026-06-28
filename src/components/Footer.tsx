@@ -1,20 +1,106 @@
-import { BUSINESS } from "@/lib/site";
+"use client";
+
+import { m } from "framer-motion";
+import { BUSINESS, LINKS, NAV_LINKS, SERVICES } from "@/lib/site";
+import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { Logo } from "./Logo";
+import { PhoneIcon, WhatsAppIcon } from "./icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-wood-800 bg-wood-950 py-8 pb-24 text-center md:pb-8">
+    <footer className="border-t border-wood-800 bg-wood-950 pb-24 pt-12 md:pb-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="font-serif text-lg font-bold text-cream-50">
-          {BUSINESS.name}
-        </p>
-        <p className="mt-1 text-sm text-cream-300">
-          {BUSINESS.owner} · Mersin geneli yerinde mobilya servisi
-        </p>
-        <p className="mt-4 text-xs text-cream-400">
-          © {year} {BUSINESS.name}. Tüm hakları saklıdır.
-        </p>
+        <m.div
+          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={staggerContainer}
+        >
+          <m.div variants={fadeInUp} className="sm:col-span-2 lg:col-span-1">
+            <Logo variant="dark" />
+            <p className="mt-4 text-sm leading-relaxed text-cream-300">
+              {BUSINESS.owner} — Mersin genelinde yerinde mobilya tamir, bakım ve montaj hizmeti.
+            </p>
+          </m.div>
+
+          <m.div variants={fadeInUp}>
+            <h3 className="font-serif text-sm font-bold uppercase tracking-wider text-cream-100">
+              İletişim
+            </h3>
+            <ul className="mt-4 space-y-3">
+              <li>
+                <a
+                  href={LINKS.whatsappMessage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-cream-300 transition-colors hover:text-[#25D366]"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
+                  WhatsApp
+                </a>
+              </li>
+              <li>
+                <a
+                  href={LINKS.tel}
+                  className="inline-flex items-center gap-2 text-sm text-cream-300 transition-colors hover:text-cream-50"
+                >
+                  <PhoneIcon className="h-4 w-4" />
+                  {BUSINESS.phone}
+                </a>
+              </li>
+            </ul>
+          </m.div>
+
+          <m.div variants={fadeInUp}>
+            <h3 className="font-serif text-sm font-bold uppercase tracking-wider text-cream-100">
+              Hizmetler
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {SERVICES.slice(0, 6).map((service) => (
+                <li key={service.title}>
+                  <a
+                    href="#hizmetler"
+                    className="text-sm text-cream-400 transition-colors hover:text-cream-200"
+                  >
+                    {service.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </m.div>
+
+          <m.div variants={fadeInUp}>
+            <h3 className="font-serif text-sm font-bold uppercase tracking-wider text-cream-100">
+              Hızlı Menü
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-cream-400 transition-colors hover:text-cream-200"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </m.div>
+        </m.div>
+
+        <m.div
+          className="mt-10 border-t border-wood-800 pt-6 text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={viewportOnce}
+        >
+          <p className="text-xs text-cream-500">
+            © {year} {BUSINESS.name}. Tüm hakları saklıdır.
+          </p>
+        </m.div>
       </div>
     </footer>
   );

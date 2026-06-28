@@ -14,9 +14,71 @@ export const BUSINESS = {
 export const NAV_LINKS = [
   { href: "#hizmetler", label: "Hizmetler" },
   { href: "#galeri", label: "Galeri" },
+  { href: "#yorumlar", label: "Yorumlar" },
   { href: "#sss", label: "SSS" },
   { href: "#iletisim", label: "İletişim" },
 ] as const;
+
+export const STATS = [
+  { value: "500+", label: "Mutlu Müşteri" },
+  { value: "1000+", label: "Tamamlanan İş" },
+  { value: "%100", label: "Müşteri Memnuniyeti" },
+  { value: "7/24", label: "Destek" },
+] as const;
+
+export type Review = {
+  id: string;
+  name: string;
+  rating: number;
+  text: string;
+  date: string;
+};
+
+export const REVIEWS: Review[] = [
+  {
+    id: "review-1",
+    name: "Ayşe K.",
+    rating: 5,
+    text: "Mutfak dolabı kapaklarımız sarkıyordu. Aynı gün gelip mükemmel şekilde ayarladı. Çok memnun kaldık.",
+    date: "2 hafta önce",
+  },
+  {
+    id: "review-2",
+    name: "Mehmet Y.",
+    rating: 5,
+    text: "Çekmece rayları değiştirildi, artık sorunsuz açılıp kapanıyor. Usta işi, tavsiye ederim.",
+    date: "1 ay önce",
+  },
+  {
+    id: "review-3",
+    name: "Zeynep A.",
+    rating: 5,
+    text: "Gardırop kurulumu hızlı ve düzgün yapıldı. WhatsApp'tan yazınca hemen dönüş aldım.",
+    date: "1 ay önce",
+  },
+];
+
+export type ServiceIconKey =
+  | "repair"
+  | "refresh"
+  | "hinge"
+  | "rail"
+  | "adjust"
+  | "door"
+  | "cabinet"
+  | "wardrobe"
+  | "kitchen"
+  | "sliding"
+  | "drawer"
+  | "chair"
+  | "assembly"
+  | "onsite";
+
+export type ServiceItem = {
+  title: string;
+  description: string;
+  icon: ServiceIconKey;
+};
 
 export type WorkItem = {
   id: string;
@@ -57,22 +119,22 @@ export const WORKS: WorkItem[] = [
   },
 ];
 
-export const SERVICES = [
-  { title: "Mobilya Onarım", description: "Kırık, çatlak ve hasarlı mobilyalarınızı yerinde onarıyoruz." },
-  { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz." },
-  { title: "Menteşe Değişimi", description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi." },
-  { title: "Ray Değişimi", description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz." },
-  { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz." },
-  { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz." },
-  { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz." },
-  { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz." },
-  { title: "Mutfak Dolabı Tamiri", description: "Mutfak dolaplarında menteşe, ray ve kapak sorunlarına kalıcı çözüm." },
-  { title: "Sürgülü Dolap Ray Tamiri", description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz." },
-  { title: "Çekmece Ray Değişimi", description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz." },
-  { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz." },
-  { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği." },
-  { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz." },
-] as const;
+export const SERVICES: ServiceItem[] = [
+  { title: "Mobilya Onarım", description: "Kırık, çatlak ve hasarlı mobilyalarınızı yerinde onarıyoruz.", icon: "repair" },
+  { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.", icon: "refresh" },
+  { title: "Menteşe Değişimi", description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi.", icon: "hinge" },
+  { title: "Ray Değişimi", description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.", icon: "rail" },
+  { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.", icon: "adjust" },
+  { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },
+  { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
+  { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },
+  { title: "Mutfak Dolabı Tamiri", description: "Mutfak dolaplarında menteşe, ray ve kapak sorunlarına kalıcı çözüm.", icon: "kitchen" },
+  { title: "Sürgülü Dolap Ray Tamiri", description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz.", icon: "sliding" },
+  { title: "Çekmece Ray Değişimi", description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.", icon: "drawer" },
+  { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.", icon: "chair" },
+  { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.", icon: "assembly" },
+  { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz.", icon: "onsite" },
+];
 
 export const WHY_US = [
   {

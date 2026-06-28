@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
+import { MotionProvider } from "@/components/MotionProvider";
 import { getFAQSchema, getLocalBusinessSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -85,7 +86,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }
