@@ -11,6 +11,52 @@ export const BUSINESS = {
   tagline: "Mersin geneli yerinde mobilya tamir, bakım, onarım ve montaj hizmeti",
 } as const;
 
+export const NAV_LINKS = [
+  { href: "#hizmetler", label: "Hizmetler" },
+  { href: "#galeri", label: "Galeri" },
+  { href: "#sss", label: "SSS" },
+  { href: "#iletisim", label: "İletişim" },
+] as const;
+
+export type WorkItem = {
+  id: string;
+  title: string;
+  category: string;
+  beforeImage: string;
+  afterImage: string;
+  description: string;
+};
+
+export const WORKS: WorkItem[] = [
+  {
+    id: "dolap-kapak",
+    title: "Dolap Kapak Ayarı",
+    category: "Dolap Tamiri",
+    beforeImage: "/works/dolap-kapak-before.svg",
+    afterImage: "/works/dolap-kapak-after.svg",
+    description:
+      "Sarkmış ve hizası bozuk mutfak dolabı kapakları yeniden ayarlandı, menteşeler güçlendirildi.",
+  },
+  {
+    id: "mentese-degisim",
+    title: "Menteşe Değişimi",
+    category: "Menteşe & Ray",
+    beforeImage: "/works/mentese-before.svg",
+    afterImage: "/works/mentese-after.svg",
+    description:
+      "Yıpranmış menteşeler sökülerek dayanıklı soft-close menteşelerle değiştirildi.",
+  },
+  {
+    id: "cekmece-ray",
+    title: "Çekmece Ray Tamiri",
+    category: "Ray Değişimi",
+    beforeImage: "/works/cekmece-ray-before.svg",
+    afterImage: "/works/cekmece-ray-after.svg",
+    description:
+      "Takılan çekmece rayları yenilendi, yumuşak kapanma sağlandı ve çekmece hizası düzeltildi.",
+  },
+];
+
 export const SERVICES = [
   { title: "Mobilya Onarım", description: "Kırık, çatlak ve hasarlı mobilyalarınızı yerinde onarıyoruz." },
   { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz." },
@@ -45,15 +91,6 @@ export const WHY_US = [
     title: "Geniş Hizmet Yelpazesi",
     description: "Tamirden montaja, menteşeden ray değişimine kadar tüm mobilya ihtiyaçlarınız tek elden.",
   },
-] as const;
-
-export const GALLERY_ITEMS = [
-  { label: "Dolap kapak ayarı", type: "before" as const },
-  { label: "Dolap kapak ayarı", type: "after" as const },
-  { label: "Menteşe değişimi", type: "before" as const },
-  { label: "Menteşe değişimi", type: "after" as const },
-  { label: "Çekmece ray tamiri", type: "before" as const },
-  { label: "Çekmece ray tamiri", type: "after" as const },
 ] as const;
 
 export const FAQS = [

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Çekmece ray tamiri - öncesi">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8A7260"/>
+      <stop offset="100%" stop-color="#523A2E"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <rect x="100" y="180" width="600" height="120" rx="8" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <rect x="120" y="340" width="560" height="8" rx="4" fill="rgba(255,255,255,0.08)"/>
+  <rect x="120" y="360" width="400" height="8" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <rect x="24" y="24" width="80" height="30" rx="15" fill="#2C1810" opacity="0.9"/>
+  <text x="64" y="44" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="white" font-weight="700">ÖNCE</text>
+</svg>

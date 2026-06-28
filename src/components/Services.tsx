@@ -3,7 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function Services() {
   return (
-    <section id="hizmetler" className="bg-cream-50 py-16 sm:py-20">
+    <section id="hizmetler" className="scroll-mt-16 bg-cream-50 py-14 sm:scroll-mt-20 sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Hizmetlerimiz"
