@@ -107,28 +107,28 @@ export const WORKS: WorkItem[] = [
     id: "dolap-kapak",
     title: "Dolap Kapak Ayarı",
     category: "Dolap Tamiri",
-    beforeImage: "/works/dolap-kapak-before.svg",
-    afterImage: "/works/dolap-kapak-after.svg",
+    beforeImage: "/works/dolap-kapak-once.png",
+    afterImage: "/works/dolap-kapak-sonra.png",
     description:
-      "Sarkmış ve hizası bozuk mutfak dolabı kapakları yeniden ayarlandı, menteşeler güçlendirildi.",
+      "Sarkmış ve ayarı bozulmuş dolap kapakları profesyonel şekilde hizalandı ve çalışır hale getirildi.",
   },
   {
     id: "mentese-degisim",
-    title: "Menteşe Değişimi",
-    category: "Menteşe & Ray",
-    beforeImage: "/works/mentese-before.svg",
-    afterImage: "/works/mentese-after.svg",
+    title: "Menteşe Yenileme",
+    category: "Menteşe Değişimi",
+    beforeImage: "/works/mentese-once.png",
+    afterImage: "/works/mentese-sonra.png",
     description:
-      "Yıpranmış menteşeler sökülerek dayanıklı soft-close menteşelerle değiştirildi.",
+      "Yıpranmış ve işlevini kaybetmiş menteşeler dayanıklı yeni menteşeler ile değiştirildi.",
   },
   {
     id: "cekmece-ray",
-    title: "Çekmece Ray Tamiri",
-    category: "Ray Değişimi",
-    beforeImage: "/works/cekmece-ray-before.svg",
-    afterImage: "/works/cekmece-ray-after.svg",
+    title: "Ray Değişimi",
+    category: "Çekmece Rayı",
+    beforeImage: "/works/ray-once.png",
+    afterImage: "/works/ray-sonra.png",
     description:
-      "Takılan çekmece rayları yenilendi, yumuşak kapanma sağlandı ve çekmece hizası düzeltildi.",
+      "Eski ray sistemi sökülerek yeni ray montajı yapıldı ve çekmeceler sorunsuz çalışır hale getirildi.",
   },
 ];
 
