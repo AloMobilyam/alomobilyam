@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { CERTIFICATE_IMAGE } from "@/lib/site";
 
+const CERTIFICATE_SRC = "/certificates/ustalik-belgesi.png";
 const PLACEHOLDER_LABEL = "Ustalık belgesi görseli eklenecek";
 
 function CertificatePlaceholder() {
@@ -24,26 +24,23 @@ function CertificatePlaceholder() {
 }
 
 export function CertificateImage() {
-  const [loaded, setLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
-
-  const showPlaceholder = hasError || !loaded;
 
   return (
     <div
-      className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl shadow-lg ring-1 ring-wood-200/80 sm:max-w-sm"
+      className="relative mx-auto aspect-[3/4] w-full max-w-xs overflow-hidden rounded-2xl bg-cream-50 shadow-lg ring-1 ring-wood-200/80 sm:max-w-sm"
       role="img"
-      aria-label={showPlaceholder ? PLACEHOLDER_LABEL : "Erdoğan Kuşçu ustalık belgesi"}
+      aria-label={hasError ? PLACEHOLDER_LABEL : "Erdoğan Kuşçu ustalık belgesi"}
     >
-      <CertificatePlaceholder />
-      {!hasError && (
+      {hasError ? (
+        <CertificatePlaceholder />
+      ) : (
         <Image
-          src={CERTIFICATE_IMAGE}
+          src={CERTIFICATE_SRC}
           alt="Erdoğan Kuşçu ustalık belgesi"
           fill
-          className={`object-cover transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
+          className="object-contain"
           sizes="(max-width: 768px) 80vw, 320px"
-          onLoad={() => setLoaded(true)}
           onError={() => setHasError(true)}
         />
       )}

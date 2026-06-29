@@ -15,8 +15,6 @@ export const BUSINESS = {
 export const HERO_DESCRIPTION =
   "Erdoğan Kuşçu'nun 40 yılı aşkın mobilya ustalığı tecrübesiyle Mersin genelinde yerinde tamir, onarım, bakım ve montaj hizmeti.";
 
-export const CERTIFICATE_IMAGE = "/certificates/ustalik-belgesi.png";
-
 export const ON_SITE_SERVICE_IMAGE = "/site/yerinde-servis.png";
 
 export const NAV_LINKS = [
