@@ -3,6 +3,8 @@
 :root {
   --background: #fdfbf7;
   --foreground: #2c1810;
+  --mobile-bottom-bar: 4.25rem;
+  --mobile-bottom-gap: 0.875rem;
 }
 
 @theme inline {
@@ -32,6 +34,14 @@ html {
   scroll-padding-top: 3.5rem;
 }
 
+@media (max-width: 767px) {
+  html {
+    scroll-padding-bottom: calc(
+      var(--mobile-bottom-bar) + var(--mobile-bottom-gap) + env(safe-area-inset-bottom, 0px)
+    );
+  }
+}
+
 @media (min-width: 640px) {
   html {
     scroll-padding-top: 5rem;
@@ -47,7 +57,9 @@ body {
 /* Mobil sabit alt bar için içerik boşluğu */
 @media (max-width: 767px) {
   body {
-    padding-bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+    padding-bottom: calc(
+      var(--mobile-bottom-bar) + var(--mobile-bottom-gap) + env(safe-area-inset-bottom, 0px)
+    );
   }
 }
 

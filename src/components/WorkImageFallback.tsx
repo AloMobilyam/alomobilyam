@@ -35,7 +35,7 @@ export function WorkImageFallback({
           {badge}
         </span>
       )}
-      <p className="relative z-10 max-w-[85%] px-3 text-center text-xs font-medium leading-snug text-wood-700 sm:text-sm">
+      <p className="relative z-10 max-w-[90%] px-2 text-center text-[11px] font-medium leading-snug text-wood-700 sm:max-w-[85%] sm:px-3 sm:text-sm">
         {label}
       </p>
     </div>

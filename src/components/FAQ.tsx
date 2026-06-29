@@ -3,7 +3,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function FAQ() {
   return (
-    <section id="sss" className="section-padding scroll-mt-14 bg-cream-50 sm:scroll-mt-20">
+    <section id="sss" className="section-padding scroll-mt-14 bg-cream-50 pb-12 sm:scroll-mt-20 md:pb-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Sık Sorulan Sorular"

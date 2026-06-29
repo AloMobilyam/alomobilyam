@@ -3,7 +3,7 @@ import { PhoneIcon, WhatsAppIcon } from "./icons";
 
 export function MobileBottomBar() {
   return (
-    <div className="mobile-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-wood-200/70 bg-cream-50/95 px-3 pt-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(44,24,16,0.06)] backdrop-blur-lg md:hidden">
+    <div className="mobile-bottom-bar fixed inset-x-0 bottom-0 z-50 border-t border-wood-200/70 bg-cream-50/95 px-3 pt-2 pb-[max(0.625rem,env(safe-area-inset-bottom,0px))] shadow-[0_-4px_20px_rgba(44,24,16,0.06)] backdrop-blur-lg md:hidden">
       <div className="mx-auto flex max-w-lg gap-2">
         <a
           href={LINKS.tel}

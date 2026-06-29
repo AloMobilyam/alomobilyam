@@ -77,28 +77,28 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="grid shrink-0 grid-cols-[1fr_auto_1fr] items-center border-b border-wood-200 px-4 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))]">
+          <div className="flex shrink-0 items-center gap-2 border-b border-wood-200 px-3 pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:gap-3 sm:px-4">
             <button
               type="button"
               onClick={handleLogoClick}
-              className="justify-self-start text-left"
+              className="min-w-0 max-w-[38%] shrink overflow-hidden text-left sm:max-w-[42%]"
               aria-label="Ana sayfaya dön"
             >
               <Logo compact link={false} />
             </button>
-            <span className="text-lg font-bold text-wood-900">Menü</span>
-            <div className="flex justify-end">
-              <button
-                type="button"
-                onClick={onClose}
-                className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-wood-200 bg-white text-wood-900 shadow-sm transition-colors active:bg-wood-50"
-                aria-label="Menüyü kapat"
-              >
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-                </svg>
-              </button>
-            </div>
+            <h2 className="min-w-0 flex-1 truncate text-center text-sm font-bold text-wood-900 sm:text-lg">
+              Menü
+            </h2>
+            <button
+              type="button"
+              onClick={onClose}
+              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-wood-200 bg-white text-wood-900 shadow-sm transition-colors active:bg-wood-50 sm:h-12 sm:w-12"
+              aria-label="Menüyü kapat"
+            >
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+              </svg>
+            </button>
           </div>
 
           <nav className="flex-1 overflow-y-auto overscroll-contain px-5 py-4" aria-label="Mobil menü linkleri">
