@@ -9,7 +9,13 @@ export const BUSINESS = {
   whatsapp: "905324540119",
   area: "Mersin",
   tagline: "Mersin geneli yerinde mobilya tamir, bakım, onarım ve montaj hizmeti",
+  experienceYears: "40+",
 } as const;
+
+export const HERO_DESCRIPTION =
+  "Erdoğan Kuşçu'nun 40 yılı aşkın mobilya ustalığı tecrübesiyle Mersin genelinde yerinde tamir, onarım, bakım ve montaj hizmeti.";
+
+export const CERTIFICATE_IMAGE = "/certificates/ustalik-belgesi.jpg";
 
 export const NAV_LINKS = [
   { href: "#hizmetler", label: "Hizmetler" },
@@ -20,10 +26,17 @@ export const NAV_LINKS = [
 ] as const;
 
 export const STATS = [
-  { label: "Tecrübeli Usta" },
+  { label: "40+ Yıllık Tecrübe" },
+  { label: "Ustalık Belgeli" },
+  { label: "Garantili İşçilik" },
+  { label: "Mersin Geneli Yerinde Servis" },
+] as const;
+
+export const EXPERIENCE_HIGHLIGHTS = [
+  { label: "40+ Yıllık Deneyim" },
+  { label: "Ustalık Belgesi" },
   { label: "Yerinde Servis" },
-  { label: "Kaliteli İşçilik" },
-  { label: "Hızlı İletişim" },
+  { label: "Titiz İşçilik" },
 ] as const;
 
 export type Review = {
@@ -137,6 +150,11 @@ export const SERVICES: ServiceItem[] = [
 ];
 
 export const WHY_US = [
+  {
+    title: "40 Yıllık Ustalık Tecrübesi",
+    description:
+      "Erdoğan Kuşçu, uzun yıllara dayanan mobilya ustalığı deneyimi ve ustalık belgesiyle işlerinizi güvenle, titizlikle ve profesyonelce tamamlar.",
+  },
   {
     title: "Usta İşi Kalite",
     description: "Erdoğan Kuşçu'nun yılların deneyimiyle her iş titizlikle ve ustalıkla yapılır.",

@@ -6,7 +6,7 @@ export function getLocalBusinessSchema() {
     "@type": "LocalBusiness",
     name: BUSINESS.name,
     description:
-      "Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
+      "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
     url: SITE_URL,
     telephone: BUSINESS.phoneRaw,
     image: `${SITE_URL}/og-image.png`,
@@ -22,6 +22,12 @@ export function getLocalBusinessSchema() {
     founder: {
       "@type": "Person",
       name: BUSINESS.owner,
+      jobTitle: "Ustalık Belgeli Mobilya Ustası",
+      knowsAbout: [
+        "Mobilya tamiri",
+        "Mobilya montajı",
+        "Mobilya bakım ve onarım",
+      ],
     },
     contactPoint: {
       "@type": "ContactPoint",

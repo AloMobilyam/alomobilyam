@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { BUSINESS } from "@/lib/site";
+import { HERO_DESCRIPTION } from "@/lib/site";
 import { fadeInUp, viewportOnce } from "@/lib/motion";
 import { CTAButtons } from "./CTAButtons";
 import { HeroShowcase } from "./HeroShowcase";
@@ -34,8 +34,7 @@ export function Hero() {
               </h1>
 
               <p className="mt-2.5 max-w-prose text-base leading-relaxed text-wood-700 sm:mt-4 sm:text-lg">
-                {BUSINESS.tagline}. {BUSINESS.owner} ile dolap kurulumundan menteşe
-                değişimine kadar tüm işleriniz adresinizde profesyonelce yapılır.
+                {HERO_DESCRIPTION}
               </p>
 
               <div className="mt-4 sm:mt-7">
@@ -43,7 +42,7 @@ export function Hero() {
               </div>
 
               <ul className="mt-4 hidden flex-wrap gap-x-4 gap-y-1.5 text-xs text-wood-600 sm:mt-6 sm:flex sm:gap-x-5 sm:text-sm">
-                {["Yerinde servis", "Usta işi kalite", "Hızlı randevu"].map((item) => (
+                {["40+ yıllık tecrübe", "Ustalık belgeli", "Garantili işçilik"].map((item) => (
                   <li key={item} className="flex items-center gap-1.5">
                     <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-100 text-[9px] text-emerald-700">
                       ✓

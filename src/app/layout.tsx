@@ -17,7 +17,7 @@ const lora = Lora({
 
 const title = "Alo Mobilya | Mersin Mobilya Tamir ve Montaj";
 const description =
-  "Mersin'de yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.";
+  "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin'de yerinde mobilya tamiri, yenileme, dolap kurulumu, menteşe ve ray değişimi hizmeti.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   keywords: [
     "Mersin mobilya tamiri",
     "mobilya tamir Mersin",
+    "yerinde mobilya tamiri Mersin",
+    "ustalık belgeli mobilya ustası",
+    "40 yıllık mobilya ustası",
     "dolap kurulumu Mersin",
     "menteşe değişimi",
     "ray değişimi",

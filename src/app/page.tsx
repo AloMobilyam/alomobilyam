@@ -6,6 +6,7 @@ import { GoogleReviews } from "@/components/GoogleReviews";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { MobileBottomBar } from "@/components/MobileBottomBar";
+import { ExperienceSection } from "@/components/ExperienceSection";
 import { OnSiteService } from "@/components/OnSiteService";
 import { OurWorks } from "@/components/OurWorks";
 import { Services } from "@/components/Services";
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <WhyUs />
         <OnSiteService />
+        <ExperienceSection />
         <OurWorks />
         <GoogleReviews />
         <FAQ />

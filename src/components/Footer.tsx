@@ -22,7 +22,7 @@ export function Footer() {
           <m.div variants={fadeInUp} className="sm:col-span-2 lg:col-span-1">
             <Logo variant="dark" />
             <p className="mt-4 text-sm leading-relaxed text-cream-200">
-              {BUSINESS.owner} — Mersin genelinde yerinde mobilya tamir, bakım ve montaj hizmeti.
+              {BUSINESS.owner} — 40 yılı aşkın tecrübeyle Mersin genelinde yerinde mobilya tamir, bakım ve montaj hizmeti.
             </p>
           </m.div>
 
