@@ -8,8 +8,8 @@ import { isRealWorkImage, WORK_PLACEHOLDER_LABELS } from "@/lib/works";
 import { WorkImageFallback } from "./WorkImageFallback";
 
 type BeforeAfterSliderProps = {
-  beforeImage: string;
-  afterImage: string;
+  before: string;
+  after: string;
   beforeLabel?: string;
   afterLabel?: string;
   alt: string;
@@ -96,8 +96,8 @@ function PlaceholderSplitView({
 }
 
 export function BeforeAfterSlider({
-  beforeImage,
-  afterImage,
+  before,
+  after,
   beforeLabel = "ÖNCESİ",
   afterLabel = "SONRASI",
   alt,
@@ -108,7 +108,7 @@ export function BeforeAfterSlider({
   const [isDragging, setIsDragging] = useState(false);
 
   const isPlaceholderMode =
-    !isRealWorkImage(beforeImage) && !isRealWorkImage(afterImage);
+    !isRealWorkImage(before) && !isRealWorkImage(after);
 
   const updatePosition = useCallback((clientX: number) => {
     const container = containerRef.current;
@@ -166,7 +166,7 @@ export function BeforeAfterSlider({
         ) : (
           <>
             <SliderImage
-              src={afterImage}
+              src={after}
               alt={`${alt} - sonrası`}
               label={WORK_PLACEHOLDER_LABELS.after}
               variant="after"
@@ -177,7 +177,7 @@ export function BeforeAfterSlider({
               style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
             >
               <SliderImage
-                src={beforeImage}
+                src={before}
                 alt={`${alt} - öncesi`}
                 label={WORK_PLACEHOLDER_LABELS.before}
                 variant="before"

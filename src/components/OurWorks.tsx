@@ -24,15 +24,15 @@ export function OurWorks() {
         <div className="mt-10">
           <AnimatePresence mode="wait">
             <m.div
-              key={activeWork.id}
+              key={activeWork.slug}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.3 }}
             >
               <BeforeAfterSlider
-                beforeImage={activeWork.beforeImage}
-                afterImage={activeWork.afterImage}
+                before={activeWork.before}
+                after={activeWork.after}
                 alt={activeWork.title}
               />
               <div className="mt-4 text-center">
@@ -52,7 +52,7 @@ export function OurWorks() {
           <div className="mt-6 flex justify-center gap-2">
             {WORKS.map((work, index) => (
               <button
-                key={work.id}
+                key={work.slug}
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className={`h-2.5 rounded-full transition-all ${
@@ -75,7 +75,7 @@ export function OurWorks() {
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
           {WORKS.map((work) => (
-            <m.div key={work.id} variants={fadeInUp}>
+            <m.div key={work.slug} variants={fadeInUp}>
               <WorkCard work={work} />
             </m.div>
           ))}

@@ -34,14 +34,14 @@ export function WorkCard({ work }: WorkCardProps) {
 
       <div className="grid grid-cols-2 gap-px bg-wood-100">
         <WorkImage
-          src={work.beforeImage}
+          src={work.before}
           alt={`${work.title} - öncesi`}
           label="Önce"
           placeholderLabel={WORK_PLACEHOLDER_LABELS.before}
           variant="before"
         />
         <WorkImage
-          src={work.afterImage}
+          src={work.after}
           alt={`${work.title} - sonrası`}
           label="Sonra"
           placeholderLabel={WORK_PLACEHOLDER_LABELS.after}

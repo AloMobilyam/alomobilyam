@@ -93,43 +93,100 @@ export type ServiceItem = {
   icon: ServiceIconKey;
 };
 
-export type WorkItem = {
-  id: string;
-  title: string;
+export type WorkInput = {
+  slug: string;
   category: string;
-  beforeImage: string;
-  afterImage: string;
+  title: string;
   description: string;
 };
 
+export type WorkItem = WorkInput & {
+  before: string;
+  after: string;
+};
+
+export function workImagePaths(slug: string) {
+  return {
+    before: `/works/${slug}-once.png`,
+    after: `/works/${slug}-sonra.png`,
+  };
+}
+
+function createWork(input: WorkInput): WorkItem {
+  return { ...input, ...workImagePaths(input.slug) };
+}
+
 export const WORKS: WorkItem[] = [
-  {
-    id: "dolap-kapak",
-    title: "Dolap Kapak Ayarı",
-    category: "Dolap Tamiri",
-    beforeImage: "/works/dolap-kapak-once.png",
-    afterImage: "/works/dolap-kapak-sonra.png",
+  createWork({
+    slug: "mutfak-dolabi",
+    category: "Mutfak Dolabı",
+    title: "Mutfak Dolabı Yenileme",
     description:
-      "Sarkmış ve ayarı bozulmuş dolap kapakları profesyonel şekilde hizalandı ve çalışır hale getirildi.",
-  },
-  {
-    id: "mentese-degisim",
-    title: "Menteşe Yenileme",
-    category: "Menteşe Değişimi",
-    beforeImage: "/works/mentese-once.png",
-    afterImage: "/works/mentese-sonra.png",
+      "Eskiyen mutfak dolabı kapakları yenilenerek modern ve kullanışlı bir görünüme kavuşturuldu.",
+  }),
+  createWork({
+    slug: "banyo-dolabi",
+    category: "Banyo Dolabı",
+    title: "Banyo Dolabı Tamiri",
     description:
-      "Yıpranmış ve işlevini kaybetmiş menteşeler dayanıklı yeni menteşeler ile değiştirildi.",
-  },
-  {
-    id: "cekmece-ray",
-    title: "Ray Değişimi",
-    category: "Çekmece Rayı",
-    beforeImage: "/works/ray-once.png",
-    afterImage: "/works/ray-sonra.png",
+      "Şişen ve deforme olan banyo dolabı profesyonel şekilde onarıldı.",
+  }),
+  createWork({
+    slug: "tv-unitesi",
+    category: "TV Ünitesi",
+    title: "TV Ünitesi Tamiri",
     description:
-      "Eski ray sistemi sökülerek yeni ray montajı yapıldı ve çekmeceler sorunsuz çalışır hale getirildi.",
-  },
+      "Hasarlı TV ünitesi tamir edilerek sağlam ve estetik görünümü geri kazandırıldı.",
+  }),
+  createWork({
+    slug: "gardirop-kapak",
+    category: "Gardırop",
+    title: "Gardırop Kapak Ayarı",
+    description:
+      "Sarkan gardırop kapakları yeniden ayarlanarak sorunsuz çalışması sağlandı.",
+  }),
+  createWork({
+    slug: "surgulu-dolap-rayi",
+    category: "Sürgülü Dolap",
+    title: "Sürgülü Dolap Rayı",
+    description:
+      "Takılan sürgülü dolap ray sistemi yenilenerek sessiz ve akıcı kullanım sağlandı.",
+  }),
+  createWork({
+    slug: "cekmece-rayi",
+    category: "Çekmece",
+    title: "Çekmece Rayı Değişimi",
+    description:
+      "Eski ray sistemi değiştirilerek çekmeceler yumuşak ve rahat çalışır hale getirildi.",
+  }),
+  createWork({
+    slug: "mentese",
+    category: "Menteşe",
+    title: "Menteşe Değişimi",
+    description:
+      "Yıpranan menteşeler kaliteli yeni menteşeler ile değiştirildi.",
+  }),
+  createWork({
+    slug: "kapi",
+    category: "Kapı",
+    title: "Ahşap Kapı Tamiri",
+    description:
+      "Kırık, çizik ve gevşeyen ahşap kapı profesyonel şekilde onarıldı.",
+  }),
+  createWork({
+    slug: "masa",
+    category: "Masa",
+    title: "Masa Tamiri",
+    description:
+      "Sallanan veya hasar görmüş masa güçlendirilerek uzun ömürlü kullanım sağlandı.",
+  }),
+  createWork({
+    slug: "komodin",
+    category: "Komodin",
+    title: "Komodin Tamiri",
+    description:
+      "Hasarlı komodin tamir edilerek estetik görünümü yeniden kazandırıldı.",
+  }),
 ];
 
 export const SERVICES: ServiceItem[] = [
