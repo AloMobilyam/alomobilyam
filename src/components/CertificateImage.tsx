@@ -46,7 +46,7 @@ function CalendarIcon({ className }: { className?: string }) {
 }
 
 function TrustBadgeIcon({ type }: { type: (typeof TRUST_BADGES)[number]["icon"] }) {
-  const className = "h-4 w-4 sm:h-[18px] sm:w-[18px]";
+  const className = "h-4 w-4";
 
   if (type === "check") return <CheckIcon className={className} />;
   if (type === "calendar") return <CalendarIcon className={className} />;
@@ -104,19 +104,19 @@ export function CertificateImage() {
 
       <m.div
         variants={badgeGridStagger}
-        className="grid grid-cols-1 gap-2 border-t border-wood-100/80 bg-cream-50/60 px-2 pb-2 pt-2 sm:grid-cols-3 sm:gap-2 sm:px-3 sm:pb-3 sm:pt-2.5"
+        className="grid grid-cols-3 gap-1 border-t border-wood-100/80 bg-cream-50/60 px-2 pb-2 pt-1.5 sm:gap-2 sm:px-3 sm:pb-3 sm:pt-2"
       >
         {TRUST_BADGES.map((badge) => (
           <m.div
             key={badge.title}
             variants={fadeInUp}
-            className="flex flex-col items-center rounded-xl bg-white px-3 py-3 text-center shadow-sm ring-1 ring-wood-100/70 sm:py-3.5"
+            className="flex flex-col items-center rounded-xl bg-white px-1.5 py-4 text-center shadow-sm ring-1 ring-wood-100/70 sm:px-3"
           >
-            <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100 sm:h-9 sm:w-9">
+            <div className="mb-1.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 ring-1 ring-emerald-100">
               <TrustBadgeIcon type={badge.icon} />
             </div>
-            <p className="text-xs font-bold leading-tight text-wood-900 sm:text-sm">{badge.title}</p>
-            <p className="mt-0.5 text-[10px] leading-snug text-wood-600 sm:text-xs">{badge.subtitle}</p>
+            <p className="text-lg font-bold leading-tight text-wood-900">{badge.title}</p>
+            <p className="mt-0.5 text-xs leading-snug text-wood-600">{badge.subtitle}</p>
           </m.div>
         ))}
       </m.div>
