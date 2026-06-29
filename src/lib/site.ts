@@ -15,7 +15,9 @@ export const BUSINESS = {
 export const HERO_DESCRIPTION =
   "Erdoğan Kuşçu'nun 40 yılı aşkın mobilya ustalığı tecrübesiyle Mersin genelinde yerinde tamir, onarım, bakım ve montaj hizmeti.";
 
-export const CERTIFICATE_IMAGE = "/certificates/ustalik-belgesi.jpg";
+export const CERTIFICATE_IMAGE = "/certificates/ustalik-belgesi.png";
+
+export const ON_SITE_SERVICE_IMAGE = "/site/yerinde-servis.png";
 
 export const NAV_LINKS = [
   { href: "#hizmetler", label: "Hizmetler" },
@@ -111,6 +113,11 @@ export function workImagePaths(slug: string) {
     after: `/works/${slug}-sonra.png`,
   };
 }
+
+export const HERO_SHOWCASE_WORK = {
+  title: "Mutfak Dolabı Yenileme",
+  ...workImagePaths("mutfak-dolabi"),
+};
 
 function createWork(input: WorkInput): WorkItem {
   return { ...input, ...workImagePaths(input.slug) };

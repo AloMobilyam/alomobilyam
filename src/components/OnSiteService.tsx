@@ -1,6 +1,6 @@
 import { BUSINESS } from "@/lib/site";
 import { MapPinIcon } from "./icons";
-import { PlaceholderImage } from "./PlaceholderImage";
+import { OnSiteServiceImage } from "./OnSiteServiceImage";
 import { SectionHeading } from "./SectionHeading";
 
 export function OnSiteService() {
@@ -37,10 +37,7 @@ export function OnSiteService() {
             </div>
           </div>
 
-          <PlaceholderImage
-            label="Mersin geneli yerinde mobilya servisi"
-            variant="service"
-          />
+          <OnSiteServiceImage />
         </div>
       </div>
     </section>

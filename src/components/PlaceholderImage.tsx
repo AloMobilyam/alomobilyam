@@ -2,6 +2,7 @@ type PlaceholderImageProps = {
   label: string;
   variant?: "hero" | "gallery" | "service";
   badge?: string;
+  className?: string;
 };
 
 const gradients = {
@@ -14,10 +15,11 @@ export function PlaceholderImage({
   label,
   variant = "gallery",
   badge,
+  className = "",
 }: PlaceholderImageProps) {
   return (
     <div
-      className={`relative flex aspect-[4/3] w-full items-end overflow-hidden rounded-2xl bg-gradient-to-br ${gradients[variant]} shadow-inner`}
+      className={`relative flex aspect-[4/3] w-full items-end overflow-hidden rounded-2xl bg-gradient-to-br ${gradients[variant]} shadow-inner ${className}`}
       role="img"
       aria-label={label}
     >

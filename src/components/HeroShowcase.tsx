@@ -1,9 +1,14 @@
 "use client";
 
+import Image from "next/image";
+import { useState } from "react";
 import { m } from "framer-motion";
+import { HERO_SHOWCASE_WORK } from "@/lib/site";
 import { scaleIn, viewportOnce } from "@/lib/motion";
 
 export function HeroShowcase() {
+  const { title, before, after } = HERO_SHOWCASE_WORK;
+
   return (
     <m.div
       className="relative mx-auto w-full max-w-sm lg:max-w-none"
@@ -20,13 +25,23 @@ export function HeroShowcase() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_25%_15%,rgba(255,255,255,0.25),transparent_55%)]" />
 
           <div className="relative grid grid-cols-2 gap-1.5 p-2 sm:gap-3 sm:p-4">
-            <ShowcasePanel label="ÖNCESİ" tone="before" />
-            <ShowcasePanel label="SONRASI" tone="after" highlight />
+            <ShowcaseImagePanel
+              src={before}
+              alt={`${title} - öncesi`}
+              label="ÖNCESİ"
+              highlight={false}
+            />
+            <ShowcaseImagePanel
+              src={after}
+              alt={`${title} - sonrası`}
+              label="SONRASI"
+              highlight
+            />
           </div>
 
           <div className="relative border-t border-white/10 bg-wood-900/55 px-3 py-2 backdrop-blur-sm sm:px-4 sm:py-3">
             <p className="text-center text-[10px] font-medium text-cream-100 sm:text-sm">
-              Profesyonel mobilya tamir &amp; yenileme
+              {title}
             </p>
           </div>
         </div>
@@ -55,16 +70,18 @@ export function HeroShowcase() {
   );
 }
 
-function ShowcasePanel({
+function ShowcaseImagePanel({
+  src,
+  alt,
   label,
-  tone,
   highlight = false,
 }: {
+  src: string;
+  alt: string;
   label: string;
-  tone: "before" | "after";
   highlight?: boolean;
 }) {
-  const isBefore = tone === "before";
+  const [hasError, setHasError] = useState(false);
 
   return (
     <div
@@ -74,26 +91,27 @@ function ShowcasePanel({
           : "border-wood-900/25 shadow-wood-900/15"
       }`}
     >
-      <div
-        className={`absolute inset-0 ${
-          isBefore
-            ? "bg-gradient-to-br from-wood-500/90 via-wood-600 to-wood-800"
-            : "bg-gradient-to-br from-amber-100/95 via-wood-200 to-wood-400"
-        }`}
-      />
-      <div className="absolute inset-0 opacity-30 [background-image:repeating-linear-gradient(0deg,transparent,transparent_5px,rgba(0,0,0,0.04)_5px,rgba(0,0,0,0.04)_10px)]" />
-
+      <div className="absolute inset-0 bg-cream-100" />
+      {!hasError && (
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 1024px) 45vw, 220px"
+          priority
+          onError={() => setHasError(true)}
+        />
+      )}
       <span
         className={`absolute left-1.5 top-1.5 z-10 rounded-full px-1.5 py-0.5 text-[8px] font-bold tracking-wider sm:left-2 sm:top-2 sm:px-2 sm:text-[9px] ${
-          isBefore ? "bg-wood-900/85 text-cream-50" : "bg-emerald-700/90 text-white"
+          label === "ÖNCESİ"
+            ? "bg-wood-900/85 text-cream-50"
+            : "bg-emerald-700/90 text-white"
         }`}
       >
         {label}
       </span>
-
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-wood-900/70 to-transparent px-2 py-2 sm:px-3 sm:py-3">
-        <div className={`h-1 rounded-full ${isBefore ? "w-2/3 bg-wood-300/50" : "w-full bg-cream-100/60"}`} />
-      </div>
     </div>
   );
 }
