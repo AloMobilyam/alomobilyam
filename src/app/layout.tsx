@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { MotionProvider } from "@/components/MotionProvider";
 import { getFAQSchema, getLocalBusinessSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
@@ -90,6 +91,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">
+        <GoogleAnalytics />
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
