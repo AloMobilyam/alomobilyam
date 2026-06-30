@@ -50,11 +50,18 @@ export const metadata: Metadata = {
     siteName: "Alo Mobilya",
     title,
     description,
+    images: [
+      {
+        url: "/favicon.svg",
+        alt: "Alo Mobilya",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["/favicon.svg"],
   },
   robots: {
     index: true,

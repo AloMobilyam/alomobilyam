@@ -1,5 +1,20 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://alomobilyam.com";
+export const CANONICAL_SITE_URL = "https://www.alomobilyam.com";
+
+function resolveSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+
+  if (
+    fromEnv &&
+    fromEnv.startsWith("https://") &&
+    !fromEnv.includes("vercel.app")
+  ) {
+    return fromEnv;
+  }
+
+  return CANONICAL_SITE_URL;
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 export const BUSINESS = {
   name: "Alo Mobilya",

@@ -1,58 +1,83 @@
 import { BUSINESS, LINKS, SERVICES, SITE_URL } from "./site";
 
-export function getLocalBusinessSchema() {
+const organizationId = `${SITE_URL}/#organization`;
+const localBusinessId = `${SITE_URL}/#localbusiness`;
+
+export function getOrganizationSchema() {
   return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "Organization",
+    "@id": organizationId,
     name: BUSINESS.name,
-    description:
-      "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
     url: SITE_URL,
-    telephone: BUSINESS.phoneRaw,
-    image: `${SITE_URL}/og-image.png`,
-    priceRange: "$$",
-    areaServed: {
-      "@type": "City",
-      name: "Mersin",
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: "Mersin",
-      },
-    },
+    logo: `${SITE_URL}/favicon.svg`,
     founder: {
       "@type": "Person",
       name: BUSINESS.owner,
-      jobTitle: "Ustalık Belgeli Mobilya Ustası",
-      knowsAbout: [
-        "Mobilya tamiri",
-        "Mobilya montajı",
-        "Mobilya bakım ve onarım",
-      ],
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: BUSINESS.phoneRaw,
-      contactType: "customer service",
-      availableLanguage: "Turkish",
-      areaServed: "TR-33",
     },
     sameAs: [LINKS.whatsapp],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Mobilya Tamir ve Montaj Hizmetleri",
-      itemListElement: SERVICES.map((service) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service.title,
-          description: service.description,
-          areaServed: {
-            "@type": "City",
+  };
+}
+
+export function getLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      getOrganizationSchema(),
+      {
+        "@type": "LocalBusiness",
+        "@id": localBusinessId,
+        parentOrganization: { "@id": organizationId },
+        name: BUSINESS.name,
+        description:
+          "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
+        url: SITE_URL,
+        telephone: BUSINESS.phoneRaw,
+        image: `${SITE_URL}/favicon.svg`,
+        priceRange: "$$",
+        areaServed: {
+          "@type": "City",
+          name: "Mersin",
+          containedInPlace: {
+            "@type": "AdministrativeArea",
             name: "Mersin",
           },
         },
-      })),
-    },
+        founder: {
+          "@type": "Person",
+          name: BUSINESS.owner,
+          jobTitle: "Ustalık Belgeli Mobilya Ustası",
+          knowsAbout: [
+            "Mobilya tamiri",
+            "Mobilya montajı",
+            "Mobilya bakım ve onarım",
+          ],
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: BUSINESS.phoneRaw,
+          contactType: "customer service",
+          availableLanguage: "Turkish",
+          areaServed: "TR-33",
+        },
+        sameAs: [LINKS.whatsapp],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Mobilya Tamir ve Montaj Hizmetleri",
+          itemListElement: SERVICES.map((service) => ({
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: service.title,
+              description: service.description,
+              areaServed: {
+                "@type": "City",
+                name: "Mersin",
+              },
+            },
+          })),
+        },
+      },
+    ],
   };
 }
 
