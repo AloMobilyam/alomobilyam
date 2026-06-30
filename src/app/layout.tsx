@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import Script from "next/script";
 import { MotionProvider } from "@/components/MotionProvider";
 import { getFAQSchema, getLocalBusinessSchema } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
@@ -19,6 +19,9 @@ const lora = Lora({
 const title = "Alo Mobilya | Mersin Mobilya Tamir ve Montaj";
 const description =
   "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin'de yerinde mobilya tamiri, yenileme, dolap kurulumu, menteşe ve ray değişimi hizmeti.";
+
+const GA_MEASUREMENT_ID = "G-RJEH032FK4";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -91,7 +94,22 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-sans">
-        <GoogleAnalytics />
+        {isProduction && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
