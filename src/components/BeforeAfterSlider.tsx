@@ -10,9 +10,10 @@ import { WorkImageFallback } from "./WorkImageFallback";
 type BeforeAfterSliderProps = {
   before: string;
   after: string;
+  beforeAlt: string;
+  afterAlt: string;
   beforeLabel?: string;
   afterLabel?: string;
-  alt: string;
   className?: string;
 };
 
@@ -42,7 +43,7 @@ function SliderImage({
       className="object-cover"
       sizes="(max-width: 768px) 100vw, 50vw"
       draggable={false}
-      priority
+      loading="lazy"
       onError={() => setHasError(true)}
     />
   );
@@ -98,9 +99,10 @@ function PlaceholderSplitView({
 export function BeforeAfterSlider({
   before,
   after,
+  beforeAlt,
+  afterAlt,
   beforeLabel = "ÖNCESİ",
   afterLabel = "SONRASI",
-  alt,
   className = "",
 }: BeforeAfterSliderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -154,7 +156,7 @@ export function BeforeAfterSlider({
         onPointerUp={handlePointerUp}
         onPointerCancel={handlePointerUp}
         role="img"
-        aria-label={`${alt} öncesi sonrası karşılaştırma`}
+        aria-label={`${beforeAlt} ile ${afterAlt} karşılaştırması`}
       >
         {isPlaceholderMode ? (
           <PlaceholderSplitView
@@ -167,7 +169,7 @@ export function BeforeAfterSlider({
           <>
             <SliderImage
               src={after}
-              alt={`${alt} - sonrası`}
+              alt={afterAlt}
               label={WORK_PLACEHOLDER_LABELS.after}
               variant="after"
             />
@@ -178,7 +180,7 @@ export function BeforeAfterSlider({
             >
               <SliderImage
                 src={before}
-                alt={`${alt} - öncesi`}
+                alt={beforeAlt}
                 label={WORK_PLACEHOLDER_LABELS.before}
                 variant="before"
               />

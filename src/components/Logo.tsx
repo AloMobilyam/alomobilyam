@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type LogoProps = {
   compact?: boolean;
   showText?: boolean;
@@ -77,9 +79,9 @@ export function Logo({
 
   if (link) {
     return (
-      <a href="#" className={`group flex min-w-0 items-center gap-2.5 ${className}`} aria-label="Alo Mobilya ana sayfa">
+      <Link href="/" className={`group flex min-w-0 items-center gap-2.5 ${className}`} aria-label="Alo Mobilya ana sayfa">
         {content}
-      </a>
+      </Link>
     );
   }
 

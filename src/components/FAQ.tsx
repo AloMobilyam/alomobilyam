@@ -19,8 +19,8 @@ export function FAQ() {
             >
               <summary className="cursor-pointer list-none px-6 py-5 font-semibold text-wood-900 marker:hidden [&::-webkit-details-marker]:hidden">
                 <span className="flex items-center justify-between gap-4">
-                  {faq.question}
-                  <span className="shrink-0 text-wood-400 transition-transform group-open:rotate-45">
+                  <span className="min-w-0 break-words">{faq.question}</span>
+                  <span className="shrink-0 text-wood-400 transition-transform group-open:rotate-45" aria-hidden="true">
                     +
                   </span>
                 </span>

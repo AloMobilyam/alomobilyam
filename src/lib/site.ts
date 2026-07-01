@@ -32,6 +32,14 @@ export const HERO_DESCRIPTION =
 
 export const ON_SITE_SERVICE_IMAGE = "/site/yerinde-servis.png";
 
+export const ON_SITE_SERVICE_IMAGE_ALT =
+  "Mersin genelinde yerinde mobilya tamir, bakım ve montaj servisi — Alo Mobilya";
+
+export const HOME_OG_IMAGE = {
+  url: "/works/mutfak-dolabi-sonra.png",
+  alt: "Mersin mutfak dolabı yenileme sonrası — yenilenmiş modern kapaklar",
+} as const;
+
 export const NAV_LINKS = [
   { href: "/#hizmetler", label: "Hizmetler" },
   { href: "/#galeri", label: "Galeri" },
@@ -128,6 +136,8 @@ export type WorkInput = {
   category: string;
   title: string;
   description: string;
+  beforeAlt: string;
+  afterAlt: string;
   href?: string;
 };
 
@@ -145,6 +155,10 @@ export function workImagePaths(slug: string) {
 
 export const HERO_SHOWCASE_WORK = {
   title: "Mutfak Dolabı Yenileme",
+  beforeAlt:
+    "Mersin mutfak dolabı yenileme öncesi — eski ve yıpranmış kapak görünümü",
+  afterAlt:
+    "Mersin mutfak dolabı yenileme sonrası — yenilenmiş modern mutfak dolabı kapakları",
   ...workImagePaths("mutfak-dolabi"),
 };
 
@@ -159,6 +173,10 @@ export const WORKS: WorkItem[] = [
     title: "Mutfak Dolabı Yenileme",
     description:
       "Eskiyen mutfak dolabı kapakları yenilenerek modern ve kullanışlı bir görünüme kavuşturuldu.",
+    beforeAlt:
+      "Mersin mutfak dolabı yenileme öncesi — eski krem kapaklar ve yıpranmış görünüm",
+    afterAlt:
+      "Mersin mutfak dolabı yenileme sonrası — yenilenmiş modern kapaklar ve ferah mutfak",
     href: "/hizmetler/mersin-mutfak-dolabi-yenileme",
   }),
   createWork({
@@ -167,6 +185,10 @@ export const WORKS: WorkItem[] = [
     title: "Banyo Dolabı Tamiri",
     description:
       "Şişen ve deforme olan banyo dolabı profesyonel şekilde onarıldı.",
+    beforeAlt:
+      "Mersin banyo dolabı tamiri öncesi — deforme ve şişmiş kapak görünümü",
+    afterAlt:
+      "Mersin banyo dolabı tamiri sonrası — onarılmış ve düzgün kapanan banyo dolabı",
   }),
   createWork({
     slug: "tv-unitesi",
@@ -174,6 +196,10 @@ export const WORKS: WorkItem[] = [
     title: "TV Ünitesi Tamiri",
     description:
       "Hasarlı TV ünitesi tamir edilerek sağlam ve estetik görünümü geri kazandırıldı.",
+    beforeAlt:
+      "Mersin TV ünitesi tamiri öncesi — hasarlı ve yıpranmış mobilya görünümü",
+    afterAlt:
+      "Mersin TV ünitesi tamiri sonrası — onarılmış ve düzenli TV ünitesi",
   }),
   createWork({
     slug: "gardirop-kapak",
@@ -181,6 +207,10 @@ export const WORKS: WorkItem[] = [
     title: "Gardırop Kapak Ayarı",
     description:
       "Sarkan gardırop kapakları yeniden ayarlanarak sorunsuz çalışması sağlandı.",
+    beforeAlt:
+      "Mersin gardırop kapak ayarı öncesi — sarkan ve hizasız kapak görünümü",
+    afterAlt:
+      "Mersin gardırop kapak ayarı sonrası — düzgün hizalanmış gardırop kapakları",
   }),
   createWork({
     slug: "surgulu-dolap-rayi",
@@ -188,6 +218,10 @@ export const WORKS: WorkItem[] = [
     title: "Sürgülü Dolap Rayı",
     description:
       "Takılan sürgülü dolap ray sistemi yenilenerek sessiz ve akıcı kullanım sağlandı.",
+    beforeAlt:
+      "Mersin sürgülü dolap ray tamiri öncesi — takılan ve zor kayan kapak",
+    afterAlt:
+      "Mersin sürgülü dolap ray tamiri sonrası — akıcı çalışan sürgülü dolap",
   }),
   createWork({
     slug: "cekmece-rayi",
@@ -195,6 +229,10 @@ export const WORKS: WorkItem[] = [
     title: "Çekmece Rayı Değişimi",
     description:
       "Eski ray sistemi değiştirilerek çekmeceler yumuşak ve rahat çalışır hale getirildi.",
+    beforeAlt:
+      "Mersin çekmece rayı değişimi öncesi — sert kapanan ve zor açılan çekmece",
+    afterAlt:
+      "Mersin çekmece rayı değişimi sonrası — yumuşak kapanan yenilenmiş çekmece",
   }),
   createWork({
     slug: "mentese",
@@ -202,6 +240,10 @@ export const WORKS: WorkItem[] = [
     title: "Menteşe Değişimi",
     description:
       "Yıpranan menteşeler kaliteli yeni menteşeler ile değiştirildi.",
+    beforeAlt:
+      "Mersin menteşe değişimi öncesi — gevşek ve sarkan dolap kapağı",
+    afterAlt:
+      "Mersin menteşe değişimi sonrası — sağlam menteşelerle düzgün kapanan kapak",
   }),
   createWork({
     slug: "kapi",
@@ -209,6 +251,10 @@ export const WORKS: WorkItem[] = [
     title: "Ahşap Kapı Tamiri",
     description:
       "Kırık, çizik ve gevşeyen ahşap kapı profesyonel şekilde onarıldı.",
+    beforeAlt:
+      "Mersin ahşap kapı tamiri öncesi — çizik ve hasarlı kapı yüzeyi",
+    afterAlt:
+      "Mersin ahşap kapı tamiri sonrası — onarılmış ve düzgün kapanan ahşap kapı",
   }),
   createWork({
     slug: "masa",
@@ -216,6 +262,10 @@ export const WORKS: WorkItem[] = [
     title: "Masa Tamiri",
     description:
       "Sallanan veya hasar görmüş masa güçlendirilerek uzun ömürlü kullanım sağlandı.",
+    beforeAlt:
+      "Mersin masa tamiri öncesi — sallanan ve hasarlı masa görünümü",
+    afterAlt:
+      "Mersin masa tamiri sonrası — güçlendirilmiş ve sağlam masa",
   }),
   createWork({
     slug: "komodin",
@@ -223,6 +273,10 @@ export const WORKS: WorkItem[] = [
     title: "Komodin Tamiri",
     description:
       "Hasarlı komodin tamir edilerek estetik görünümü yeniden kazandırıldı.",
+    beforeAlt:
+      "Mersin komodin tamiri öncesi — hasarlı ve yıpranmış komodin",
+    afterAlt:
+      "Mersin komodin tamiri sonrası — onarılmış ve düzenli komodin görünümü",
   }),
 ];
 

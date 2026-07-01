@@ -25,7 +25,7 @@ export const SERVICE_METADATA = {
   ],
   ogImage: {
     url: "/works/mutfak-dolabi-sonra.png",
-    alt: "Mersin mutfak dolabı yenileme önce sonra — modern kapaklar",
+    alt: "Mersin mutfak dolabı yenileme sonrası — yenilenmiş modern kapaklar",
   },
 } as const;
 

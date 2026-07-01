@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mersin Mutfak Dolabı Yenileme — Alo Mobilya",
+    title,
     description,
     images: [ogImage.url],
   },

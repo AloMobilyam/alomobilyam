@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ON_SITE_SERVICE_IMAGE } from "@/lib/site";
+import { ON_SITE_SERVICE_IMAGE, ON_SITE_SERVICE_IMAGE_ALT } from "@/lib/site";
 import { PlaceholderImage } from "./PlaceholderImage";
 
-const PLACEHOLDER_LABEL = "Mersin geneli yerinde mobilya servisi";
+const PLACEHOLDER_LABEL = ON_SITE_SERVICE_IMAGE_ALT;
 
 export function OnSiteServiceImage() {
   const [loaded, setLoaded] = useState(false);
@@ -29,6 +29,7 @@ export function OnSiteServiceImage() {
           fill
           className={`object-cover transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
           sizes="(max-width: 1024px) 100vw, 50vw"
+          loading="lazy"
           onLoad={() => setLoaded(true)}
           onError={() => setHasError(true)}
         />

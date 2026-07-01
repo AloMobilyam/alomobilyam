@@ -81,22 +81,18 @@ export function CertificateImage() {
       viewport={viewportOnce}
       variants={staggerContainer}
     >
-      <m.div
-        variants={fadeInUp}
-        className="px-2 pt-2 sm:px-3 sm:pt-3"
-        role="img"
-        aria-label={hasError ? PLACEHOLDER_LABEL : "Erdoğan Kuşçu ustalık belgesi"}
-      >
+      <m.div variants={fadeInUp} className="px-2 pt-2 sm:px-3 sm:pt-3">
         {hasError ? (
           <CertificatePlaceholder />
         ) : (
           <Image
             src={CERTIFICATE_SRC}
-            alt="Erdoğan Kuşçu ustalık belgesi"
+            alt="Erdoğan Kuşçu MEB onaylı mobilya ustalık belgesi"
             width={CERTIFICATE_WIDTH}
             height={CERTIFICATE_HEIGHT}
             className="mx-auto block h-auto w-full object-contain"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 36rem"
+            loading="lazy"
             onError={() => setHasError(true)}
           />
         )}

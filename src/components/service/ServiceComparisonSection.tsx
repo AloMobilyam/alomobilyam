@@ -30,6 +30,8 @@ export function ServiceComparisonSection() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={fadeInUp}
+          role="region"
+          aria-label="Mutfak dolabı yenileme ile sıfırdan mutfak karşılaştırması"
         >
           <div className="hidden sm:grid sm:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)_minmax(0,1.2fr)] sm:border-b sm:border-wood-100 sm:bg-cream-50">
             <div className="px-5 py-4 text-xs font-semibold uppercase tracking-wider text-wood-600">
@@ -62,14 +64,14 @@ export function ServiceComparisonSection() {
                   <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-wood-500 sm:hidden">
                     {renovationLabel}
                   </p>
-                  <p className="text-sm leading-relaxed text-wood-700">{row.renovation}</p>
+                  <p className="text-sm leading-relaxed break-words text-wood-700">{row.renovation}</p>
                 </div>
 
                 <div className="border-t border-wood-100 px-4 py-4 sm:border-l sm:border-t-0 sm:px-5">
                   <p className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-wood-500 sm:hidden">
                     {newKitchenLabel}
                   </p>
-                  <p className="text-sm leading-relaxed text-wood-600">{row.newKitchen}</p>
+                  <p className="text-sm leading-relaxed break-words text-wood-600">{row.newKitchen}</p>
                 </div>
               </m.div>
             ))}

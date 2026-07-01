@@ -36,7 +36,7 @@ export function ServicePricingFactors() {
               <h3 className="font-serif text-base font-bold text-wood-900 sm:text-lg">
                 {factor.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-wood-600">
+              <p className="mt-2 text-sm leading-relaxed break-words text-wood-600">
                 {factor.description}
               </p>
             </m.div>

@@ -34,7 +34,8 @@ export function OurWorks() {
               <BeforeAfterSlider
                 before={activeWork.before}
                 after={activeWork.after}
-                alt={activeWork.title}
+                beforeAlt={activeWork.beforeAlt}
+                afterAlt={activeWork.afterAlt}
               />
               <div className="mt-4 text-center">
                 <span className="inline-block rounded-full bg-wood-100 px-3 py-1 text-xs font-semibold text-wood-700">

@@ -28,8 +28,8 @@ export function ServiceFaqSection() {
               <details className="group rounded-2xl border border-wood-100 bg-white shadow-sm">
                 <summary className="cursor-pointer list-none px-5 py-4 font-semibold text-wood-900 marker:hidden sm:px-6 sm:py-5 [&::-webkit-details-marker]:hidden">
                   <span className="flex items-center justify-between gap-4 text-sm sm:text-base">
-                    {faq.question}
-                    <span className="shrink-0 text-wood-400 transition-transform group-open:rotate-45">
+                    <span className="min-w-0 break-words">{faq.question}</span>
+                    <span className="shrink-0 text-wood-400 transition-transform group-open:rotate-45" aria-hidden="true">
                       +
                     </span>
                   </span>

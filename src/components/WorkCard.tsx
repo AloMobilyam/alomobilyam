@@ -44,14 +44,14 @@ export function WorkCard({ work }: WorkCardProps) {
       <div className="grid grid-cols-2 gap-px bg-wood-100">
         <WorkImage
           src={work.before}
-          alt={`${work.title} - öncesi`}
+          alt={work.beforeAlt}
           label="Önce"
           placeholderLabel={WORK_PLACEHOLDER_LABELS.before}
           variant="before"
         />
         <WorkImage
           src={work.after}
-          alt={`${work.title} - sonrası`}
+          alt={work.afterAlt}
           label="Sonra"
           placeholderLabel={WORK_PLACEHOLDER_LABELS.after}
           variant="after"
@@ -92,6 +92,7 @@ function WorkImage({
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 50vw, 25vw"
+          loading="lazy"
           onError={() => setHasError(true)}
         />
       )}

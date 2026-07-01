@@ -3,7 +3,7 @@ import { DM_Sans, Lora } from "next/font/google";
 import Script from "next/script";
 import { MotionProvider } from "@/components/MotionProvider";
 import { getFAQSchema, getLocalBusinessSchema } from "@/lib/schema";
-import { SITE_URL } from "@/lib/site";
+import { HOME_OG_IMAGE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: "/favicon.svg",
-        alt: "Alo Mobilya",
+        url: HOME_OG_IMAGE.url,
+        alt: HOME_OG_IMAGE.alt,
       },
     ],
   },
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/favicon.svg"],
+    images: [HOME_OG_IMAGE.url],
   },
   robots: {
     index: true,

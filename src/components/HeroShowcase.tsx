@@ -7,7 +7,7 @@ import { HERO_SHOWCASE_WORK } from "@/lib/site";
 import { scaleIn, viewportOnce } from "@/lib/motion";
 
 export function HeroShowcase() {
-  const { title, before, after } = HERO_SHOWCASE_WORK;
+  const { title, before, after, beforeAlt, afterAlt } = HERO_SHOWCASE_WORK;
 
   return (
     <m.div
@@ -27,15 +27,16 @@ export function HeroShowcase() {
           <div className="relative grid grid-cols-2 gap-1.5 p-2 sm:gap-3 sm:p-4">
             <ShowcaseImagePanel
               src={before}
-              alt={`${title} - öncesi`}
+              alt={beforeAlt}
               label="ÖNCESİ"
               highlight={false}
             />
             <ShowcaseImagePanel
               src={after}
-              alt={`${title} - sonrası`}
+              alt={afterAlt}
               label="SONRASI"
               highlight
+              priority
             />
           </div>
 
@@ -75,11 +76,13 @@ function ShowcaseImagePanel({
   alt,
   label,
   highlight = false,
+  priority = false,
 }: {
   src: string;
   alt: string;
   label: string;
   highlight?: boolean;
+  priority?: boolean;
 }) {
   const [hasError, setHasError] = useState(false);
 
@@ -99,7 +102,7 @@ function ShowcaseImagePanel({
           fill
           className="object-cover"
           sizes="(max-width: 1024px) 45vw, 220px"
-          priority
+          priority={priority}
           onError={() => setHasError(true)}
         />
       )}
