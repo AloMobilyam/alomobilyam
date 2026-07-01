@@ -30,6 +30,9 @@ export const SERVICE_METADATA = {
 export const SERVICE_WHATSAPP_MESSAGE =
   "Merhaba, Mersin mutfak dolabı yenileme hizmeti hakkında bilgi almak istiyorum.";
 
+export const SERVICE_TESTIMONIALS_WHATSAPP_MESSAGE =
+  "Merhaba, mutfak dolabımın fotoğraflarını göndermek ve ön teklif almak istiyorum.";
+
 export function getServiceWhatsAppLink(message = SERVICE_WHATSAPP_MESSAGE) {
   return `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
 }
@@ -321,5 +324,44 @@ export const SERVICE_WORK_STAGES: ServiceWorkStage[] = [
       src: stageImage("montaj-son-kontrol.png"),
       alt: "Mersin mutfak dolabı yenileme — montaj ve son kontroller aşamasında kapakların yerinde takılması",
     },
+  },
+];
+
+export type ServiceTestimonial = {
+  id: number;
+  name: string;
+  text: string;
+};
+
+export const SERVICE_TESTIMONIALS: ServiceTestimonial[] = [
+  {
+    id: 1,
+    name: "Ayşe K.",
+    text: "Sararmış kapakları krem tona boyattırdık. Evde çalışması rahattı, mutfak çok daha ferah göründü.",
+  },
+  {
+    id: 2,
+    name: "Mehmet D.",
+    text: "WhatsApp'tan birkaç fotoğraf gönderdik, aynı gün geri dönüş aldık. İş bitince kapaklar düzgün hizalandı.",
+  },
+  {
+    id: 3,
+    name: "Zeynep A.",
+    text: "Eski menteşeler de yenilendi, kapaklar artık sessiz kapanıyor. Çalışma alanını temiz bıraktılar.",
+  },
+  {
+    id: 4,
+    name: "Hasan T.",
+    text: "Yeni dolap almak yerine yenilemeyi tercih ettik. Bütçemize uygun oldu, mutfağın görünümü belirgin şekilde değişti.",
+  },
+  {
+    id: 5,
+    name: "Elif S.",
+    text: "Zımparalama ve boyama işlemi özenli yapıldı. Renk seçiminde yönlendirme aldık, sonuç beklentimizi karşıladı.",
+  },
+  {
+    id: 6,
+    name: "Mustafa B.",
+    text: "Mezitli'den hizmet aldık, randevuya zamanında geldiler. Teslimden sonra küçük bir ayar için tekrar uğradılar.",
   },
 ];
