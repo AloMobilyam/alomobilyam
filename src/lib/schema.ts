@@ -1,4 +1,11 @@
 import { BUSINESS, LINKS, SERVICES, SITE_URL } from "./site";
+import {
+  SERVICE_BREADCRUMB_ITEMS,
+  SERVICE_FAQS,
+  SERVICE_METADATA,
+  SERVICE_TITLE,
+  SERVICE_URL,
+} from "./services/mutfak-dolabi-yenileme";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -103,5 +110,69 @@ export function getFAQSchema() {
         },
       },
     ],
+  };
+}
+
+function resolveBreadcrumbItemUrl(href: string): string {
+  if (href.startsWith("http")) {
+    return href;
+  }
+
+  if (href === "/") {
+    return SITE_URL;
+  }
+
+  return `${SITE_URL}${href}`;
+}
+
+export function getMutfakDolabiYenilemeFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: SERVICE_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMutfakDolabiYenilemeServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: SERVICE_TITLE,
+    description: SERVICE_METADATA.description,
+    url: SERVICE_URL,
+    provider: {
+      "@type": "LocalBusiness",
+      name: BUSINESS.name,
+      telephone: BUSINESS.phoneRaw,
+      areaServed: {
+        "@type": "City",
+        name: "Mersin",
+      },
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Mutfak dolabı yenileme",
+  };
+}
+
+export function getMutfakDolabiYenilemeBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: SERVICE_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
   };
 }
