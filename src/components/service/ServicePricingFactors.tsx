@@ -11,7 +11,8 @@ import { WhatsAppIcon } from "../icons";
 import { SectionHeading } from "../SectionHeading";
 
 export function ServicePricingFactors() {
-  const { eyebrow, title, description, factors, ctaText } = SERVICE_PRICING_FACTORS;
+  const { eyebrow, title, description, factors, discoveryFeeNote, ctaText } =
+    SERVICE_PRICING_FACTORS;
   const whatsappHref = getServiceWhatsAppLink(SERVICE_TESTIMONIALS_WHATSAPP_MESSAGE);
 
   return (
@@ -44,6 +45,16 @@ export function ServicePricingFactors() {
             </m.div>
           ))}
         </m.div>
+
+        <m.p
+          className="mt-8 rounded-2xl border border-wood-100 bg-cream-100 px-5 py-4 text-center text-sm leading-relaxed text-wood-700 sm:mt-10 sm:px-8 sm:py-5 sm:text-base"
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          variants={fadeInUp}
+        >
+          {discoveryFeeNote}
+        </m.p>
 
         <m.div
           className="mt-8 rounded-2xl border border-wood-100 bg-cream-100 p-5 text-center sm:mt-10 sm:p-8"

@@ -653,8 +653,10 @@ export const SERVICE_PRICING_FACTORS = {
       description: "Yerinde söküm, hazırlık, boyama veya kapak montajı gibi adımların kapsamı teklife yansır.",
     },
   ],
+  discoveryFeeNote:
+    "Fotoğraf veya video üzerinden ön değerlendirme ücretsizdir. Yerinde keşif ve ölçü alma taleplerinde Mersin şehir içi keşif ücreti 500 TL'dir. İş onaylandığında bu tutar toplam iş bedelinden düşülür.",
   ctaText:
-    "Mutfağınızın birkaç fotoğrafını WhatsApp üzerinden gönderin; ölçü ve işlem kapsamına göre ön teklif alın.",
+    "Mutfağınızın birkaç fotoğrafını WhatsApp üzerinden gönderin; ücretsiz ön değerlendirme ve ölçüye göre ön teklif alın.",
 } as const;
 
 export type ServiceFaqItem = {
@@ -698,6 +700,11 @@ export const SERVICE_FAQS: ServiceFaqItem[] = [
     question: "Yerinde keşif yapılıyor mu?",
     answer:
       "Evet. Mersin genelinde adresinize gelerek mutfağınızı yerinde inceliyoruz. WhatsApp üzerinden fotoğraf göndererek de ön değerlendirme ve ön teklif alabilirsiniz.",
+  },
+  {
+    question: "Yerinde keşif ücretli mi?",
+    answer:
+      "Fotoğraf veya video üzerinden ön değerlendirme ücretsizdir. Yerinde keşif ve ölçü alma taleplerinde Mersin şehir içi için 500 TL keşif ücreti alınır. İş onaylandığında bu tutar toplam iş bedelinden düşülür. Mersin dışı veya uzak ilçe taleplerinde mesafeye göre bilgi verilir.",
   },
   {
     question: "Mersin'de mutfak dolabı yenileme hizmeti veriyor musunuz?",
