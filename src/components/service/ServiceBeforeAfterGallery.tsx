@@ -19,7 +19,7 @@ export function ServiceBeforeAfterGallery() {
         <SectionHeading
           eyebrow="Gerçek İşler"
           title="Gerçek Öncesi / Sonrası Galerisi"
-          description="Mersin genelinde tamamladığımız mutfak dolabı yenileme çalışmalarından gerçek önce ve sonra fotoğrafları. Her projede kapaklar adresinizde yenilenerek mutfağınıza yeni bir görünüm kazandırıldı."
+          description="Tamamladığımız mutfak dolabı yenileme çalışmalarından gerçek önce ve sonra fotoğrafları."
         />
 
         <m.div

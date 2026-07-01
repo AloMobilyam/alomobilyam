@@ -263,7 +263,7 @@ export const SERVICE_TRUST_CARDS = [
 ] as const;
 
 export const SERVICE_TRUST_DESCRIPTION =
-  "Erdoğan Kuşçu'nun 40 yılı aşan mobilya ustalığı ve ustalık belgesiyle Mersin genelinde yerinde keşif yapıyoruz. WhatsApp üzerinden gönderdiğiniz fotoğraflarla ön değerlendirme sunuyor, işçiliği mutfağınızın ölçüsüne göre planlayıp çalışma alanını temiz bırakıyoruz.";
+  "Ustalık belgenizi burada inceleyebilirsiniz. Her projede ölçünüze uygun işçilik yapıyor, teslim sonrası çalışma alanını temiz bırakıyoruz.";
 
 export const SERVICE_WORK_STAGES: ServiceWorkStage[] = [
   {
@@ -346,8 +346,8 @@ export const SERVICE_WHAT_IS = {
   description:
     "Mevcut mutfak dolabınızı sökmeden, gövde yapısını koruyarak görünümünü ve kullanımını güncellemenin pratik yoludur.",
   paragraphs: [
-    "Mutfak dolabı yenileme; eski mutfak dolaplarının tamamen sökülüp yerine sıfırdan mutfak yaptırmak yerine, sağlam kalan gövde üzerinde kapak, boya, lake veya MDF lam uygulamasıyla mutfağınıza yeni bir görünüm kazandırma işlemidir. Mersin genelinde Alo Mobilya olarak bu hizmeti adresinizde, yerinde sunuyoruz.",
-    "Gövde yapısı sağlam olduğu sürece yeni dolap almadan mutfağınızı güncelleyebilir, tadilat süresini ve maliyeti önemli ölçüde azaltabilirsiniz. Keşif veya fotoğrafla ön değerlendirme sonrası hangi işlemlerin sizin mutfağınız için uygun olduğunu birlikte belirliyoruz.",
+    "Mutfak dolabı yenileme; gövde yapısını koruyarak kapak, boya, lake veya MDF lam ile mutfağınıza yeni görünüm kazandırma işlemidir. Bu hizmeti adresinizde, yerinde sunuyoruz.",
+    "Gövde yapısı sağlam olduğu sürece yeni dolap almadan mutfağınızı güncelleyebilir, tadilat süresini ve maliyeti önemli ölçüde azaltabilirsiniz. Hangi işlemlerin sizin mutfağınız için uygun olduğunu keşif veya fotoğraf paylaşımıyla birlikte belirliyoruz.",
   ],
 } as const;
 
@@ -459,7 +459,7 @@ export const SERVICE_MATERIAL_OPTIONS = {
       icon: "paint",
     },
   ] satisfies ServiceMaterialOption[],
-  note: "Malzeme seçimi mutfağınızın ölçüsü, kullanım sıklığı ve bütçenize göre değişir. Net öneri için yerinde keşif veya fotoğrafla ön değerlendirme yapıyoruz.",
+  note: "Malzeme seçimi mutfağınızın ölçüsü, kullanım sıklığı ve bütçenize göre değişir. Net öneri için keşif sırasında birlikte değerlendiriyoruz.",
 } as const;
 
 export type ServiceWhenNewKitchenItem = {
@@ -615,7 +615,7 @@ export const SERVICE_COMPARISON = {
         "Gövde hasarlı, yerleşim değişecek veya taşıyıcı yapı zayıfsa.",
     },
   ] satisfies ServiceComparisonRow[],
-  note: "Yerinde keşif veya fotoğrafla ön değerlendirme ile mutfağınızın hangi gruba girdiğini birlikte belirliyoruz.",
+  note: "Keşif veya fotoğraf paylaşımıyla mutfağınızın hangi gruba girdiğini birlikte belirliyoruz.",
 } as const;
 
 export const SERVICE_PRICING_FACTORS = {
@@ -654,7 +654,7 @@ export const SERVICE_PRICING_FACTORS = {
     },
   ],
   ctaText:
-    "Mutfağınızın birkaç fotoğrafını WhatsApp üzerinden gönderin; ölçü ve işlem kapsamına göre ücretsiz ön teklif alın.",
+    "Mutfağınızın birkaç fotoğrafını WhatsApp üzerinden gönderin; ölçü ve işlem kapsamına göre ön teklif alın.",
 } as const;
 
 export type ServiceFaqItem = {

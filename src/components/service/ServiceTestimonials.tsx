@@ -40,7 +40,7 @@ export function ServiceTestimonials() {
         <SectionHeading
           eyebrow="Müşteri Yorumları"
           title="Müşterilerimiz Ne Diyor?"
-          description="Mersin'de mobilya tamiri ve mutfak dolabı yenileme hizmeti alan müşterilerimizin değerlendirmeleri."
+          description="Mersin'de mutfak dolabı yenileme hizmeti alan müşterilerimizin değerlendirmeleri."
         />
 
         <m.div

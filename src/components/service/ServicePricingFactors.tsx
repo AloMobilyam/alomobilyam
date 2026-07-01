@@ -3,7 +3,8 @@
 import { m } from "framer-motion";
 import {
   SERVICE_PRICING_FACTORS,
-  SERVICE_WHATSAPP_LINK,
+  SERVICE_TESTIMONIALS_WHATSAPP_MESSAGE,
+  getServiceWhatsAppLink,
 } from "@/lib/services/mutfak-dolabi-yenileme";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
 import { WhatsAppIcon } from "../icons";
@@ -11,6 +12,7 @@ import { SectionHeading } from "../SectionHeading";
 
 export function ServicePricingFactors() {
   const { eyebrow, title, description, factors, ctaText } = SERVICE_PRICING_FACTORS;
+  const whatsappHref = getServiceWhatsAppLink(SERVICE_TESTIMONIALS_WHATSAPP_MESSAGE);
 
   return (
     <section
@@ -55,7 +57,7 @@ export function ServicePricingFactors() {
           </p>
 
           <m.a
-            href={SERVICE_WHATSAPP_LINK}
+            href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-5 inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:mt-6 sm:w-auto sm:gap-3 sm:px-8 sm:text-base"
@@ -64,7 +66,7 @@ export function ServicePricingFactors() {
             transition={{ duration: 0.2 }}
           >
             <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
-            WhatsApp ile Keşif ve Teklif Al
+            WhatsApp ile Fotoğraf Gönder
           </m.a>
         </m.div>
       </div>

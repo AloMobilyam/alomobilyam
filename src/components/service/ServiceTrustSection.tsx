@@ -24,7 +24,7 @@ export function ServiceTrustSection() {
         <SectionHeading
           eyebrow="Güven"
           title="Neden Alo Mobilya?"
-          description="Erdoğan Kuşçu'nun ustalık belgesi ve yılların tecrübesiyle Mersin genelinde yerinde keşif, fotoğrafla ön değerlendirme ve ölçüye uygun mutfak dolabı yenileme hizmeti sunuyoruz."
+          description="Ustalık belgesi ve yılların tecrübesiyle ölçüye uygun mutfak dolabı yenileme hizmeti sunuyoruz."
         />
 
         <div className="mt-10 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">
@@ -90,7 +90,7 @@ export function ServiceTrustSection() {
                 transition={{ duration: 0.2 }}
               >
                 <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
-                WhatsApp ile Ücretsiz Teklif Al
+                WhatsApp ile Teklif Al
               </m.a>
             </m.div>
           </m.div>

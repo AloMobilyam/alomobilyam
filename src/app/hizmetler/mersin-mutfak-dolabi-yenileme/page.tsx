@@ -102,8 +102,8 @@ export default function MersinMutfakDolabiYenilemePage() {
         <ServiceMaterialOptions />
         <ServiceComparisonSection />
         <ServiceWhenNewKitchenSection />
-        <ServicePricingFactors />
         <ServiceTrustSection />
+        <ServicePricingFactors />
         <ServiceTestimonials />
         <ServiceFaqSection />
       </main>

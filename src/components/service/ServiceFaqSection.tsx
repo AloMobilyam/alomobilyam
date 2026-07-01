@@ -8,7 +8,7 @@ import { SectionHeading } from "../SectionHeading";
 
 export function ServiceFaqSection() {
   return (
-    <section id="sss" className="section-padding scroll-mt-14 bg-cream-50 pb-12 sm:scroll-mt-20 md:pb-20">
+    <section id="sss" className="section-padding scroll-mt-14 bg-cream-50 pb-16 sm:scroll-mt-20 md:pb-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Sık Sorulan Sorular"
@@ -62,7 +62,7 @@ export function ServiceFaqSection() {
             transition={{ duration: 0.2 }}
           >
             <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
-            WhatsApp ile Soru Sorun
+            WhatsApp ile Soru Sor
           </m.a>
         </m.div>
       </div>

@@ -51,7 +51,7 @@ export function ServiceHero() {
               />
             </div>
 
-            <ul className="mt-4 hidden flex-wrap gap-x-4 gap-y-1.5 text-xs text-wood-600 sm:mt-6 sm:flex sm:gap-x-5 sm:text-sm">
+            <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1.5 text-[11px] text-wood-600 sm:mt-6 sm:gap-x-5 sm:text-sm">
               {trustItems.map((item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-emerald-100 text-[9px] text-emerald-700">
