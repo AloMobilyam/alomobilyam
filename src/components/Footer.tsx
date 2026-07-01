@@ -80,7 +80,7 @@ export function Footer() {
             </h3>
             <ul className="mt-4 space-y-2">
               {navLinks.map((link) => (
-                <li key={link.label}>
+                <li key={link.href}>
                   <a
                     href={link.href}
                     className="text-sm text-cream-100 transition-colors hover:text-wood-300"

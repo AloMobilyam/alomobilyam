@@ -42,7 +42,7 @@ export function Header() {
             <nav className="flex items-center gap-1" aria-label="Ana menü">
               {navLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={link.href}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-wood-700 transition-colors hover:bg-wood-100 hover:text-wood-900"
                 >

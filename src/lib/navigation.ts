@@ -6,17 +6,29 @@ export type NavLink = {
   label: string;
 };
 
-const SERVICE_PAGE_NAV_LINKS: NavLink[] = [
-  { href: "/#hizmetler", label: "Hizmetler" },
-  { href: "#galeri", label: "Galeri" },
-  { href: "#musteri-yorumlari", label: "Yorumlar" },
-  { href: "#sss", label: "SSS" },
-  { href: "/#iletisim", label: "İletişim" },
-];
+function normalizePathname(pathname: string): string {
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    return pathname.slice(0, -1);
+  }
+
+  return pathname;
+}
+
+export function getServicePageNavLinks(servicePath: string): NavLink[] {
+  return [
+    { href: "/#hizmetler", label: "Hizmetler" },
+    { href: `${servicePath}#galeri`, label: "Galeri" },
+    { href: `${servicePath}#musteri-yorumlari`, label: "Yorumlar" },
+    { href: `${servicePath}#sss`, label: "SSS" },
+    { href: "/#iletisim", label: "İletişim" },
+  ];
+}
 
 export function getNavLinks(pathname: string): NavLink[] {
-  if (pathname === SERVICE_PATH) {
-    return SERVICE_PAGE_NAV_LINKS;
+  const normalizedPath = normalizePathname(pathname);
+
+  if (normalizedPath === SERVICE_PATH) {
+    return getServicePageNavLinks(SERVICE_PATH);
   }
 
   return NAV_LINKS.map((link) => ({ href: link.href, label: link.label }));

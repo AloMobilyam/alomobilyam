@@ -98,7 +98,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           <nav className="flex-1 overflow-y-auto overscroll-contain px-5 py-4" aria-label="Mobil menü linkleri">
             <ul className="space-y-1">
               {navLinks.map((link) => (
-                <li key={link.label}>
+                <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={onClose}
