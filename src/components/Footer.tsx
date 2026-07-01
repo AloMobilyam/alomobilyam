@@ -1,13 +1,15 @@
 "use client";
 
 import { m } from "framer-motion";
-import { BUSINESS, LINKS, NAV_LINKS, SERVICES } from "@/lib/site";
+import { BUSINESS, LINKS, SERVICES } from "@/lib/site";
+import { useNavLinks } from "@/hooks/useNavLinks";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
 import { Logo } from "./Logo";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const navLinks = useNavLinks();
 
   return (
     <footer className="border-t border-wood-800 bg-wood-950 pt-8 pb-6 md:pb-10 md:pt-12">
@@ -77,8 +79,8 @@ export function Footer() {
               Hızlı Menü
             </h3>
             <ul className="mt-4 space-y-2">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link) => (
+                <li key={link.label}>
                   <a
                     href={link.href}
                     className="text-sm text-cream-100 transition-colors hover:text-wood-300"

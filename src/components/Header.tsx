@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { BUSINESS, LINKS, NAV_LINKS } from "@/lib/site";
+import { BUSINESS, LINKS } from "@/lib/site";
+import { useNavLinks } from "@/hooks/useNavLinks";
 import { PhoneIcon } from "./icons";
 import { Logo } from "./Logo";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navLinks = useNavLinks();
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -38,9 +40,9 @@ export function Header() {
             <Logo className="mr-auto" />
 
             <nav className="flex items-center gap-1" aria-label="Ana menü">
-              {NAV_LINKS.map((link) => (
+              {navLinks.map((link) => (
                 <a
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className="rounded-lg px-3 py-2 text-sm font-medium text-wood-700 transition-colors hover:bg-wood-100 hover:text-wood-900"
                 >

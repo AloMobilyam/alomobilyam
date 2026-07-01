@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, m } from "framer-motion";
-import { LINKS, NAV_LINKS } from "@/lib/site";
+import { LINKS } from "@/lib/site";
+import { useNavLinks } from "@/hooks/useNavLinks";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 import { Logo } from "./Logo";
 
@@ -13,6 +14,8 @@ type MobileMenuProps = {
 };
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
+  const navLinks = useNavLinks();
+
   useEffect(() => {
     if (!open) return;
 
@@ -94,8 +97,8 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
 
           <nav className="flex-1 overflow-y-auto overscroll-contain px-5 py-4" aria-label="Mobil menü linkleri">
             <ul className="space-y-1">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
+              {navLinks.map((link) => (
+                <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={onClose}

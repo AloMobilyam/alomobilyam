@@ -12,7 +12,7 @@ const IMAGE_HEIGHT = 900;
 export function ServiceBeforeAfterGallery() {
   return (
     <section
-      id="once-sonra"
+      id="galeri"
       className="section-padding scroll-mt-14 bg-white sm:scroll-mt-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
