@@ -238,6 +238,23 @@ function stageImage(filename: string) {
   return `${SERVICE_WORK_STAGES_IMAGE_BASE}/${filename}`;
 }
 
+export const SERVICE_TRUST_CERTIFICATE = {
+  src: "/certificates/ustalik-belgesi.png",
+  alt: "Erdoğan Kuşçu MEB onaylı ustalık belgesi — Alo Mobilya mutfak dolabı yenileme hizmeti",
+  width: 1448,
+  height: 1086,
+} as const;
+
+export const SERVICE_TRUST_CARDS = [
+  { title: "40+ Yıl Tecrübe" },
+  { title: "Ustalık Belgeli Hizmet" },
+  { title: "Yerinde Servis" },
+  { title: "Garantili İşçilik" },
+] as const;
+
+export const SERVICE_TRUST_DESCRIPTION =
+  "Erdoğan Kuşçu'nun 40 yılı aşan mobilya ustalığı ve ustalık belgesiyle, mutfak dolabı yenileme işlemlerini Mersin genelinde yerinde ve özenli şekilde tamamlıyoruz.";
+
 export const SERVICE_WORK_STAGES: ServiceWorkStage[] = [
   {
     id: 1,

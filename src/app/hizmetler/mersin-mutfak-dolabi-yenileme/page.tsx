@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { MobileBottomBar } from "@/components/MobileBottomBar";
 import { ServiceBeforeAfterGallery } from "@/components/service/ServiceBeforeAfterGallery";
 import { ServiceHero } from "@/components/service/ServiceHero";
+import { ServiceTrustSection } from "@/components/service/ServiceTrustSection";
 import { ServiceWorkStages } from "@/components/service/ServiceWorkStages";
 import {
   SERVICE_BREADCRUMB_ITEMS,
@@ -59,6 +60,7 @@ export default function MersinMutfakDolabiYenilemePage() {
         <ServiceHero />
         <ServiceBeforeAfterGallery />
         <ServiceWorkStages />
+        <ServiceTrustSection />
       </main>
       <Footer />
       <MobileBottomBar whatsappHref={SERVICE_WHATSAPP_LINK} />
