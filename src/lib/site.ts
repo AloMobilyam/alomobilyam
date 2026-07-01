@@ -128,6 +128,7 @@ export type WorkInput = {
   category: string;
   title: string;
   description: string;
+  href?: string;
 };
 
 export type WorkItem = WorkInput & {
@@ -158,6 +159,7 @@ export const WORKS: WorkItem[] = [
     title: "Mutfak Dolabı Yenileme",
     description:
       "Eskiyen mutfak dolabı kapakları yenilenerek modern ve kullanışlı bir görünüme kavuşturuldu.",
+    href: "/hizmetler/mersin-mutfak-dolabi-yenileme",
   }),
   createWork({
     slug: "banyo-dolabi",

@@ -17,6 +17,15 @@ export function Services() {
           description="Ev ve ofis mobilyalarınız için tamir, bakım, onarım ve montaj işlemlerini Mersin genelinde yerinde gerçekleştiriyoruz."
         />
 
+        <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-wood-600">
+          <Link
+            href="/hizmetler/mersin-mutfak-dolabi-yenileme"
+            className="font-medium text-wood-800 underline-offset-2 transition-colors hover:text-wood-600 hover:underline"
+          >
+            Mutfak dolabı yenileme hizmetimizi inceleyin
+          </Link>
+        </p>
+
         <m.div
           className="mt-6 grid gap-2.5 sm:mt-10 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3"
           initial="hidden"

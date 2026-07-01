@@ -10,6 +10,7 @@ type CTAButtonsProps = {
   compact?: boolean;
   className?: string;
   whatsappHref?: string;
+  whatsappLabel?: string;
 };
 
 export function CTAButtons({
@@ -18,7 +19,10 @@ export function CTAButtons({
   compact = false,
   className = "",
   whatsappHref = LINKS.whatsappMessage,
+  whatsappLabel,
 }: CTAButtonsProps) {
+  const whatsappMobileLabel = whatsappLabel ?? "WhatsApp";
+  const whatsappDesktopLabel = whatsappLabel ?? "WhatsApp ile Yaz";
   const sizeClasses = compact
     ? "px-4 py-2.5 text-sm gap-2 rounded-xl sm:px-6 sm:py-3.5 sm:text-base sm:rounded-2xl sm:gap-3"
     : size === "lg"
@@ -42,8 +46,8 @@ export function CTAButtons({
         transition={{ duration: 0.2 }}
       >
         <WhatsAppIcon className={iconSize} />
-        <span className="sm:hidden">WhatsApp</span>
-        <span className="hidden sm:inline">WhatsApp ile Yaz</span>
+        <span className="sm:hidden">{whatsappMobileLabel}</span>
+        <span className="hidden sm:inline">{whatsappDesktopLabel}</span>
       </m.a>
       <m.a
         href={LINKS.tel}

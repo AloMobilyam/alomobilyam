@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { m } from "framer-motion";
 import { HERO_DESCRIPTION } from "@/lib/site";
 import { fadeInUp, viewportOnce } from "@/lib/motion";
@@ -40,6 +41,16 @@ export function Hero() {
               <div className="mt-4 sm:mt-7">
                 <CTAButtons layout="stack" compact />
               </div>
+
+              <p className="mt-3 text-sm text-wood-600">
+                <Link
+                  href="/hizmetler/mersin-mutfak-dolabi-yenileme"
+                  className="font-medium text-wood-800 underline-offset-2 transition-colors hover:text-wood-600 hover:underline"
+                >
+                  Mersin mutfak dolabı yenileme
+                </Link>{" "}
+                hizmetimiz hakkında detaylı bilgi alın.
+              </p>
 
               <ul className="mt-4 hidden flex-wrap gap-x-4 gap-y-1.5 text-xs text-wood-600 sm:mt-6 sm:flex sm:gap-x-5 sm:text-sm">
                 {["40+ yıllık tecrübe", "Ustalık belgeli", "Garantili işçilik"].map((item) => (

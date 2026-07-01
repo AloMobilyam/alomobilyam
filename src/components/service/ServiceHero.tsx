@@ -47,6 +47,7 @@ export function ServiceHero() {
                 layout="stack"
                 compact
                 whatsappHref={SERVICE_WHATSAPP_LINK}
+                whatsappLabel="WhatsApp ile Teklif Al"
               />
             </div>
 

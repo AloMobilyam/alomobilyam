@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { m } from "framer-motion";
 import Image from "next/image";
 import type { WorkItem } from "@/lib/site";
@@ -30,6 +31,14 @@ export function WorkCard({ work }: WorkCardProps) {
         <p className="mt-1.5 text-sm leading-relaxed text-wood-600">
           {work.description}
         </p>
+        {work.href && (
+          <Link
+            href={work.href}
+            className="mt-3 inline-block text-sm font-medium text-wood-800 underline-offset-2 transition-colors hover:text-wood-600 hover:underline"
+          >
+            Mersin mutfak dolabı yenileme hizmetimizi inceleyin
+          </Link>
+        )}
       </div>
 
       <div className="grid grid-cols-2 gap-px bg-wood-100">

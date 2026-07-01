@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { m, AnimatePresence } from "framer-motion";
 import { WORKS } from "@/lib/site";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
@@ -45,6 +46,14 @@ export function OurWorks() {
                 <p className="mx-auto mt-2 max-w-xl text-sm text-wood-600">
                   {activeWork.description}
                 </p>
+                {activeWork.href && (
+                  <Link
+                    href={activeWork.href}
+                    className="mt-3 inline-block text-sm font-medium text-wood-800 underline-offset-2 transition-colors hover:text-wood-600 hover:underline"
+                  >
+                    Dolap yenileme çözümlerimizi görün
+                  </Link>
+                )}
               </div>
             </m.div>
           </AnimatePresence>

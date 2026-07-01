@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BUSINESS } from "@/lib/site";
 import { CTAButtons } from "./CTAButtons";
 
@@ -15,6 +16,16 @@ export function CTABanner() {
         <div className="mx-auto mt-7 max-w-md sm:max-w-lg">
           <CTAButtons layout="stack" />
         </div>
+        <p className="mx-auto mt-5 max-w-md text-sm text-cream-300">
+          Mutfak dolabınızı yenilemek mi istiyorsunuz?{" "}
+          <Link
+            href="/hizmetler/mersin-mutfak-dolabi-yenileme"
+            className="font-medium text-cream-100 underline-offset-2 transition-colors hover:text-white hover:underline"
+          >
+            Mersin mutfak dolabı yenileme
+          </Link>{" "}
+          hizmet sayfamıza göz atın.
+        </p>
       </div>
     </section>
   );

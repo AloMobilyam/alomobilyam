@@ -62,7 +62,7 @@ export function ServiceFaqSection() {
             transition={{ duration: 0.2 }}
           >
             <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />
-            WhatsApp ile Sorun
+            WhatsApp ile Soru Sorun
           </m.a>
         </m.div>
       </div>
