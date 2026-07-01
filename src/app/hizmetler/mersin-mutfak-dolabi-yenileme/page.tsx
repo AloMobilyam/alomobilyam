@@ -3,15 +3,18 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { MobileBottomBar } from "@/components/MobileBottomBar";
+import { ServiceAudienceSection } from "@/components/service/ServiceAudienceSection";
 import { ServiceBeforeAfterGallery } from "@/components/service/ServiceBeforeAfterGallery";
 import { ServiceComparisonSection } from "@/components/service/ServiceComparisonSection";
 import { ServiceFaqSection } from "@/components/service/ServiceFaqSection";
 import { ServiceHero } from "@/components/service/ServiceHero";
+import { ServiceMaterialOptions } from "@/components/service/ServiceMaterialOptions";
 import { ServicePricingFactors } from "@/components/service/ServicePricingFactors";
 import { ServiceRenovationOperations } from "@/components/service/ServiceRenovationOperations";
 import { ServiceTestimonials } from "@/components/service/ServiceTestimonials";
 import { ServiceTrustSection } from "@/components/service/ServiceTrustSection";
 import { ServiceWhatIsSection } from "@/components/service/ServiceWhatIsSection";
+import { ServiceWhenNewKitchenSection } from "@/components/service/ServiceWhenNewKitchenSection";
 import { ServiceWorkStages } from "@/components/service/ServiceWorkStages";
 import {
   getMutfakDolabiYenilemeBreadcrumbSchema,
@@ -94,8 +97,11 @@ export default function MersinMutfakDolabiYenilemePage() {
         <ServiceBeforeAfterGallery />
         <ServiceWorkStages />
         <ServiceWhatIsSection />
+        <ServiceAudienceSection />
         <ServiceRenovationOperations />
+        <ServiceMaterialOptions />
         <ServiceComparisonSection />
+        <ServiceWhenNewKitchenSection />
         <ServicePricingFactors />
         <ServiceTrustSection />
         <ServiceTestimonials />

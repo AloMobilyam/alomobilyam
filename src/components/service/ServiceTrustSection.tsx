@@ -24,7 +24,7 @@ export function ServiceTrustSection() {
         <SectionHeading
           eyebrow="Güven"
           title="Neden Alo Mobilya?"
-          description="Ustalık belgesi ve yılların tecrübesiyle Mersin genelinde güvenilir mutfak dolabı yenileme hizmeti sunuyoruz."
+          description="Erdoğan Kuşçu'nun ustalık belgesi ve yılların tecrübesiyle Mersin genelinde yerinde keşif, fotoğrafla ön değerlendirme ve ölçüye uygun mutfak dolabı yenileme hizmeti sunuyoruz."
         />
 
         <div className="mt-10 grid items-start gap-8 lg:grid-cols-2 lg:gap-12">

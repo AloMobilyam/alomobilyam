@@ -53,9 +53,14 @@ export const SERVICE_HERO = {
   h1Highlight: "Yerinde Kapak Boyama ve Yenileme",
   paragraphs: [
     "Sararmış, boyası dökülen veya eskiyen mutfak dolabı kapakları mutfağınızın görünümünü olumsuz etkiler. Mersin genelinde Alo Mobilya olarak yeni dolap almadan, mevcut dolabınızı adresinizde yeniliyoruz.",
-    "Erdoğan Kuşçu'nun 40 yılı aşkın ustalık tecrübesi ve ustalık belgesiyle kapak boyama, zımparalama, menteşe değişimi ve montaj işlemlerini evinizde veya iş yerinizde profesyonelce tamamlıyoruz.",
+    "Erdoğan Kuşçu'nun 40 yılı aşkın ustalık tecrübesi ve ustalık belgesiyle kapak boyama, zımparalama, menteşe değişimi ve montaj işlemlerini ölçünüze göre planlayarak evinizde veya iş yerinizde tamamlıyoruz.",
   ],
-  trustItems: ["40+ yıllık tecrübe", "Ustalık belgeli", "Garantili işçilik"],
+  trustItems: [
+    "40+ yıllık tecrübe",
+    "Ustalık belgeli",
+    "Yerinde keşif",
+    "Fotoğrafla ön teklif",
+  ],
   showcase: HERO_SHOWCASE_WORK,
 } as const;
 
@@ -253,12 +258,12 @@ export const SERVICE_TRUST_CERTIFICATE = {
 export const SERVICE_TRUST_CARDS = [
   { title: "40+ Yıl Tecrübe" },
   { title: "Ustalık Belgeli Hizmet" },
-  { title: "Yerinde Servis" },
-  { title: "Garantili İşçilik" },
+  { title: "Yerinde Keşif" },
+  { title: "Ölçüye Uygun İşçilik" },
 ] as const;
 
 export const SERVICE_TRUST_DESCRIPTION =
-  "Erdoğan Kuşçu'nun 40 yılı aşan mobilya ustalığı ve ustalık belgesiyle, mutfak dolabı yenileme işlemlerini Mersin genelinde yerinde ve özenli şekilde tamamlıyoruz.";
+  "Erdoğan Kuşçu'nun 40 yılı aşan mobilya ustalığı ve ustalık belgesiyle Mersin genelinde yerinde keşif yapıyoruz. WhatsApp üzerinden gönderdiğiniz fotoğraflarla ön değerlendirme sunuyor, işçiliği mutfağınızın ölçüsüne göre planlayıp çalışma alanını temiz bırakıyoruz.";
 
 export const SERVICE_WORK_STAGES: ServiceWorkStage[] = [
   {
@@ -342,9 +347,159 @@ export const SERVICE_WHAT_IS = {
     "Mevcut mutfak dolabınızı sökmeden, gövde yapısını koruyarak görünümünü ve kullanımını güncellemenin pratik yoludur.",
   paragraphs: [
     "Mutfak dolabı yenileme; eski mutfak dolaplarının tamamen sökülüp yerine sıfırdan mutfak yaptırmak yerine, sağlam kalan gövde üzerinde kapak, boya, lake veya MDF lam uygulamasıyla mutfağınıza yeni bir görünüm kazandırma işlemidir. Mersin genelinde Alo Mobilya olarak bu hizmeti adresinizde, yerinde sunuyoruz.",
-    "Sararmış, çizilmiş veya modası geçmiş kapaklar; gevşek menteşeler, takılan raylar veya eski kulplar mutfağın hem estetiğini hem de günlük kullanımını olumsuz etkiler. Yenileme sürecinde kapak değişimi, boya veya lake uygulaması, MDF lam kapak montajı, menteşe ve ray değişimi, kulp yenileme ile yerinde montaj adımlarını ihtiyacınıza göre planlıyoruz.",
-    "Gövde yapısı sağlam olduğu sürece yeni dolap almadan mutfağınızı güncelleyebilir, tadilat süresini ve maliyeti önemli ölçüde azaltabilirsiniz. Keşif sonrası hangi işlemlerin sizin mutfağınız için uygun olduğunu birlikte belirliyoruz.",
+    "Gövde yapısı sağlam olduğu sürece yeni dolap almadan mutfağınızı güncelleyebilir, tadilat süresini ve maliyeti önemli ölçüde azaltabilirsiniz. Keşif veya fotoğrafla ön değerlendirme sonrası hangi işlemlerin sizin mutfağınız için uygun olduğunu birlikte belirliyoruz.",
   ],
+} as const;
+
+export type ServiceAudienceItem = {
+  id: number;
+  title: string;
+  description: string;
+};
+
+export const SERVICE_AUDIENCE = {
+  eyebrow: "Kimler İçin?",
+  title: "Bu Hizmet Kimler İçin Uygun?",
+  description:
+    "Gövde yapısı sağlam kalan mutfaklarda yenileme, sıfırdan mutfağa kıyasla daha hızlı ve ekonomik bir yol sunar. Aşağıdaki durumlarda sık tercih edilir.",
+  items: [
+    {
+      id: 1,
+      title: "Gövdesi sağlam, kapakları eskimiş mutfaklar",
+      description:
+        "Dolap gövdesi düzgün duruyor ancak kapaklar sararmış, çizilmiş veya modası geçmiş görünüyorsa yenileme yeterli olabilir.",
+    },
+    {
+      id: 2,
+      title: "Komple mutfak yaptırmadan modern görünüm isteyenler",
+      description:
+        "Mevcut mutfak düzeninizden memnunsunuz; yalnızca görünümü güncellemek istiyorsanız kapak ve aksesuar yenilemesi pratik bir seçenektir.",
+    },
+    {
+      id: 3,
+      title: "Görünümünü yenilemek isteyenler",
+      description:
+        "Renk, doku veya kapak modelini değiştirerek mutfağa daha ferah ve güncel bir hava kazandırmak isteyenler için uygundur.",
+    },
+    {
+      id: 4,
+      title: "Menteşe, ray ve kulp gibi parçaları yıpranmış olanlar",
+      description:
+        "Kapaklar çalışır durumda olsa bile gevşek menteşe, takılan ray veya eski kulp günlük kullanımı zorlaştırıyorsa parça yenilemesiyle birlikte değerlendirilebilir.",
+    },
+    {
+      id: 5,
+      title: "Daha ekonomik ve hızlı çözüm arayanlar",
+      description:
+        "Sıfırdan mutfak bütçesi veya tadilat süresi sizin için ağır geliyorsa, gövde uygun olduğunda yenileme daha erişilebilir bir alternatif olabilir.",
+    },
+  ] satisfies ServiceAudienceItem[],
+} as const;
+
+export type ServiceMaterialOptionIcon = "lam" | "lake" | "membran" | "acrylic" | "paint";
+
+export type ServiceMaterialOption = {
+  id: number;
+  title: string;
+  description: string;
+  advantage: string;
+  suitableFor: string;
+  icon: ServiceMaterialOptionIcon;
+};
+
+export const SERVICE_MATERIAL_OPTIONS = {
+  eyebrow: "Malzeme Seçenekleri",
+  title: "Kapak Yenilemede Hangi Malzemeler Kullanılır?",
+  description:
+    "Her malzemenin dayanıklılığı, bakım ihtiyacı ve görünümü farklıdır. Keşifte mutfağınızın kullanım yoğunluğuna ve bütçenize göre seçenekleri birlikte değerlendiriyoruz.",
+  options: [
+    {
+      id: 1,
+      title: "MDF Lam",
+      description:
+        "MDF üzerine yapıştırılan dekoratif kaplama tabakasıdır. Ahşap desenli veya düz renkli yüzeyler sunar.",
+      advantage: "Geniş renk ve doku seçeneği; sıcak ve doğal bir görünüm.",
+      suitableFor: "Ahşap tonu veya sade düz renk tercih eden, orta yoğunlukta kullanılan mutfaklar.",
+      icon: "lam",
+    },
+    {
+      id: 2,
+      title: "Lake",
+      description:
+        "Kapak yüzeyine uygulanan parlak veya mat lake kaplama; pürüzsüz ve modern bir bitiş verir.",
+      advantage: "Kolay temizlenir; düz yüzeylerde şık ve çağdaş bir görünüm.",
+      suitableFor: "Modern, parlak veya mat düz kapak isteyen mutfaklar.",
+      icon: "lake",
+    },
+    {
+      id: 3,
+      title: "Membran",
+      description:
+        "Isı ve basınçla kapak profiline yapıştırılan PVC tabakasıdır. Çıtalı ve profilli kapaklarda sık kullanılır.",
+      advantage: "Köşe ve profil detaylarına uyum; geniş renk seçeneği.",
+      suitableFor: "Shaker, çıtalı veya profilli kapak modeli tercih edenler.",
+      icon: "membran",
+    },
+    {
+      id: 4,
+      title: "Akrilik",
+      description:
+        "Yüksek parlaklıkta, homojen renkli kapak yüzeyi sunan malzemedir. Işığı yansıtarak ferah bir etki yaratır.",
+      advantage: "Parlak ve premium görünüm; leke izi belirgin olmaz.",
+      suitableFor: "Aydınlık, modern ve yüksek parlaklık isteyen mutfaklar.",
+      icon: "acrylic",
+    },
+    {
+      id: 5,
+      title: "Kapak Boyama",
+      description:
+        "Mevcut kapaklar zımparalanıp uygun astar ve boya ile yeniden renklendirilir. Gövde sökülmeden uygulanabilir.",
+      advantage: "Ekonomik ve hızlı; mevcut kapak formu korunur.",
+      suitableFor: "Kapak yapısı sağlam, yalnızca renk değişimi isteyen mutfaklar.",
+      icon: "paint",
+    },
+  ] satisfies ServiceMaterialOption[],
+  note: "Malzeme seçimi mutfağınızın ölçüsü, kullanım sıklığı ve bütçenize göre değişir. Net öneri için yerinde keşif veya fotoğrafla ön değerlendirme yapıyoruz.",
+} as const;
+
+export type ServiceWhenNewKitchenItem = {
+  id: number;
+  title: string;
+  description: string;
+};
+
+export const SERVICE_WHEN_NEW_KITCHEN = {
+  eyebrow: "Dürüst Değerlendirme",
+  title: "Hangi Durumlarda Yenileme Yerine Sıfırdan Mutfak Gerekir?",
+  description:
+    "Her mutfak yenilemeye uygun değildir. Keşif sırasında dolap gövdelerinizi olduğu gibi inceliyor; yenilemenin yeterli olmayacağı durumları baştan söylüyoruz.",
+  items: [
+    {
+      id: 1,
+      title: "Dolap gövdesi çürümüş veya gevşemişse",
+      description:
+        "Tahta yumuşamış, kabarmış veya taşıyıcı parçalar zayıflamışsa kapak yenilemesi uzun vadede yeterli olmaz.",
+    },
+    {
+      id: 2,
+      title: "Nem ve su hasarı çok fazlaysa",
+      description:
+        "Lavabo altı, tezgâh kenarı veya duvar birleşimlerinde yaygın şişme ve küf varsa önce yapısal sorun giderilmelidir.",
+    },
+    {
+      id: 3,
+      title: "Ölçü ve yerleşim tamamen değişecekse",
+      description:
+        "Mutfak düzenini L'den U'ya çevirmek, ada eklemek veya dolap konumlarını kökten değiştirmek yenileme kapsamının ötesindedir.",
+    },
+    {
+      id: 4,
+      title: "Taşıyıcı yapı sağlam değilse",
+      description:
+        "Duvara montaj noktaları, askı rayları veya dolap iskeleti güvenli taşıma sağlamıyorsa sıfırdan üretim daha doğru yatırımdır.",
+    },
+  ] satisfies ServiceWhenNewKitchenItem[],
+  note: "Bu durumlarda yenilemeyi önermiyoruz. Size sıfırdan mutfak veya kapsamlı tadilat yolunu açıkça anlatıyor; baskı yapmadan en mantıklı seçeneği birlikte değerlendiriyoruz.",
 } as const;
 
 export type ServiceRenovationOperationIcon =
@@ -455,12 +610,12 @@ export const SERVICE_COMPARISON = {
     {
       aspect: "Ne Zaman Tercih Edilir?",
       renovation:
-        "Gövde sağlam, ölçüler uygun ve görünüm güncellenmek istendiğinde ideal çözümdür.",
+        "Gövde sağlam, ölçüler uygun ve görünüm veya aksesuar güncellenmek istendiğinde.",
       newKitchen:
-        "Gövde çok kötü durumdaysa, ölçüler değişecekse veya mutfak düzeni tamamen yenilenecekse daha mantıklı olabilir.",
+        "Gövde hasarlı, yerleşim değişecek veya taşıyıcı yapı zayıfsa.",
     },
   ] satisfies ServiceComparisonRow[],
-  note: "Keşif sırasında dolap gövdelerinizi inceliyoruz. Gövde yapısı yeterince sağlam değilse sıfırdan mutfak yaptırmanın daha doğru olacağını açıkça söylüyoruz.",
+  note: "Yerinde keşif veya fotoğrafla ön değerlendirme ile mutfağınızın hangi gruba girdiğini birlikte belirliyoruz.",
 } as const;
 
 export const SERVICE_PRICING_FACTORS = {
