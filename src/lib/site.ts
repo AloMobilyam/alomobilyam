@@ -33,11 +33,11 @@ export const HERO_DESCRIPTION =
 export const ON_SITE_SERVICE_IMAGE = "/site/yerinde-servis.png";
 
 export const NAV_LINKS = [
-  { href: "#hizmetler", label: "Hizmetler" },
-  { href: "#galeri", label: "Galeri" },
-  { href: "#yorumlar", label: "Yorumlar" },
-  { href: "#sss", label: "SSS" },
-  { href: "#iletisim", label: "İletişim" },
+  { href: "/#hizmetler", label: "Hizmetler" },
+  { href: "/#galeri", label: "Galeri" },
+  { href: "/#yorumlar", label: "Yorumlar" },
+  { href: "/#sss", label: "SSS" },
+  { href: "/#iletisim", label: "İletişim" },
 ] as const;
 
 export const STATS = [
@@ -106,6 +106,7 @@ export type ServiceItem = {
   title: string;
   description: string;
   icon: ServiceIconKey;
+  href?: string;
 };
 
 export type WorkInput = {
@@ -212,6 +213,13 @@ export const WORKS: WorkItem[] = [
 export const SERVICES: ServiceItem[] = [
   { title: "Mobilya Onarım", description: "Kırık, çatlak ve hasarlı mobilyalarınızı yerinde onarıyoruz.", icon: "repair" },
   { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.", icon: "refresh" },
+  {
+    title: "Mutfak Dolabı Yenileme",
+    description:
+      "Eski mutfak dolaplarınızı yerinde kapak boyama, menteşe değişimi ve montaj işlemleriyle yeniliyoruz.",
+    icon: "kitchen",
+    href: "/hizmetler/mersin-mutfak-dolabi-yenileme",
+  },
   { title: "Menteşe Değişimi", description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi.", icon: "hinge" },
   { title: "Ray Değişimi", description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.", icon: "rail" },
   { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.", icon: "adjust" },

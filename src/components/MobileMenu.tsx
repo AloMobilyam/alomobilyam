@@ -45,15 +45,6 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
     };
   }, [open]);
 
-  const handleNavClick = (href: string) => {
-    const targetId = href.replace("#", "");
-    onClose();
-
-    window.setTimeout(() => {
-      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
-  };
-
   const handleLogoClick = () => {
     onClose();
     window.setTimeout(() => {
@@ -105,13 +96,13 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <ul className="space-y-1">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <button
-                    type="button"
-                    onClick={() => handleNavClick(link.href)}
-                    className="flex w-full items-center rounded-xl px-4 py-4 text-left text-lg font-semibold text-wood-900 transition-colors active:bg-wood-100"
+                  <a
+                    href={link.href}
+                    onClick={onClose}
+                    className="flex w-full items-center rounded-xl px-4 py-4 text-lg font-semibold text-wood-900 transition-colors active:bg-wood-100"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
