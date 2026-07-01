@@ -9,6 +9,7 @@ type CTAButtonsProps = {
   size?: "md" | "lg";
   compact?: boolean;
   className?: string;
+  whatsappHref?: string;
 };
 
 export function CTAButtons({
@@ -16,6 +17,7 @@ export function CTAButtons({
   size = "lg",
   compact = false,
   className = "",
+  whatsappHref = LINKS.whatsappMessage,
 }: CTAButtonsProps) {
   const sizeClasses = compact
     ? "px-4 py-2.5 text-sm gap-2 rounded-xl sm:px-6 sm:py-3.5 sm:text-base sm:rounded-2xl sm:gap-3"
@@ -31,7 +33,7 @@ export function CTAButtons({
   return (
     <div className={`w-full gap-2 sm:gap-3 ${layoutClasses} ${className}`}>
       <m.a
-        href={LINKS.whatsappMessage}
+        href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
         className={`inline-flex w-full items-center justify-center font-semibold text-white bg-[#25D366] shadow-md shadow-[#25D366]/20 sm:w-auto sm:flex-1 sm:font-bold sm:shadow-lg sm:shadow-[#25D366]/30 ${sizeClasses}`}
