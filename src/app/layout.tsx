@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Lora } from "next/font/google";
 import Script from "next/script";
 import { MotionProvider } from "@/components/MotionProvider";
-import { getFAQSchema, getLocalBusinessSchema } from "@/lib/schema";
+import { getLocalBusinessSchema } from "@/lib/schema";
 import { HOME_OG_IMAGE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -82,7 +82,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const localBusinessSchema = getLocalBusinessSchema();
-  const faqSchema = getFAQSchema();
 
   return (
     <html lang="tr" className={`${dmSans.variable} ${lora.variable} h-full antialiased`}>
@@ -91,12 +90,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
           }}
         />
       </head>

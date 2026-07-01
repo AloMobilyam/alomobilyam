@@ -1,4 +1,4 @@
-import { BUSINESS, LINKS, SERVICES, SITE_URL } from "./site";
+import { BUSINESS, FAQS, LINKS, SERVICES, SITE_URL } from "./site";
 import {
   SERVICE_BREADCRUMB_ITEMS,
   SERVICE_FAQS,
@@ -103,24 +103,14 @@ export function getFAQSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Mersin'in hangi ilçelerine hizmet veriyorsunuz?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Mersin genelinde yerinde servis hizmeti sunuyoruz. Mezitli, Yenişehir, Toroslar, Akdeniz ve çevre ilçelere randevu ile geliyoruz.",
-        },
+    mainEntity: FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
       },
-      {
-        "@type": "Question",
-        name: "Fiziksel mağazanız veya atölyeniz var mı?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Hayır. Alo Mobilya olarak tamamen yerinde servis modeliyle çalışıyoruz. İşlerinizi kendi adresinizde yapıyoruz.",
-        },
-      },
-    ],
+    })),
   };
 }
 

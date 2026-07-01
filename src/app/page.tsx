@@ -1,3 +1,4 @@
+import { getFAQSchema } from "@/lib/schema";
 import { CTABanner } from "@/components/CTABanner";
 import { Contact } from "@/components/Contact";
 import { FAQ } from "@/components/FAQ";
@@ -13,8 +14,16 @@ import { Services } from "@/components/Services";
 import { WhyUs } from "@/components/WhyUs";
 
 export default function Home() {
+  const faqSchema = getFAQSchema();
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
       <Header />
       <main>
         <Hero />
