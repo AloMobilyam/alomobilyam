@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SERVICE_PATH } from "@/lib/services/mutfak-dolabi-yenileme";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -6,8 +7,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${SITE_URL}${SERVICE_PATH}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }

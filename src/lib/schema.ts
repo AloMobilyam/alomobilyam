@@ -36,11 +36,22 @@ export function getLocalBusinessSchema() {
         parentOrganization: { "@id": organizationId },
         name: BUSINESS.name,
         description:
-          "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
+          "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, mutfak dolabı yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
         url: SITE_URL,
         telephone: BUSINESS.phoneRaw,
         image: `${SITE_URL}/favicon.svg`,
         priceRange: "$$",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: BUSINESS.location.locality,
+          addressRegion: BUSINESS.location.region,
+          addressCountry: BUSINESS.location.country,
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: BUSINESS.location.geo.latitude,
+          longitude: BUSINESS.location.geo.longitude,
+        },
         areaServed: {
           "@type": "City",
           name: "Mersin",
@@ -148,13 +159,7 @@ export function getMutfakDolabiYenilemeServiceSchema() {
     description: SERVICE_METADATA.description,
     url: SERVICE_URL,
     provider: {
-      "@type": "LocalBusiness",
-      name: BUSINESS.name,
-      telephone: BUSINESS.phoneRaw,
-      areaServed: {
-        "@type": "City",
-        name: "Mersin",
-      },
+      "@id": localBusinessId,
     },
     areaServed: {
       "@type": "City",

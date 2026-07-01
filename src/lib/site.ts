@@ -18,6 +18,7 @@ export const SITE_URL = resolveSiteUrl();
 
 export const BUSINESS = {
   name: "Alo Mobilya",
+  shortName: "Alo Mobilya",
   owner: "Erdoğan Kuşçu",
   phone: "+90 532 454 01 19",
   phoneRaw: "+905324540119",
@@ -25,6 +26,20 @@ export const BUSINESS = {
   area: "Mersin",
   tagline: "Mersin geneli yerinde mobilya tamir, bakım, onarım ve montaj hizmeti",
   experienceYears: "40+",
+  location: {
+    locality: "Mersin",
+    region: "Mersin",
+    country: "TR",
+    geo: {
+      latitude: 36.8121,
+      longitude: 34.6415,
+    },
+  },
+} as const;
+
+export const MANIFEST_COLORS = {
+  background: "#fdfbf7",
+  theme: "#2c1810",
 } as const;
 
 export const HERO_DESCRIPTION =
