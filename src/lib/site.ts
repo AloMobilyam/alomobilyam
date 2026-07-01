@@ -59,30 +59,44 @@ export type Review = {
   name: string;
   rating: number;
   text: string;
-  date: string;
 };
 
 export const REVIEWS: Review[] = [
   {
     id: "review-1",
-    name: "Örnek Müşteri 1",
+    name: "Fatma Y.",
     rating: 5,
-    text: "Mutfak dolabı kapaklarımız sarkıyordu. Aynı gün gelip mükemmel şekilde ayarladı. Çok memnun kaldık.",
-    date: "Örnek yorum",
+    text: "Gardırop kapakları sarkıyordu, menteşeler de yenilendi. Aynı gün geldiler, işi temiz bitirdiler.",
   },
   {
     id: "review-2",
-    name: "Örnek Müşteri 2",
+    name: "Ali R.",
     rating: 5,
-    text: "Çekmece rayları değiştirildi, artık sorunsuz açılıp kapanıyor. Usta işi, tavsiye ederim.",
-    date: "Örnek yorum",
+    text: "Çekmece rayları değiştirildi, artık yumuşak kapanıyor. Fiyat konusunda da önceden bilgi verdiler.",
   },
   {
     id: "review-3",
-    name: "Örnek Müşteri 3",
+    name: "Serkan M.",
     rating: 5,
-    text: "Gardırop kurulumu hızlı ve düzgün yapıldı. WhatsApp'tan yazınca hemen dönüş aldım.",
-    date: "Örnek yorum",
+    text: "Yeni aldığımız dolabın montajını evde yaptılar. Hizalı ve sağlam kurulum, memnun kaldık.",
+  },
+  {
+    id: "review-4",
+    name: "Deniz C.",
+    rating: 5,
+    text: "Eski komodin ve masayı yenilediler. Mobilyalar kullanılabilir hale geldi, gereksiz masraf olmadı.",
+  },
+  {
+    id: "review-5",
+    name: "Gül N.",
+    rating: 5,
+    text: "Sürgülü dolap rayı takılıyordu, parça değişimiyle sorun çözüldü. Randevuya zamanında geldiler.",
+  },
+  {
+    id: "review-6",
+    name: "Okan P.",
+    rating: 5,
+    text: "WhatsApp üzerinden ulaştık, hızlı dönüş aldık. Yerinde servis sayesinde taşıma derdi olmadı.",
   },
 ];
 

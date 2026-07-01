@@ -29,12 +29,12 @@ export function GoogleReviews() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Müşteri Yorumları"
-          title="Google Yorumları"
-          description="Gerçek Google yorumları yakında eklenecektir. Aşağıdaki kartlar yalnızca yerleşim örneğidir."
+          title="Müşterilerimiz Ne Diyor?"
+          description="Mersin genelinde mobilya tamiri, bakım, montaj ve yenileme hizmeti alan müşterilerimizin değerlendirmeleri."
         />
 
         <m.div
-          className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:gap-6"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
@@ -44,40 +44,17 @@ export function GoogleReviews() {
             <m.article
               key={review.id}
               variants={fadeInUp}
-              className="relative flex flex-col rounded-2xl border border-dashed border-wood-200 bg-cream-50/80 p-5"
+              className="flex flex-col rounded-2xl border border-wood-100 bg-white p-5 shadow-sm ring-1 ring-wood-100/80 sm:p-6"
             >
-              <span className="absolute right-4 top-4 rounded-full bg-wood-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-wood-600">
-                Örnek yorum
-              </span>
-
-              <div className="flex items-start gap-3 pr-20">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-wood-100 font-semibold text-wood-600">
-                  {review.name.charAt(0)}
-                </div>
-                <div>
-                  <p className="font-semibold text-wood-700">{review.name}</p>
-                  <p className="text-xs text-wood-400">{review.date}</p>
-                </div>
-              </div>
-
-              <div className="mt-3 opacity-60">
+              <p className="font-semibold text-wood-800">{review.name}</p>
+              <div className="mt-2">
                 <StarRating rating={review.rating} />
               </div>
-
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-wood-500">
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-wood-600 sm:text-[0.9375rem]">
                 &ldquo;{review.text}&rdquo;
               </p>
             </m.article>
           ))}
-        </m.div>
-
-        <m.div
-          className="mt-8 flex items-center justify-center rounded-2xl border border-dashed border-wood-200 bg-white/60 px-4 py-3 text-sm text-wood-600"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={viewportOnce}
-        >
-          Gerçek Google yorumları yakında eklenecektir
         </m.div>
       </div>
     </section>
