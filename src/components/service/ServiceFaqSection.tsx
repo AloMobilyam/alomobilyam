@@ -1,6 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
+import { trackWhatsAppConversion } from "@/lib/google-ads";
 import { SERVICE_FAQS, SERVICE_WHATSAPP_LINK } from "@/lib/services/mutfak-dolabi-yenileme";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
 import { WhatsAppIcon } from "../icons";
@@ -56,6 +57,7 @@ export function ServiceFaqSection() {
             href={SERVICE_WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="mt-4 inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:w-auto sm:gap-3 sm:px-8 sm:text-base"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

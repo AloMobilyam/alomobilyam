@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, m } from "framer-motion";
+import { trackWhatsAppConversion } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
@@ -125,7 +126,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
                 href={LINKS.whatsappMessage}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={onClose}
+                onClick={() => {
+                  trackWhatsAppConversion();
+                  onClose();
+                }}
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-[#25D366] px-4 py-3.5 text-sm font-semibold text-white transition-colors active:bg-[#1fb855]"
               >
                 <WhatsAppIcon className="h-5 w-5" />

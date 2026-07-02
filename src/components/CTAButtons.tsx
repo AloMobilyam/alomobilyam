@@ -1,6 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
+import { trackWhatsAppConversion } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 
@@ -40,6 +41,7 @@ export function CTAButtons({
         href={whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={trackWhatsAppConversion}
         className={`inline-flex w-full items-center justify-center font-semibold text-white bg-[#25D366] shadow-md shadow-[#25D366]/20 sm:w-auto sm:flex-1 sm:font-bold sm:shadow-lg sm:shadow-[#25D366]/30 ${sizeClasses}`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}

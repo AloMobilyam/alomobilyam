@@ -1,3 +1,6 @@
+"use client";
+
+import { trackWhatsAppConversion } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 
@@ -23,6 +26,7 @@ export function MobileBottomBar({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackWhatsAppConversion}
           className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[#25D366] px-3 py-2.5 text-[13px] font-semibold text-white transition-colors active:bg-[#1fb855]"
           aria-label="WhatsApp ile yaz"
         >
