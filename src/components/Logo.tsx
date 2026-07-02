@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type LogoProps = {
@@ -17,43 +18,21 @@ export function Logo({
 }: LogoProps) {
   const isDark = variant === "dark";
   const iconSize = compact ? "h-9 w-9" : "h-10 w-10 sm:h-11 sm:w-11";
-  const svgSize = compact ? "h-[18px] w-[18px]" : "h-5 w-5 sm:h-6 sm:w-6";
+  const iconDimension = compact ? 36 : 44;
 
   const content = (
     <>
       <div
-        className={`flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-wood-700 to-wood-900 text-cream-50 shadow-md shadow-wood-900/25 ring-1 ring-wood-600/20 transition-transform group-hover:scale-[1.02] ${iconSize}`}
+        className={`relative shrink-0 overflow-hidden rounded-xl shadow-md shadow-wood-900/25 ring-1 ring-wood-600/20 transition-transform group-hover:scale-[1.02] ${iconSize}`}
       >
-        <svg
-          viewBox="0 0 32 32"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className={svgSize}
-          aria-hidden="true"
-        >
-          <path
-            d="M10.5 8.5c0-.83.67-1.5 1.5-1.5h1.8l.6-1.2h3.8l.6 1.2h1.8c.83 0 1.5.67 1.5 1.5V11h-11V8.5z"
-            fill="currentColor"
-            opacity="0.95"
-          />
-          <rect x="8.5" y="11" width="15" height="10" rx="1.5" stroke="currentColor" strokeWidth="1.3" fill="none" />
-          <path d="M16 6.5v4.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-          <path d="M14 8.75h4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-          <path
-            d="M11.5 23.5c0 1.1.9 2 2 2h5c1.1 0 2-.9 2-2"
-            stroke="currentColor"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-          />
-          <path
-            d="M21 14.5l2.5 2.5-2.5 2.5"
-            stroke="currentColor"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            opacity="0.85"
-          />
-        </svg>
+        <Image
+          src="/brand/alo-mobilya-icon-1024.png"
+          alt="Alo Mobilya logo ikonu"
+          width={iconDimension}
+          height={iconDimension}
+          className="h-full w-full object-cover"
+          priority
+        />
       </div>
 
       {showText && (

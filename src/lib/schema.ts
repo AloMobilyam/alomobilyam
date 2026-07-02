@@ -16,7 +16,7 @@ export function getOrganizationSchema() {
     "@id": organizationId,
     name: BUSINESS.name,
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.svg`,
+    logo: `${SITE_URL}/brand/alo-mobilya-logo-horizontal.png`,
     founder: {
       "@type": "Person",
       name: BUSINESS.owner,
@@ -39,7 +39,7 @@ export function getLocalBusinessSchema() {
           "40 yılı aşkın tecrübeli, ustalık belgeli mobilya ustası Erdoğan Kuşçu ile Mersin genelinde yerinde mobilya tamiri, mobilya yenileme, mutfak dolabı yenileme, dolap kurulumu, menteşe değişimi, ray değişimi ve kapı onarım hizmeti.",
         url: SITE_URL,
         telephone: BUSINESS.phoneRaw,
-        image: `${SITE_URL}/favicon.svg`,
+        image: `${SITE_URL}/brand/alo-mobilya-icon-1024.png`,
         priceRange: "$$",
         address: {
           "@type": "PostalAddress",
