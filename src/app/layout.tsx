@@ -3,7 +3,7 @@ import { DM_Sans, Lora } from "next/font/google";
 import Script from "next/script";
 import { MotionProvider } from "@/components/MotionProvider";
 import { getLocalBusinessSchema } from "@/lib/schema";
-import { HOME_OG_IMAGE, SITE_URL } from "@/lib/site";
+import { GOOGLE_ADS_ID, HOME_OG_IMAGE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -112,6 +112,18 @@ export default function RootLayout({
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-ads" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GOOGLE_ADS_ID}');
               `}
             </Script>
           </>

@@ -1,5 +1,7 @@
 export const CANONICAL_SITE_URL = "https://www.alomobilyam.com";
 
+export const GOOGLE_ADS_ID = "AW-17775158966";
+
 function resolveSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
 
