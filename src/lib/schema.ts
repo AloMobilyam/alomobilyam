@@ -34,6 +34,13 @@ import {
   SERVICE_TITLE as MENTESE_TITLE,
   SERVICE_URL as MENTESE_URL,
 } from "./services/mentese-degisimi";
+import {
+  SERVICE_BREADCRUMB_ITEMS as RAY_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as RAY_FAQS,
+  SERVICE_METADATA as RAY_METADATA,
+  SERVICE_TITLE as RAY_TITLE,
+  SERVICE_URL as RAY_URL,
+} from "./services/ray-degisimi";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -376,6 +383,52 @@ export function getMenteseDegisimiBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: MENTESE_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getRayDegisimiFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: RAY_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getRayDegisimiServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: RAY_TITLE,
+    description: RAY_METADATA.description,
+    url: RAY_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Ray değişimi",
+  };
+}
+
+export function getRayDegisimiBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: RAY_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,

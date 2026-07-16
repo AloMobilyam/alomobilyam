@@ -329,7 +329,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "hinge",
     href: "/hizmetler/mersin-mentese-degisimi",
   },
-  { title: "Ray Değişimi", description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.", icon: "rail" },
+  {
+    title: "Ray Değişimi",
+    description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.",
+    icon: "rail",
+    href: "/hizmetler/mersin-ray-degisimi",
+  },
   { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.", icon: "adjust" },
   { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },
   { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
