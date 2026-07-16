@@ -348,7 +348,13 @@ export const SERVICES: ServiceItem[] = [
     icon: "door",
     href: "/hizmetler/mersin-kapi-onarim",
   },
-  { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
+  {
+    title: "Dolap Kurulum",
+    description:
+      "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.",
+    icon: "cabinet",
+    href: "/hizmetler/mersin-dolap-kurulum",
+  },
   { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },
   {
     title: "Vestiyer / Portmanto Yenileme",
