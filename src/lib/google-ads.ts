@@ -6,6 +6,13 @@ import {
 
 const isProduction = process.env.NODE_ENV === "production";
 const CONVERSION_CALLBACK_TIMEOUT_MS = 1000;
+const PHONE_CONVERSION_PLACEHOLDER = "PHONE_LABEL_HERE";
+
+function isPhoneConversionConfigured(): boolean {
+  return !GOOGLE_ADS_PHONE_CONVERSION_SEND_TO.includes(
+    PHONE_CONVERSION_PLACEHOLDER,
+  );
+}
 
 function trackConversion(sendTo: string): Promise<void> {
   return new Promise((resolve) => {
@@ -47,6 +54,10 @@ export function trackWhatsAppConversion(): Promise<void> {
 }
 
 export function trackPhoneConversion(): Promise<void> {
+  if (!isPhoneConversionConfigured()) {
+    return Promise.resolve();
+  }
+
   return trackConversion(GOOGLE_ADS_PHONE_CONVERSION_SEND_TO);
 }
 
@@ -65,6 +76,11 @@ export async function handleWhatsAppClick(
 export async function handlePhoneClick(
   event: MouseEvent<HTMLAnchorElement>,
 ): Promise<void> {
+  // Placeholder label varken gtag gönderme; native tel: yönlendirmesini kullan.
+  if (!isPhoneConversionConfigured()) {
+    return;
+  }
+
   event.preventDefault();
 
   const url = event.currentTarget.href;
