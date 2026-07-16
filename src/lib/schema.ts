@@ -27,6 +27,13 @@ import {
   SERVICE_TITLE as MOBILYA_YENILEME_TITLE,
   SERVICE_URL as MOBILYA_YENILEME_URL,
 } from "./services/mobilya-yenileme";
+import {
+  SERVICE_BREADCRUMB_ITEMS as MENTESE_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as MENTESE_FAQS,
+  SERVICE_METADATA as MENTESE_METADATA,
+  SERVICE_TITLE as MENTESE_TITLE,
+  SERVICE_URL as MENTESE_URL,
+} from "./services/mentese-degisimi";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -323,6 +330,52 @@ export function getMobilyaYenilemeBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: MOBILYA_YENILEME_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getMenteseDegisimiFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MENTESE_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMenteseDegisimiServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: MENTESE_TITLE,
+    description: MENTESE_METADATA.description,
+    url: MENTESE_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Menteşe değişimi",
+  };
+}
+
+export function getMenteseDegisimiBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: MENTESE_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,

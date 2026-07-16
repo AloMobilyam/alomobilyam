@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { handleWhatsAppClick } from "@/lib/google-ads";
+import { handlePhoneClick, handleWhatsAppClick } from "@/lib/google-ads";
 import { BUSINESS, LINKS, SERVICES } from "@/lib/site";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -49,6 +49,7 @@ export function Footer() {
               <li>
                 <a
                   href={LINKS.tel}
+                  onClick={handlePhoneClick}
                   className="inline-flex items-center gap-2 text-sm text-cream-100 transition-colors hover:text-wood-300"
                 >
                   <PhoneIcon className="h-4 w-4" />

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, m } from "framer-motion";
-import { handleWhatsAppClick } from "@/lib/google-ads";
+import { handlePhoneClick, handleWhatsAppClick } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
@@ -116,7 +116,10 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <div className="mx-auto flex max-w-lg gap-3">
               <a
                 href={LINKS.tel}
-                onClick={onClose}
+                onClick={(event) => {
+                  void handlePhoneClick(event);
+                  onClose();
+                }}
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-wood-800 px-4 py-3.5 text-sm font-semibold text-cream-50 transition-colors active:bg-wood-900"
               >
                 <PhoneIcon className="h-5 w-5" />

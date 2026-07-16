@@ -1,10 +1,13 @@
 import type { MouseEvent } from "react";
-import { GOOGLE_ADS_WHATSAPP_CONVERSION_SEND_TO } from "@/lib/site";
+import {
+  GOOGLE_ADS_PHONE_CONVERSION_SEND_TO,
+  GOOGLE_ADS_WHATSAPP_CONVERSION_SEND_TO,
+} from "@/lib/site";
 
 const isProduction = process.env.NODE_ENV === "production";
 const CONVERSION_CALLBACK_TIMEOUT_MS = 1000;
 
-export function trackWhatsAppConversion(): Promise<void> {
+function trackConversion(sendTo: string): Promise<void> {
   return new Promise((resolve) => {
     let settled = false;
 
@@ -28,7 +31,7 @@ export function trackWhatsAppConversion(): Promise<void> {
     const timeoutId = window.setTimeout(finish, CONVERSION_CALLBACK_TIMEOUT_MS);
 
     gtag("event", "conversion", {
-      send_to: GOOGLE_ADS_WHATSAPP_CONVERSION_SEND_TO,
+      send_to: sendTo,
       value: 1.0,
       currency: "TRY",
       event_callback: () => {
@@ -37,6 +40,14 @@ export function trackWhatsAppConversion(): Promise<void> {
       },
     });
   });
+}
+
+export function trackWhatsAppConversion(): Promise<void> {
+  return trackConversion(GOOGLE_ADS_WHATSAPP_CONVERSION_SEND_TO);
+}
+
+export function trackPhoneConversion(): Promise<void> {
+  return trackConversion(GOOGLE_ADS_PHONE_CONVERSION_SEND_TO);
 }
 
 export async function handleWhatsAppClick(
@@ -49,4 +60,16 @@ export async function handleWhatsAppClick(
   await trackWhatsAppConversion();
 
   window.open(url, "_blank", "noopener,noreferrer");
+}
+
+export async function handlePhoneClick(
+  event: MouseEvent<HTMLAnchorElement>,
+): Promise<void> {
+  event.preventDefault();
+
+  const url = event.currentTarget.href;
+
+  await trackPhoneConversion();
+
+  window.location.href = url;
 }

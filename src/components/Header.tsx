@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { handlePhoneClick } from "@/lib/google-ads";
 import { BUSINESS, LINKS } from "@/lib/site";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { PhoneIcon } from "./icons";
@@ -53,6 +54,7 @@ export function Header() {
 
             <a
               href={LINKS.tel}
+              onClick={handlePhoneClick}
               className="inline-flex items-center gap-2 rounded-xl bg-wood-800 px-4 py-2.5 text-sm font-semibold text-cream-50 shadow-md transition-colors hover:bg-wood-900"
             >
               <PhoneIcon className="h-4 w-4" />

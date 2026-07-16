@@ -1,6 +1,6 @@
 "use client";
 
-import { handleWhatsAppClick } from "@/lib/google-ads";
+import { handlePhoneClick, handleWhatsAppClick } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 
@@ -16,6 +16,7 @@ export function MobileBottomBar({
       <div className="mx-auto flex max-w-lg gap-2">
         <a
           href={LINKS.tel}
+          onClick={handlePhoneClick}
           className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-wood-800 px-3 py-2.5 text-[13px] font-semibold text-cream-50 transition-colors active:bg-wood-900"
           aria-label="Hemen ara"
         >

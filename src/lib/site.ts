@@ -3,6 +3,8 @@ export const CANONICAL_SITE_URL = "https://www.alomobilyam.com";
 export const GOOGLE_ADS_ID = "AW-17775158966";
 export const GOOGLE_ADS_WHATSAPP_CONVERSION_SEND_TO =
   "AW-17775158966/vmRICLSY1skCELbN72tc";
+export const GOOGLE_ADS_PHONE_CONVERSION_SEND_TO =
+  "AW-17775158966/PHONE_LABEL_HERE";
 
 function resolveSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
@@ -321,7 +323,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "kitchen",
     href: "/hizmetler/mersin-mutfak-dolabi-yenileme",
   },
-  { title: "Menteşe Değişimi", description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi.", icon: "hinge" },
+  {
+    title: "Menteşe Değişimi",
+    description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi.",
+    icon: "hinge",
+    href: "/hizmetler/mersin-mentese-degisimi",
+  },
   { title: "Ray Değişimi", description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.", icon: "rail" },
   { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.", icon: "adjust" },
   { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },

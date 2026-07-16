@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { handleWhatsAppClick } from "@/lib/google-ads";
+import { handlePhoneClick, handleWhatsAppClick } from "@/lib/google-ads";
 import { LINKS } from "@/lib/site";
 import { PhoneIcon, WhatsAppIcon } from "./icons";
 
@@ -53,6 +53,7 @@ export function CTAButtons({
       </m.a>
       <m.a
         href={LINKS.tel}
+        onClick={handlePhoneClick}
         className={`inline-flex w-full items-center justify-center border-2 border-wood-300 bg-white font-semibold text-wood-900 shadow-sm sm:w-auto sm:flex-1 sm:font-bold sm:shadow-md sm:shadow-wood-900/5 ${sizeClasses}`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
