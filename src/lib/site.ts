@@ -335,7 +335,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "rail",
     href: "/hizmetler/mersin-ray-degisimi",
   },
-  { title: "Dolap Kapak Ayarı", description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.", icon: "adjust" },
+  {
+    title: "Dolap Kapak Ayarı",
+    description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.",
+    icon: "adjust",
+    href: "/hizmetler/mersin-dolap-kapak-ayari",
+  },
   { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },
   { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
   { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },

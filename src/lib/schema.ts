@@ -41,6 +41,13 @@ import {
   SERVICE_TITLE as RAY_TITLE,
   SERVICE_URL as RAY_URL,
 } from "./services/ray-degisimi";
+import {
+  SERVICE_BREADCRUMB_ITEMS as DOLAP_KAPAK_AYARI_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as DOLAP_KAPAK_AYARI_FAQS,
+  SERVICE_METADATA as DOLAP_KAPAK_AYARI_METADATA,
+  SERVICE_TITLE as DOLAP_KAPAK_AYARI_TITLE,
+  SERVICE_URL as DOLAP_KAPAK_AYARI_URL,
+} from "./services/dolap-kapak-ayari";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -429,6 +436,52 @@ export function getRayDegisimiBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: RAY_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getDolapKapakAyariFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: DOLAP_KAPAK_AYARI_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getDolapKapakAyariServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: DOLAP_KAPAK_AYARI_TITLE,
+    description: DOLAP_KAPAK_AYARI_METADATA.description,
+    url: DOLAP_KAPAK_AYARI_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Dolap kapak ayarı",
+  };
+}
+
+export function getDolapKapakAyariBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: DOLAP_KAPAK_AYARI_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
