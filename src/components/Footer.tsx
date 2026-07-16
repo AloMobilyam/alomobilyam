@@ -1,7 +1,7 @@
 "use client";
 
 import { m } from "framer-motion";
-import { trackWhatsAppConversion } from "@/lib/google-ads";
+import { handleWhatsAppClick } from "@/lib/google-ads";
 import { BUSINESS, LINKS, SERVICES } from "@/lib/site";
 import { useNavLinks } from "@/hooks/useNavLinks";
 import { fadeInUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -39,7 +39,7 @@ export function Footer() {
                   href={LINKS.whatsappMessage}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackWhatsAppConversion}
+                  onClick={handleWhatsAppClick}
                   className="inline-flex items-center gap-2 text-sm text-cream-100 transition-colors hover:text-[#25D366]"
                 >
                   <WhatsAppIcon className="h-4 w-4" />

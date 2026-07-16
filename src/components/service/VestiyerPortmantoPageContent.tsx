@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import { m } from "framer-motion";
-import { trackWhatsAppConversion } from "@/lib/google-ads";
+import { handleWhatsAppClick } from "@/lib/google-ads";
 import {
   SERVICE_BEFORE_AFTER_GALLERY,
   SERVICE_COMPARISON,
@@ -579,7 +579,7 @@ function PricingFactorsSection() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackWhatsAppConversion}
+            onClick={handleWhatsAppClick}
             className="mt-5 inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:mt-6 sm:w-auto sm:gap-3 sm:px-8 sm:text-base"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -662,7 +662,7 @@ function TrustSection() {
                 href={SERVICE_WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackWhatsAppConversion}
+                onClick={handleWhatsAppClick}
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:gap-3 sm:px-8 sm:py-4 sm:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -732,7 +732,7 @@ function TestimonialsSection() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackWhatsAppConversion}
+            onClick={handleWhatsAppClick}
             className="inline-flex w-full max-w-sm items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:gap-3 sm:px-8 sm:py-4 sm:text-base"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -803,7 +803,7 @@ function FaqSection() {
             href={SERVICE_WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackWhatsAppConversion}
+            onClick={handleWhatsAppClick}
             className="mt-4 inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:w-auto sm:gap-3 sm:px-8 sm:text-base"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}

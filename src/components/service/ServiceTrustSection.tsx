@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { m } from "framer-motion";
-import { trackWhatsAppConversion } from "@/lib/google-ads";
+import { handleWhatsAppClick } from "@/lib/google-ads";
 import {
   SERVICE_TRUST_CARDS,
   SERVICE_TRUST_CERTIFICATE,
@@ -85,7 +85,7 @@ export function ServiceTrustSection() {
                 href={SERVICE_WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackWhatsAppConversion}
+                onClick={handleWhatsAppClick}
                 className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#25D366] px-6 py-4 text-sm font-bold text-white shadow-lg shadow-[#25D366]/25 sm:gap-3 sm:px-8 sm:py-4 sm:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
