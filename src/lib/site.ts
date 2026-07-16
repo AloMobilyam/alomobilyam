@@ -300,7 +300,13 @@ export const WORKS: WorkItem[] = [
 ];
 
 export const SERVICES: ServiceItem[] = [
-  { title: "Mobilya Onarım", description: "Kırık, çatlak ve hasarlı mobilyalarınızı yerinde onarıyoruz.", icon: "repair" },
+  {
+    title: "Mobilya Onarım",
+    description:
+      "Kırık, çatlak ve hasarlı mobilyalarınızı Mersin genelinde yerinde onarıyoruz.",
+    icon: "repair",
+    href: "/hizmetler/mersin-mobilya-onarim",
+  },
   { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.", icon: "refresh" },
   {
     title: "Mutfak Dolabı Yenileme",

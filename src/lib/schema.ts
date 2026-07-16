@@ -13,6 +13,13 @@ import {
   SERVICE_TITLE as VESTIYER_SERVICE_TITLE,
   SERVICE_URL as VESTIYER_SERVICE_URL,
 } from "./services/vestiyer-portmanto-yenileme";
+import {
+  SERVICE_BREADCRUMB_ITEMS as MOBILYA_ONARIM_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as MOBILYA_ONARIM_FAQS,
+  SERVICE_METADATA as MOBILYA_ONARIM_METADATA,
+  SERVICE_TITLE as MOBILYA_ONARIM_TITLE,
+  SERVICE_URL as MOBILYA_ONARIM_URL,
+} from "./services/mobilya-onarim";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -217,6 +224,52 @@ export function getVestiyerPortmantoYenilemeBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: VESTIYER_SERVICE_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getMobilyaOnarimFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MOBILYA_ONARIM_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMobilyaOnarimServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: MOBILYA_ONARIM_TITLE,
+    description: MOBILYA_ONARIM_METADATA.description,
+    url: MOBILYA_ONARIM_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Mobilya onarım",
+  };
+}
+
+export function getMobilyaOnarimBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: MOBILYA_ONARIM_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
