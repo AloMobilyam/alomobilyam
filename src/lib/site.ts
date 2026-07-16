@@ -307,7 +307,13 @@ export const SERVICES: ServiceItem[] = [
     icon: "repair",
     href: "/hizmetler/mersin-mobilya-onarim",
   },
-  { title: "Mobilya Yenileme", description: "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.", icon: "refresh" },
+  {
+    title: "Mobilya Yenileme",
+    description:
+      "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.",
+    icon: "refresh",
+    href: "/hizmetler/mersin-mobilya-yenileme",
+  },
   {
     title: "Mutfak Dolabı Yenileme",
     description:

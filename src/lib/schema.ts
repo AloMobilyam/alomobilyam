@@ -20,6 +20,13 @@ import {
   SERVICE_TITLE as MOBILYA_ONARIM_TITLE,
   SERVICE_URL as MOBILYA_ONARIM_URL,
 } from "./services/mobilya-onarim";
+import {
+  SERVICE_BREADCRUMB_ITEMS as MOBILYA_YENILEME_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as MOBILYA_YENILEME_FAQS,
+  SERVICE_METADATA as MOBILYA_YENILEME_METADATA,
+  SERVICE_TITLE as MOBILYA_YENILEME_TITLE,
+  SERVICE_URL as MOBILYA_YENILEME_URL,
+} from "./services/mobilya-yenileme";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -270,6 +277,52 @@ export function getMobilyaOnarimBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: MOBILYA_ONARIM_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getMobilyaYenilemeFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MOBILYA_YENILEME_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMobilyaYenilemeServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: MOBILYA_YENILEME_TITLE,
+    description: MOBILYA_YENILEME_METADATA.description,
+    url: MOBILYA_YENILEME_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Mobilya yenileme",
+  };
+}
+
+export function getMobilyaYenilemeBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: MOBILYA_YENILEME_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
