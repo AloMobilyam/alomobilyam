@@ -315,7 +315,12 @@ export const SERVICES: ServiceItem[] = [
   { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },
   { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
   { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },
-  { title: "Vestiyer / Portmanto Yenileme", description: "Eski vestiyer ve portmantolarınıza modern, temiz ve kullanışlı bir görünüm kazandırıyoruz.", icon: "wardrobe" },
+  {
+    title: "Vestiyer / Portmanto Yenileme",
+    description: "Eski vestiyer ve portmantolarınıza modern, temiz ve kullanışlı bir görünüm kazandırıyoruz.",
+    icon: "wardrobe",
+    href: "/hizmetler/mersin-vestiyer-portmanto-yenileme",
+  },
   { title: "Sürgülü Dolap Ray Tamiri", description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz.", icon: "sliding" },
   { title: "Çekmece Ray Değişimi", description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.", icon: "drawer" },
   { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.", icon: "chair" },

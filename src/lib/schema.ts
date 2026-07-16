@@ -6,6 +6,13 @@ import {
   SERVICE_TITLE,
   SERVICE_URL,
 } from "./services/mutfak-dolabi-yenileme";
+import {
+  SERVICE_BREADCRUMB_ITEMS as VESTIYER_SERVICE_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as VESTIYER_SERVICE_FAQS,
+  SERVICE_METADATA as VESTIYER_SERVICE_METADATA,
+  SERVICE_TITLE as VESTIYER_SERVICE_TITLE,
+  SERVICE_URL as VESTIYER_SERVICE_URL,
+} from "./services/vestiyer-portmanto-yenileme";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -164,6 +171,52 @@ export function getMutfakDolabiYenilemeBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: SERVICE_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getVestiyerPortmantoYenilemeFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: VESTIYER_SERVICE_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getVestiyerPortmantoYenilemeServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: VESTIYER_SERVICE_TITLE,
+    description: VESTIYER_SERVICE_METADATA.description,
+    url: VESTIYER_SERVICE_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Vestiyer ve portmanto yenileme",
+  };
+}
+
+export function getVestiyerPortmantoYenilemeBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: VESTIYER_SERVICE_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
