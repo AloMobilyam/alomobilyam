@@ -341,7 +341,13 @@ export const SERVICES: ServiceItem[] = [
     icon: "adjust",
     href: "/hizmetler/mersin-dolap-kapak-ayari",
   },
-  { title: "Kapı Onarım", description: "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.", icon: "door" },
+  {
+    title: "Kapı Onarım",
+    description:
+      "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.",
+    icon: "door",
+    href: "/hizmetler/mersin-kapi-onarim",
+  },
   { title: "Dolap Kurulum", description: "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.", icon: "cabinet" },
   { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },
   {
