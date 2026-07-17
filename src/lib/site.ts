@@ -355,7 +355,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "cabinet",
     href: "/hizmetler/mersin-dolap-kurulum",
   },
-  { title: "Gardırop Kurulumu", description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.", icon: "wardrobe" },
+  {
+    title: "Gardırop Kurulumu",
+    description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.",
+    icon: "wardrobe",
+    href: "/hizmetler/mersin-gardirop-kurulumu",
+  },
   {
     title: "Vestiyer / Portmanto Yenileme",
     description: "Eski vestiyer ve portmantolarınıza modern, temiz ve kullanışlı bir görünüm kazandırıyoruz.",

@@ -8,6 +8,7 @@ import { SERVICE_PATH as DOLAP_KAPAK_AYARI_SERVICE_PATH } from "@/lib/services/d
 import { SERVICE_PATH as KAPI_ONARIM_SERVICE_PATH } from "@/lib/services/kapi-onarim";
 import { SERVICE_PATH as VESTIYER_SERVICE_PATH } from "@/lib/services/vestiyer-portmanto-yenileme";
 import { SERVICE_PATH as DOLAP_KURULUM_SERVICE_PATH } from "@/lib/services/dolap-kurulum";
+import { SERVICE_PATH as GARDIROP_KURULUM_SERVICE_PATH } from "@/lib/services/gardirop-kurulumu";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -68,6 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}${DOLAP_KURULUM_SERVICE_PATH}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}${GARDIROP_KURULUM_SERVICE_PATH}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

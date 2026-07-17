@@ -62,6 +62,13 @@ import {
   SERVICE_TITLE as DOLAP_KURULUM_TITLE,
   SERVICE_URL as DOLAP_KURULUM_URL,
 } from "./services/dolap-kurulum";
+import {
+  SERVICE_BREADCRUMB_ITEMS as GARDIROP_KURULUM_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as GARDIROP_KURULUM_FAQS,
+  SERVICE_METADATA as GARDIROP_KURULUM_METADATA,
+  SERVICE_TITLE as GARDIROP_KURULUM_TITLE,
+  SERVICE_URL as GARDIROP_KURULUM_URL,
+} from "./services/gardirop-kurulumu";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -588,6 +595,52 @@ export function getDolapKurulumBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: DOLAP_KURULUM_BREADCRUMB_ITEMS.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: resolveBreadcrumbItemUrl(item.href),
+    })),
+  };
+}
+
+export function getGardiropKurulumuFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: GARDIROP_KURULUM_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getGardiropKurulumuServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: GARDIROP_KURULUM_TITLE,
+    description: GARDIROP_KURULUM_METADATA.description,
+    url: GARDIROP_KURULUM_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Gardırop kurulumu",
+  };
+}
+
+export function getGardiropKurulumuBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: GARDIROP_KURULUM_BREADCRUMB_ITEMS.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
