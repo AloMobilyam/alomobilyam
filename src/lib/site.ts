@@ -367,7 +367,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "wardrobe",
     href: "/hizmetler/mersin-vestiyer-portmanto-yenileme",
   },
-  { title: "Sürgülü Dolap Ray Tamiri", description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz.", icon: "sliding" },
+  {
+    title: "Sürgülü Dolap Ray Tamiri",
+    description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz.",
+    icon: "sliding",
+    href: "/hizmetler/mersin-surgulu-dolap-ray-tamiri",
+  },
   { title: "Çekmece Ray Değişimi", description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.", icon: "drawer" },
   { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.", icon: "chair" },
   { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.", icon: "assembly" },

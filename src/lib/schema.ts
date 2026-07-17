@@ -69,6 +69,13 @@ import {
   SERVICE_TITLE as GARDIROP_KURULUM_TITLE,
   SERVICE_URL as GARDIROP_KURULUM_URL,
 } from "./services/gardirop-kurulumu";
+import {
+  SERVICE_BREADCRUMB_ITEMS as SURGULU_DOLAP_RAY_TAMIRI_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as SURGULU_DOLAP_RAY_TAMIRI_FAQS,
+  SERVICE_METADATA as SURGULU_DOLAP_RAY_TAMIRI_METADATA,
+  SERVICE_TITLE as SURGULU_DOLAP_RAY_TAMIRI_TITLE,
+  SERVICE_URL as SURGULU_DOLAP_RAY_TAMIRI_URL,
+} from "./services/surgulu-dolap-ray-tamiri";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -646,5 +653,53 @@ export function getGardiropKurulumuBreadcrumbSchema() {
       name: item.label,
       item: resolveBreadcrumbItemUrl(item.href),
     })),
+  };
+}
+
+export function getSurguluDolapRayTamiriFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: SURGULU_DOLAP_RAY_TAMIRI_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getSurguluDolapRayTamiriServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: SURGULU_DOLAP_RAY_TAMIRI_TITLE,
+    description: SURGULU_DOLAP_RAY_TAMIRI_METADATA.description,
+    url: SURGULU_DOLAP_RAY_TAMIRI_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Sürgülü dolap ray tamiri",
+  };
+}
+
+export function getSurguluDolapRayTamiriBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: SURGULU_DOLAP_RAY_TAMIRI_BREADCRUMB_ITEMS.map(
+      (item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: resolveBreadcrumbItemUrl(item.href),
+      }),
+    ),
   };
 }
