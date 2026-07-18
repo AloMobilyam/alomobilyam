@@ -373,7 +373,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "sliding",
     href: "/hizmetler/mersin-surgulu-dolap-ray-tamiri",
   },
-  { title: "Çekmece Ray Değişimi", description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.", icon: "drawer" },
+  {
+    title: "Çekmece Ray Değişimi",
+    description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.",
+    icon: "drawer",
+    href: "/hizmetler/mersin-cekmece-ray-degisimi",
+  },
   { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.", icon: "chair" },
   { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.", icon: "assembly" },
   { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz.", icon: "onsite" },

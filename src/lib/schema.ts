@@ -76,6 +76,13 @@ import {
   SERVICE_TITLE as SURGULU_DOLAP_RAY_TAMIRI_TITLE,
   SERVICE_URL as SURGULU_DOLAP_RAY_TAMIRI_URL,
 } from "./services/surgulu-dolap-ray-tamiri";
+import {
+  SERVICE_BREADCRUMB_ITEMS as CEKMECE_RAY_DEGISIMI_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as CEKMECE_RAY_DEGISIMI_FAQS,
+  SERVICE_METADATA as CEKMECE_RAY_DEGISIMI_METADATA,
+  SERVICE_TITLE as CEKMECE_RAY_DEGISIMI_TITLE,
+  SERVICE_URL as CEKMECE_RAY_DEGISIMI_URL,
+} from "./services/cekmece-ray-degisimi";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -694,6 +701,54 @@ export function getSurguluDolapRayTamiriBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: SURGULU_DOLAP_RAY_TAMIRI_BREADCRUMB_ITEMS.map(
+      (item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: resolveBreadcrumbItemUrl(item.href),
+      }),
+    ),
+  };
+}
+
+export function getCekmeceRayDegisimiFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: CEKMECE_RAY_DEGISIMI_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getCekmeceRayDegisimiServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: CEKMECE_RAY_DEGISIMI_TITLE,
+    description: CEKMECE_RAY_DEGISIMI_METADATA.description,
+    url: CEKMECE_RAY_DEGISIMI_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Çekmece ray değişimi",
+  };
+}
+
+export function getCekmeceRayDegisimiBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: CEKMECE_RAY_DEGISIMI_BREADCRUMB_ITEMS.map(
       (item, index) => ({
         "@type": "ListItem",
         position: index + 1,
