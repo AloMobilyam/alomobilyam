@@ -26,7 +26,7 @@ export const SERVICE_METADATA = {
     "masa sandalye vida sıkma",
   ],
   ogImage: {
-    url: "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-sonrasi-01.png",
+    url: "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-sonrasi-02.png",
     alt: "Mersin masa sandalye tamiri sonrası - onarılmış masa ve sandalye",
   },
 } as const;
@@ -66,13 +66,13 @@ export const SERVICE_HERO = {
   showcase: {
     title: "Masa Sandalye Tamiri",
     before:
-      "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-oncesi-01.png",
+      "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-oncesi-02.png",
     after:
-      "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-sonrasi-01.png",
+      "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-sonrasi-02.png",
     beforeAlt:
-      "Mersin masa sandalye tamiri öncesi - sallanan ve hasarlı sandalye",
+      "Mersin masa sandalye tamiri öncesi - yıpranmış masa ve sandalye takımı",
     afterAlt:
-      "Mersin masa sandalye tamiri sonrası - sağlamlaştırılmış sandalye",
+      "Mersin masa sandalye tamiri sonrası - onarılmış ve sağlamlaştırılmış masa sandalye takımı",
   },
 } as const;
 
@@ -107,38 +107,25 @@ export const SERVICE_BEFORE_AFTER_GALLERY: ServiceBeforeAfterItem[] = [
   {
     id: 1,
     before: {
-      src: galleryImage("masa-sandalye-tamiri-oncesi-01.png"),
-      alt: "Mersin masa sandalye tamiri öncesi 01 - sallanan ve gevşek sandalye",
-    },
-    after: {
-      src: galleryImage("masa-sandalye-tamiri-sonrasi-01.png"),
-      alt: "Mersin masa sandalye tamiri sonrası 01 - güçlendirilmiş ve sağlam sandalye",
-    },
-    caption:
-      "Sallanan sandalyede bağlantılar sıkılaştırılarak kullanım güvenliği ve sağlamlık geri kazandırıldı.",
-  },
-  {
-    id: 2,
-    before: {
       src: galleryImage("masa-sandalye-tamiri-oncesi-02.png"),
-      alt: "Mersin masa sandalye tamiri öncesi 02 - hasarlı masa veya sandalye yapısı",
+      alt: "Mersin masa sandalye tamiri öncesi 01 - yıpranmış masa ve sandalye takımı",
     },
     after: {
       src: galleryImage("masa-sandalye-tamiri-sonrasi-02.png"),
-      alt: "Mersin masa sandalye tamiri sonrası 02 - onarılmış ve dengeli mobilya",
+      alt: "Mersin masa sandalye tamiri sonrası 01 - onarılmış ve dengeli masa sandalye takımı",
     },
     caption:
       "Gevşek ayak ve bağlantı noktaları onarılarak masa/sandalye yeniden dengeli hale getirildi.",
   },
   {
-    id: 3,
+    id: 2,
     before: {
       src: galleryImage("masa-sandalye-tamiri-oncesi-03.png"),
-      alt: "Mersin masa sandalye tamiri öncesi 03 - kırık veya yıpranmış sandalye",
+      alt: "Mersin masa sandalye tamiri öncesi 02 - kırık veya yıpranmış sandalye",
     },
     after: {
       src: galleryImage("masa-sandalye-tamiri-sonrasi-03.png"),
-      alt: "Mersin masa sandalye tamiri sonrası 03 - yenilenmiş ve kullanıma hazır sandalye",
+      alt: "Mersin masa sandalye tamiri sonrası 02 - yenilenmiş ve kullanıma hazır sandalye",
     },
     caption:
       "Kırık masa sandalye onarımıyla yapısal zayıflık giderildi; mobilya günlük kullanıma hazırlandı.",
