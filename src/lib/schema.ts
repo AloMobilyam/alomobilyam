@@ -83,6 +83,13 @@ import {
   SERVICE_TITLE as CEKMECE_RAY_DEGISIMI_TITLE,
   SERVICE_URL as CEKMECE_RAY_DEGISIMI_URL,
 } from "./services/cekmece-ray-degisimi";
+import {
+  SERVICE_BREADCRUMB_ITEMS as MASA_SANDALYE_TAMIRI_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as MASA_SANDALYE_TAMIRI_FAQS,
+  SERVICE_METADATA as MASA_SANDALYE_TAMIRI_METADATA,
+  SERVICE_TITLE as MASA_SANDALYE_TAMIRI_TITLE,
+  SERVICE_URL as MASA_SANDALYE_TAMIRI_URL,
+} from "./services/masa-sandalye-tamiri";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -749,6 +756,54 @@ export function getCekmeceRayDegisimiBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: CEKMECE_RAY_DEGISIMI_BREADCRUMB_ITEMS.map(
+      (item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: resolveBreadcrumbItemUrl(item.href),
+      }),
+    ),
+  };
+}
+
+export function getMasaSandalyeTamiriFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MASA_SANDALYE_TAMIRI_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMasaSandalyeTamiriServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: MASA_SANDALYE_TAMIRI_TITLE,
+    description: MASA_SANDALYE_TAMIRI_METADATA.description,
+    url: MASA_SANDALYE_TAMIRI_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Masa sandalye tamiri",
+  };
+}
+
+export function getMasaSandalyeTamiriBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: MASA_SANDALYE_TAMIRI_BREADCRUMB_ITEMS.map(
       (item, index) => ({
         "@type": "ListItem",
         position: index + 1,

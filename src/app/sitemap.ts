@@ -11,6 +11,7 @@ import { SERVICE_PATH as DOLAP_KURULUM_SERVICE_PATH } from "@/lib/services/dolap
 import { SERVICE_PATH as GARDIROP_KURULUM_SERVICE_PATH } from "@/lib/services/gardirop-kurulumu";
 import { SERVICE_PATH as SURGULU_DOLAP_RAY_TAMIRI_SERVICE_PATH } from "@/lib/services/surgulu-dolap-ray-tamiri";
 import { SERVICE_PATH as CEKMECE_RAY_DEGISIMI_SERVICE_PATH } from "@/lib/services/cekmece-ray-degisimi";
+import { SERVICE_PATH as MASA_SANDALYE_TAMIRI_SERVICE_PATH } from "@/lib/services/masa-sandalye-tamiri";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -89,6 +90,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}${CEKMECE_RAY_DEGISIMI_SERVICE_PATH}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}${MASA_SANDALYE_TAMIRI_SERVICE_PATH}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

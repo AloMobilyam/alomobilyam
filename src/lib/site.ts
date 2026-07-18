@@ -379,7 +379,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "drawer",
     href: "/hizmetler/mersin-cekmece-ray-degisimi",
   },
-  { title: "Masa Sandalye Tamiri", description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.", icon: "chair" },
+  {
+    title: "Masa Sandalye Tamiri",
+    description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.",
+    icon: "chair",
+    href: "/hizmetler/mersin-masa-sandalye-tamiri",
+  },
   { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.", icon: "assembly" },
   { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz.", icon: "onsite" },
 ];
