@@ -150,6 +150,8 @@ export type ServiceItem = {
   description: string;
   icon: ServiceIconKey;
   href?: string;
+  /** Ana sayfa hizmet kartı üst görseli; yoksa ikonlu fallback kullanılır */
+  cardImage?: string;
 };
 
 export type WorkInput = {
@@ -308,6 +310,8 @@ export const SERVICES: ServiceItem[] = [
       "Kırık, çatlak ve hasarlı mobilyalarınızı Mersin genelinde yerinde onarıyoruz.",
     icon: "repair",
     href: "/hizmetler/mersin-mobilya-onarim",
+    cardImage:
+      "/services/mobilya-onarim/once-sonra/mobilya-onarim-tv-unitesi-sonrasi-01.png",
   },
   {
     title: "Mobilya Yenileme",
@@ -315,6 +319,8 @@ export const SERVICES: ServiceItem[] = [
       "Eski mobilyalarınıza modern ve kullanışlı bir görünüm kazandırıyoruz.",
     icon: "refresh",
     href: "/hizmetler/mersin-mobilya-yenileme",
+    cardImage:
+      "/services/mobilya-yenileme/once-sonra/mobilya-yenileme-gardirop-sonrasi-01.png",
   },
   {
     title: "Mutfak Dolabı Yenileme",
@@ -322,24 +328,31 @@ export const SERVICES: ServiceItem[] = [
       "Eski mutfak dolaplarınızı yerinde kapak boyama, menteşe değişimi ve montaj işlemleriyle yeniliyoruz.",
     icon: "kitchen",
     href: "/hizmetler/mersin-mutfak-dolabi-yenileme",
+    cardImage: "/mutfak-dolabi-yenileme/once-sonra/sonra1.png",
   },
   {
     title: "Menteşe Değişimi",
     description: "Sarkmış kapaklar ve gevşek menteşeler için hızlı menteşe değişimi.",
     icon: "hinge",
     href: "/hizmetler/mersin-mentese-degisimi",
+    cardImage:
+      "/services/mentese-degisimi/is-asamalari/mentese-degisimi-yeni-mentese-takma-01.png",
   },
   {
     title: "Ray Değişimi",
     description: "Çekmece ve dolap raylarınızı dayanıklı parçalarla yeniliyoruz.",
     icon: "rail",
     href: "/hizmetler/mersin-ray-degisimi",
+    cardImage:
+      "/services/ray-degisimi/is-asamalari/ray-degisimi-tv-unitesi-ray-takma-01.png",
   },
   {
     title: "Dolap Kapak Ayarı",
     description: "Hizası bozuk kapakları düzgün ve sessiz kapanacak şekilde ayarlıyoruz.",
     icon: "adjust",
     href: "/hizmetler/mersin-dolap-kapak-ayari",
+    cardImage:
+      "/services/dolap-kapak-ayari/is-asamalari/dolap-kapak-ayari-gardirop-son-kontrol-01.png",
   },
   {
     title: "Kapı Onarım",
@@ -347,6 +360,8 @@ export const SERVICES: ServiceItem[] = [
       "Mobilya kapılarındaki kırık, çatlak ve menteşe sorunlarını gideriyoruz.",
     icon: "door",
     href: "/hizmetler/mersin-kapi-onarim",
+    cardImage:
+      "/services/kapi-onarim/once-sonra/kapi-onarim-amerikan-kapi-sonrasi-01.png",
   },
   {
     title: "Dolap Kurulum",
@@ -354,42 +369,56 @@ export const SERVICES: ServiceItem[] = [
       "Yeni dolaplarınızı profesyonelce kuruyor, sağlam ve düzgün monte ediyoruz.",
     icon: "cabinet",
     href: "/hizmetler/mersin-dolap-kurulum",
+    cardImage:
+      "/services/dolap-kurulum/is-asamalari/dolap-kurulum-son-kontrol-ve-ayar-01.png",
   },
   {
     title: "Gardırop Kurulumu",
     description: "Gardırop montajını eksiksiz ve güvenli şekilde tamamlıyoruz.",
     icon: "wardrobe",
     href: "/hizmetler/mersin-gardirop-kurulumu",
+    cardImage:
+      "/services/gardirop-kurulumu/is-asamalari/gardirop-kurulumu-son-kontrol-ve-ayar-01.png",
   },
   {
     title: "Vestiyer / Portmanto Yenileme",
     description: "Eski vestiyer ve portmantolarınıza modern, temiz ve kullanışlı bir görünüm kazandırıyoruz.",
     icon: "wardrobe",
     href: "/hizmetler/mersin-vestiyer-portmanto-yenileme",
+    cardImage:
+      "/services/vestiyer-portmanto-yenileme/once-sonra/vestiyer-portmanto-yenileme-sonrasi-01.png",
   },
   {
     title: "Sürgülü Dolap Ray Tamiri",
     description: "Takılan veya kırılan sürgülü ray sistemlerini onarıyoruz.",
     icon: "sliding",
     href: "/hizmetler/mersin-surgulu-dolap-ray-tamiri",
+    cardImage:
+      "/services/surgulu-dolap-ray-tamiri/is-asamalari/surgulu-dolap-ray-tamiri-son-kontrol-01.png",
   },
   {
     title: "Çekmece Ray Değişimi",
     description: "Yumuşak kapanan, dayanıklı çekmece rayları ile değişim yapıyoruz.",
     icon: "drawer",
     href: "/hizmetler/mersin-cekmece-ray-degisimi",
+    cardImage:
+      "/services/cekmece-ray-degisimi/is-asamalari/cekmece-ray-degisimi-son-kontrol-01.png",
   },
   {
     title: "Masa Sandalye Tamiri",
     description: "Sallanan, kırık veya gevşek masa ve sandalyeleri tamir ediyoruz.",
     icon: "chair",
     href: "/hizmetler/mersin-masa-sandalye-tamiri",
+    cardImage:
+      "/services/masa-sandalye-tamiri/once-sonra/masa-sandalye-tamiri-sonrasi-01.png",
   },
   {
     title: "Mobilya Montaj ve Demontaj",
     description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.",
     icon: "assembly",
     href: "/hizmetler/mersin-mobilya-montaj-demontaj",
+    cardImage:
+      "/services/mobilya-montaj-demontaj/is-asamalari/mobilya-montaj-demontaj-dolap-govde-hizalama-01.png",
   },
   {
     title: "Tekne Tik ve Ahşap Bakımı",
@@ -397,6 +426,8 @@ export const SERVICES: ServiceItem[] = [
       "Tekne tik güverte, ahşap küpeşte, kamara mobilyası ve marin vernik işlemlerini yapıyoruz.",
     icon: "refresh",
     href: "/hizmetler/mersin-tekne-tik-ahsap-bakimi",
+    cardImage:
+      "/services/tekne-tik-ahsap-bakimi/once-sonra/tekne-tik-ahsap-bakimi-tik-guverte-sonrasi-01.png",
   },
 ];
 
