@@ -101,14 +101,14 @@ export function ServiceBeforeAfterGallery({
                   />
                 </div>
 
-                <figcaption className="border-t border-wood-100 px-3 py-3 sm:px-4 sm:py-3.5">
+                <div className="border-t border-wood-100 px-3 py-3 sm:px-4 sm:py-3.5">
                   <p className="text-center text-xs leading-relaxed text-wood-700 sm:text-sm">
                     <span className="font-semibold text-wood-900">
                       Proje {item.id}.
                     </span>{" "}
                     {item.caption}
                   </p>
-                </figcaption>
+                </div>
 
                 <button
                   type="button"

@@ -17,6 +17,7 @@ import { ServiceWhatIsSection } from "@/components/service/ServiceWhatIsSection"
 import { ServiceWhenNewKitchenSection } from "@/components/service/ServiceWhenNewKitchenSection";
 import { ServiceWorkStages } from "@/components/service/ServiceWorkStages";
 import {
+  getLocalBusinessSchema,
   getMutfakDolabiYenilemeBreadcrumbSchema,
   getMutfakDolabiYenilemeFAQSchema,
   getMutfakDolabiYenilemeServiceSchema,
@@ -67,12 +68,19 @@ export const metadata: Metadata = {
 };
 
 export default function MersinMutfakDolabiYenilemePage() {
+  const localBusinessSchema = getLocalBusinessSchema();
   const serviceSchema = getMutfakDolabiYenilemeServiceSchema();
   const faqSchema = getMutfakDolabiYenilemeFAQSchema();
   const breadcrumbSchema = getMutfakDolabiYenilemeBreadcrumbSchema();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
