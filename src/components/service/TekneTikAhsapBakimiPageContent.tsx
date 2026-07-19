@@ -50,7 +50,7 @@ export function TekneTikAhsapBakimiPageContent() {
 }
 
 function ServiceHeroSection() {
-  const { badge, h1, h1Highlight, paragraphs, trustItems, showcase } = SERVICE_HERO;
+  const { badge, h1, paragraphs, trustItems, showcase } = SERVICE_HERO;
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-50 to-cream-50">
@@ -72,7 +72,7 @@ function ServiceHeroSection() {
             </p>
 
             <h1 className="max-w-[20ch] font-serif text-[1.625rem] font-bold leading-[1.2] tracking-tight text-wood-900 sm:max-w-none sm:text-4xl sm:leading-tight lg:text-[2.65rem]">
-              {h1} <span className="text-wood-700">{h1Highlight}</span>
+              {h1}
             </h1>
 
             <div className="mt-2.5 max-w-prose space-y-2.5 text-base leading-relaxed text-wood-700 sm:mt-4 sm:space-y-3 sm:text-lg">

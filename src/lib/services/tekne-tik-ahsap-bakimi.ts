@@ -52,8 +52,8 @@ export const SERVICE_BREADCRUMB_ITEMS = [
 export const SERVICE_HERO = {
   badge: "Mersin geneli yerinde servis",
   h1: "Mersin Tekne Tik ve Ahşap Bakımı",
-  h1Highlight: "Profesyonel Tik Güverte, Kamara ve Marin Vernik Uygulamaları",
   paragraphs: [
+    "Profesyonel tik güverte temizliği, kamara ahşap bakımı ve marin vernik uygulamaları.",
     "Teknenizin tik güverte, ahşap küpeşte, kamara mobilyası ve ahşap doğrama bölümlerinde temizlik, zımpara, derz tamiri, bakım, koruma ve marin vernik uygulamaları yapıyoruz. Tekne ahşaplarınızı daha temiz, bakımlı ve uzun ömürlü hale getirerek değerini korumasına yardımcı oluyoruz.",
     "Alo Mobilya’nın ahşap ustalığı ve yerinde servis tecrübesiyle; temiz işçilik, doğru malzeme seçimi ve zamanında teslim odaklı ilerliyoruz. Fotoğraf göndererek hızlı ön değerlendirme alabilirsiniz.",
   ],
