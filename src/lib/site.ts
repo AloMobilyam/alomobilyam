@@ -385,7 +385,12 @@ export const SERVICES: ServiceItem[] = [
     icon: "chair",
     href: "/hizmetler/mersin-masa-sandalye-tamiri",
   },
-  { title: "Mobilya Montaj ve Demontaj", description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.", icon: "assembly" },
+  {
+    title: "Mobilya Montaj ve Demontaj",
+    description: "Taşınma ve yenileme süreçlerinde montaj ve demontaj desteği.",
+    icon: "assembly",
+    href: "/hizmetler/mersin-mobilya-montaj-demontaj",
+  },
   { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz.", icon: "onsite" },
 ];
 

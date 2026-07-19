@@ -90,6 +90,13 @@ import {
   SERVICE_TITLE as MASA_SANDALYE_TAMIRI_TITLE,
   SERVICE_URL as MASA_SANDALYE_TAMIRI_URL,
 } from "./services/masa-sandalye-tamiri";
+import {
+  SERVICE_BREADCRUMB_ITEMS as MOBILYA_MONTAJ_DEMONTAJ_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as MOBILYA_MONTAJ_DEMONTAJ_FAQS,
+  SERVICE_METADATA as MOBILYA_MONTAJ_DEMONTAJ_METADATA,
+  SERVICE_TITLE as MOBILYA_MONTAJ_DEMONTAJ_TITLE,
+  SERVICE_URL as MOBILYA_MONTAJ_DEMONTAJ_URL,
+} from "./services/mobilya-montaj-demontaj";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -804,6 +811,54 @@ export function getMasaSandalyeTamiriBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: MASA_SANDALYE_TAMIRI_BREADCRUMB_ITEMS.map(
+      (item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: resolveBreadcrumbItemUrl(item.href),
+      }),
+    ),
+  };
+}
+
+export function getMobilyaMontajDemontajFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: MOBILYA_MONTAJ_DEMONTAJ_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getMobilyaMontajDemontajServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: MOBILYA_MONTAJ_DEMONTAJ_TITLE,
+    description: MOBILYA_MONTAJ_DEMONTAJ_METADATA.description,
+    url: MOBILYA_MONTAJ_DEMONTAJ_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Mobilya montaj ve demontaj",
+  };
+}
+
+export function getMobilyaMontajDemontajBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: MOBILYA_MONTAJ_DEMONTAJ_BREADCRUMB_ITEMS.map(
       (item, index) => ({
         "@type": "ListItem",
         position: index + 1,
