@@ -97,6 +97,13 @@ import {
   SERVICE_TITLE as MOBILYA_MONTAJ_DEMONTAJ_TITLE,
   SERVICE_URL as MOBILYA_MONTAJ_DEMONTAJ_URL,
 } from "./services/mobilya-montaj-demontaj";
+import {
+  SERVICE_BREADCRUMB_ITEMS as TEKNE_TIK_AHSAP_BAKIMI_BREADCRUMB_ITEMS,
+  SERVICE_FAQS as TEKNE_TIK_AHSAP_BAKIMI_FAQS,
+  SERVICE_METADATA as TEKNE_TIK_AHSAP_BAKIMI_METADATA,
+  SERVICE_TITLE as TEKNE_TIK_AHSAP_BAKIMI_TITLE,
+  SERVICE_URL as TEKNE_TIK_AHSAP_BAKIMI_URL,
+} from "./services/tekne-tik-ahsap-bakimi";
 
 const organizationId = `${SITE_URL}/#organization`;
 const localBusinessId = `${SITE_URL}/#localbusiness`;
@@ -859,6 +866,54 @@ export function getMobilyaMontajDemontajBreadcrumbSchema() {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: MOBILYA_MONTAJ_DEMONTAJ_BREADCRUMB_ITEMS.map(
+      (item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.label,
+        item: resolveBreadcrumbItemUrl(item.href),
+      }),
+    ),
+  };
+}
+
+export function getTekneTikAhsapBakimiFAQSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: TEKNE_TIK_AHSAP_BAKIMI_FAQS.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function getTekneTikAhsapBakimiServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: TEKNE_TIK_AHSAP_BAKIMI_TITLE,
+    description: TEKNE_TIK_AHSAP_BAKIMI_METADATA.description,
+    url: TEKNE_TIK_AHSAP_BAKIMI_URL,
+    provider: {
+      "@id": localBusinessId,
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Mersin",
+    },
+    serviceType: "Tekne tik ve ahşap bakımı",
+  };
+}
+
+export function getTekneTikAhsapBakimiBreadcrumbSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: TEKNE_TIK_AHSAP_BAKIMI_BREADCRUMB_ITEMS.map(
       (item, index) => ({
         "@type": "ListItem",
         position: index + 1,

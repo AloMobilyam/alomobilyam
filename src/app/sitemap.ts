@@ -13,6 +13,7 @@ import { SERVICE_PATH as SURGULU_DOLAP_RAY_TAMIRI_SERVICE_PATH } from "@/lib/ser
 import { SERVICE_PATH as CEKMECE_RAY_DEGISIMI_SERVICE_PATH } from "@/lib/services/cekmece-ray-degisimi";
 import { SERVICE_PATH as MASA_SANDALYE_TAMIRI_SERVICE_PATH } from "@/lib/services/masa-sandalye-tamiri";
 import { SERVICE_PATH as MOBILYA_MONTAJ_DEMONTAJ_SERVICE_PATH } from "@/lib/services/mobilya-montaj-demontaj";
+import { SERVICE_PATH as TEKNE_TIK_AHSAP_BAKIMI_SERVICE_PATH } from "@/lib/services/tekne-tik-ahsap-bakimi";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -103,6 +104,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}${MOBILYA_MONTAJ_DEMONTAJ_SERVICE_PATH}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}${TEKNE_TIK_AHSAP_BAKIMI_SERVICE_PATH}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

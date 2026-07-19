@@ -391,7 +391,13 @@ export const SERVICES: ServiceItem[] = [
     icon: "assembly",
     href: "/hizmetler/mersin-mobilya-montaj-demontaj",
   },
-  { title: "Yerinde Servis", description: "Mersin genelinde adresinize gelerek tüm işlemleri yerinde yapıyoruz.", icon: "onsite" },
+  {
+    title: "Tekne Tik ve Ahşap Bakımı",
+    description:
+      "Tekne tik güverte, ahşap küpeşte, kamara mobilyası ve marin vernik işlemlerini yapıyoruz.",
+    icon: "refresh",
+    href: "/hizmetler/mersin-tekne-tik-ahsap-bakimi",
+  },
 ];
 
 export const WHY_US = [
