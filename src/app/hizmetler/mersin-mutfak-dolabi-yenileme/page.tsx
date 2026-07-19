@@ -22,6 +22,7 @@ import {
   getMutfakDolabiYenilemeServiceSchema,
 } from "@/lib/schema";
 import {
+  SERVICE_BEFORE_AFTER_GALLERY,
   SERVICE_BREADCRUMB_ITEMS,
   SERVICE_METADATA,
   SERVICE_URL,
@@ -94,7 +95,12 @@ export default function MersinMutfakDolabiYenilemePage() {
       <main>
         <Breadcrumb items={SERVICE_BREADCRUMB_ITEMS} />
         <ServiceHero />
-        <ServiceBeforeAfterGallery />
+        <ServiceBeforeAfterGallery
+          items={SERVICE_BEFORE_AFTER_GALLERY}
+          eyebrow="Gerçek İşler"
+          title="Gerçek Öncesi / Sonrası Galerisi"
+          description="Tamamladığımız mutfak dolabı yenileme çalışmalarından gerçek önce ve sonra fotoğrafları."
+        />
         <ServiceWorkStages />
         <ServiceWhatIsSection />
         <ServiceAudienceSection />
