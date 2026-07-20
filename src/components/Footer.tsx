@@ -105,6 +105,15 @@ export function Footer() {
           <p className="text-xs text-cream-300">
             © {year} {BUSINESS.name}. Tüm hakları saklıdır.
           </p>
+          <p className="mt-3 text-[10px] leading-relaxed text-wood-600 sm:text-[11px]">
+            Web tasarım &amp; SEO danışmanlığı:{" "}
+            <a
+              href="tel:05352963636"
+              className="text-wood-600 underline-offset-2 transition-colors hover:text-wood-500 hover:underline"
+            >
+              0535 296 36 36
+            </a>
+          </p>
         </m.div>
       </div>
     </footer>
