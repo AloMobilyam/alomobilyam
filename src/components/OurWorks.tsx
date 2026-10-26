@@ -7,6 +7,7 @@ import { WORKS } from "@/lib/site";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
 import { SectionHeading } from "./SectionHeading";
 import { WorkCard } from "./WorkCard";
+import { LatestWorks } from "./LatestWorks";
 import { fadeInUp, viewportOnce } from "@/lib/motion";
 
 export function OurWorks() {
@@ -19,10 +20,13 @@ export function OurWorks() {
         <SectionHeading
           eyebrow="Portföy"
           title="Yaptığımız İşler"
-          description="Mersin genelinde tamamladığımız mobilya tamir ve yenileme çalışmalarından örnekler. Her işte öncesi ve sonrası farkını net şekilde görebilirsiniz."
+          description="Mersin genelinde tamamladığımız mobilya çalışmalarını ve önce–sonra yenileme örneklerini inceleyin."
         />
 
-        <div className="mt-10">
+        <LatestWorks />
+
+        <h3 className="font-serif text-2xl font-bold text-wood-900">Öncesi ve Sonrası</h3>
+        <div className="mt-6">
           <AnimatePresence mode="wait">
             <m.div
               key={activeWork.slug}
