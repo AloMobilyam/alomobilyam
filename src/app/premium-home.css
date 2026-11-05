@@ -28,7 +28,7 @@
 .premium-home .premium-hero {
   isolation: isolate;
   background-image:
-    linear-gradient(94deg, rgb(253 249 241 / 97%) 0%, rgb(250 241 224 / 94%) 42%, rgb(239 222 197 / 88%) 100%),
+    linear-gradient(100deg, rgb(255 247 232 / 96%) 0%, rgb(239 216 182 / 85%) 44%, rgb(88 54 33 / 67%) 100%),
     url("/images/son-calismalar/mutfak-dolabi-genel.webp");
   background-position: center;
   background-size: cover;
@@ -40,8 +40,9 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 12% 12%, rgb(255 255 255 / 60%), transparent 48%),
-    linear-gradient(122deg, transparent 55%, rgb(156 96 28 / 7%) 100%);
+    radial-gradient(ellipse at 9% 12%, rgb(255 250 243 / 57%), transparent 43%),
+    radial-gradient(ellipse at 96% 65%, rgb(49 27 15 / 24%), transparent 49%),
+    linear-gradient(122deg, transparent 44%, rgb(156 96 28 / 12%) 100%);
 }
 .premium-home .premium-hero > .absolute {
   opacity: .55;
@@ -96,7 +97,7 @@
 .premium-home .mobile-bottom-bar a:nth-child(2) {
   background: linear-gradient(145deg, #12a56e, #06794f);
   border-color: #39b98e;
-  box-shadow: 0 6px 17px rgb(6 121 79 / 24%), inset 0 1px rgb(255 255 255 / 24%);
+  box-shadow: 0 8px 19px rgb(6 121 79 / 28%), inset 0 1px rgb(255 255 255 / 24%);
 }
 .premium-home .premium-hero-actions > div > a:nth-child(2),
 .premium-home .premium-cta-banner a[href^="tel:"],
@@ -104,14 +105,14 @@
   background: linear-gradient(145deg, #2265c1, #123b82);
   border-color: #659be2;
   color: #fff;
-  box-shadow: 0 6px 17px rgb(20 64 137 / 23%), inset 0 1px rgb(255 255 255 / 20%);
+  box-shadow: 0 8px 19px rgb(20 64 137 / 29%), inset 0 1px rgb(255 255 255 / 20%);
 }
 .premium-home .premium-showcase {
   filter: drop-shadow(0 16px 21px rgb(59 32 13 / 16%));
 }
 .premium-home .premium-showcase > div:nth-child(2) {
   border-color: rgb(191 141 69 / 73%);
-  box-shadow: 0 14px 36px rgb(68 40 22 / 17%);
+  box-shadow: 0 19px 44px rgb(48 27 16 / 25%), 0 0 0 1px rgb(186 132 62 / 21%);
 }
 .premium-home .premium-showcase > div:nth-child(2) > div {
   background: linear-gradient(135deg, #b1874f, #684324 52%, #2c1b12);
@@ -193,7 +194,7 @@
 @media (max-width: 639px) {
   .premium-home .premium-hero {
     background-image:
-      linear-gradient(135deg, rgb(255 250 241 / 97%), rgb(246 235 217 / 92%)),
+      linear-gradient(148deg, rgb(255 248 236 / 96%) 0%, rgb(237 212 176 / 90%) 64%, rgb(180 136 91 / 76%) 100%),
       url("/images/son-calismalar/mutfak-dolabi-genel.webp");
   }
   .premium-home .premium-hero-heading {
