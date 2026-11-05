@@ -53,6 +53,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: HOME_OG_IMAGE.url,
+        secureUrl: new URL(HOME_OG_IMAGE.url, SITE_URL).toString(),
+        width: HOME_OG_IMAGE.width,
+        height: HOME_OG_IMAGE.height,
+        type: HOME_OG_IMAGE.type,
         alt: HOME_OG_IMAGE.alt,
       },
     ],
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: [HOME_OG_IMAGE.url],
+    images: [{ url: HOME_OG_IMAGE.url, alt: HOME_OG_IMAGE.alt }],
   },
   robots: {
     index: true,

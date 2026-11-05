@@ -57,8 +57,11 @@ export const ON_SITE_SERVICE_IMAGE_ALT =
   "Mersin genelinde yerinde mobilya tamir, bakım ve montaj servisi — Alo Mobilya";
 
 export const HOME_OG_IMAGE = {
-  url: "/works/mutfak-dolabi-sonra.png",
-  alt: "Mersin mutfak dolabı yenileme sonrası — yenilenmiş modern kapaklar",
+  url: "/brand/alo-mobilya-social-20261105.jpg",
+  width: 1200,
+  height: 630,
+  type: "image/jpeg",
+  alt: "Alo Mobilya — Mersin mobilya tamir, montaj ve mutfak dolabı yenileme",
 } as const;
 
 export const NAV_LINKS = [
