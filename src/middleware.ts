@@ -16,6 +16,14 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Keep branch previews on their own Vercel URL for visual QA.
+  // Production Vercel aliases still redirect to the canonical domain.
+  if (process.env.VERCEL_ENV === "preview" && host.endsWith(".vercel.app")) {
+    const response = NextResponse.next();
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+    return response;
+  }
+
   if (host.includes("vercel.app") || host === "alomobilyam.com") {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.protocol = "https:";
