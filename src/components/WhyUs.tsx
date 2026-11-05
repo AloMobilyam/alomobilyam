@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function WhyUs() {
   return (
-    <section id="neden-biz" className="section-padding bg-white">
+    <section id="neden-biz" className="premium-why-us section-padding bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Neden Alo Mobilya?"

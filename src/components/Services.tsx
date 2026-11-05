@@ -10,7 +10,7 @@ import { ServiceIcon } from "./ServiceIcon";
 
 export function Services() {
   return (
-    <section id="hizmetler" className="section-padding scroll-mt-14 bg-cream-50 sm:scroll-mt-20">
+    <section id="hizmetler" className="premium-services section-padding scroll-mt-14 bg-cream-50 sm:scroll-mt-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Hizmetlerimiz"
@@ -68,7 +68,7 @@ function ServiceCard({ service }: { service: ServiceItem }) {
         boxShadow: "0 16px 32px -10px rgba(44, 24, 16, 0.14)",
         transition: { duration: 0.25 },
       }}
-      className={`group relative flex h-full flex-col overflow-hidden rounded-xl border border-wood-100 bg-white shadow-sm transition-[border-color] duration-300 hover:border-wood-200 sm:rounded-2xl ${
+      className={`premium-service-card group relative flex h-full flex-col overflow-hidden rounded-xl border border-wood-100 bg-white shadow-sm transition-[border-color] duration-300 hover:border-wood-200 sm:rounded-2xl ${
         hasImage ? "" : "p-3.5 sm:p-6"
       }`}
     >

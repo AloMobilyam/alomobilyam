@@ -1,3 +1,4 @@
+import "./premium-home.css";
 import { getFAQSchema } from "@/lib/schema";
 import { CTABanner } from "@/components/CTABanner";
 import { Contact } from "@/components/Contact";
@@ -17,7 +18,7 @@ export default function Home() {
   const faqSchema = getFAQSchema();
 
   return (
-    <>
+    <div className="premium-home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -39,6 +40,6 @@ export default function Home() {
       </main>
       <Footer />
       <MobileBottomBar />
-    </>
+    </div>
   );
 }

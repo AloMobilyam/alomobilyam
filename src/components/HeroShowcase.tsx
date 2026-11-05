@@ -11,7 +11,7 @@ export function HeroShowcase() {
 
   return (
     <m.div
-      className="relative mx-auto w-full max-w-sm lg:max-w-none"
+      className="premium-showcase relative mx-auto w-full max-w-sm lg:max-w-none"
       initial="hidden"
       whileInView="visible"
       viewport={viewportOnce}

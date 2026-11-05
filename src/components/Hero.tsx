@@ -11,25 +11,25 @@ import { Stats } from "./Stats";
 export function Hero() {
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-50 to-cream-50">
+      <section className="premium-hero relative overflow-hidden bg-gradient-to-b from-cream-100 via-cream-50 to-cream-50">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(196,165,116,0.2),transparent_55%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(92,64,51,0.05),transparent_50%)]" />
 
         <div className="relative mx-auto max-w-6xl px-4 pb-4 pt-3 sm:px-6 sm:pb-8 sm:pt-8 lg:px-8 lg:pb-10">
           <div className="grid items-start gap-5 lg:grid-cols-2 lg:items-center lg:gap-12">
             <m.div
-              className="order-1"
+              className="premium-hero-copy order-1"
               initial="hidden"
               whileInView="visible"
               viewport={viewportOnce}
               variants={fadeInUp}
             >
-              <p className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-wood-200/80 bg-white/85 px-2.5 py-1 text-[10px] font-semibold text-wood-700 shadow-sm backdrop-blur-sm sm:mb-3 sm:px-3 sm:py-1.5 sm:text-sm">
+              <p className="premium-hero-pill mb-2 inline-flex items-center gap-1.5 rounded-full border border-wood-200/80 bg-white/85 px-2.5 py-1 text-[10px] font-semibold text-wood-700 shadow-sm backdrop-blur-sm sm:mb-3 sm:px-3 sm:py-1.5 sm:text-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                 Mersin geneli yerinde servis
               </p>
 
-              <h1 className="max-w-[18ch] font-serif text-[1.625rem] font-bold leading-[1.2] tracking-tight text-wood-900 sm:max-w-none sm:text-4xl sm:leading-tight lg:text-[2.65rem]">
+              <h1 className="premium-hero-heading max-w-[18ch] font-serif text-[1.625rem] font-bold leading-[1.2] tracking-tight text-wood-900 sm:max-w-none sm:text-4xl sm:leading-tight lg:text-[2.65rem]">
                 Mobilya Tamir, Bakım ve Montajda{" "}
                 <span className="text-wood-700">Güvenilir Usta</span>
               </h1>
@@ -38,7 +38,7 @@ export function Hero() {
                 {HERO_DESCRIPTION}
               </p>
 
-              <div className="mt-4 sm:mt-7">
+              <div className="premium-hero-actions mt-4 sm:mt-7">
                 <CTAButtons layout="stack" compact />
               </div>
 

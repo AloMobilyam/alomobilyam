@@ -1,0 +1,238 @@
+/* Alo Mobilya premium visual refresh — home page only.
+   Intentionally scoped: service routes, tracking handlers and content are unchanged. */
+.premium-home {
+  --premium-gold: #b98338;
+  --premium-dark: #28170f;
+  --premium-sapphire: #164a9b;
+  --premium-emerald: #087e56;
+}
+
+.premium-home > header {
+  border-bottom-color: rgb(187 141 78 / 25%);
+  background: rgb(255 251 245 / 96%);
+  box-shadow: 0 3px 22px rgb(44 24 16 / 7%);
+}
+.premium-home > header nav a:hover {
+  color: #95601f;
+  background: rgb(191 142 67 / 12%);
+}
+.premium-home > header a[href^="tel:"] {
+  background: linear-gradient(135deg, #392319, #24150e);
+  border: 1px solid rgb(207 162 94 / 68%);
+  box-shadow: 0 5px 14px rgb(70 39 19 / 17%), inset 0 1px rgb(255 255 255 / 10%);
+}
+.premium-home > header a[href^="tel:"]:hover {
+  background: linear-gradient(135deg, #51331f, #301b11);
+}
+
+.premium-home .premium-hero {
+  isolation: isolate;
+  background-image:
+    linear-gradient(94deg, rgb(253 249 241 / 97%) 0%, rgb(250 241 224 / 94%) 42%, rgb(239 222 197 / 88%) 100%),
+    url("/images/son-calismalar/mutfak-dolabi-genel.webp");
+  background-position: center;
+  background-size: cover;
+}
+.premium-home .premium-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 12% 12%, rgb(255 255 255 / 60%), transparent 48%),
+    linear-gradient(122deg, transparent 55%, rgb(156 96 28 / 7%) 100%);
+}
+.premium-home .premium-hero > .absolute {
+  opacity: .55;
+}
+.premium-home .premium-hero-pill {
+  border-color: rgb(178 125 49 / 34%);
+  background: rgb(255 255 255 / 91%);
+  color: #70461f;
+  box-shadow: 0 4px 12px rgb(74 42 18 / 9%);
+}
+.premium-home .premium-hero-heading {
+  max-width: 22ch;
+  color: #2b190f;
+  letter-spacing: -.027em;
+  text-wrap: balance;
+}
+.premium-home .premium-hero-heading span {
+  color: #a76d28;
+}
+.premium-home .premium-hero-copy > p:not(.premium-hero-pill) {
+  color: #563b2d;
+}
+.premium-home .premium-hero-copy ul li > span {
+  color: #8e5d20;
+  background: #f3dfbb;
+}
+.premium-home .premium-hero-actions > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.premium-home .premium-hero-actions > div > a,
+.premium-home .premium-cta-banner a[href^="tel:"],
+.premium-home .premium-cta-banner a[target="_blank"],
+.premium-home .mobile-bottom-bar a {
+  position: relative;
+  min-width: 0;
+  border-radius: 13px;
+  color: #fff;
+  border-width: 1px;
+  font-weight: 700;
+  box-shadow: 0 5px 16px rgb(19 52 53 / 18%);
+  transition: filter .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.premium-home .premium-hero-actions > div > a:hover,
+.premium-home .premium-cta-banner a:hover,
+.premium-home .mobile-bottom-bar a:hover {
+  filter: brightness(1.08);
+}
+.premium-home .premium-hero-actions > div > a:first-child,
+.premium-home .premium-cta-banner a[target="_blank"],
+.premium-home .mobile-bottom-bar a:nth-child(2) {
+  background: linear-gradient(145deg, #12a56e, #06794f);
+  border-color: #39b98e;
+  box-shadow: 0 6px 17px rgb(6 121 79 / 24%), inset 0 1px rgb(255 255 255 / 24%);
+}
+.premium-home .premium-hero-actions > div > a:nth-child(2),
+.premium-home .premium-cta-banner a[href^="tel:"],
+.premium-home .mobile-bottom-bar a:first-child {
+  background: linear-gradient(145deg, #2265c1, #123b82);
+  border-color: #659be2;
+  color: #fff;
+  box-shadow: 0 6px 17px rgb(20 64 137 / 23%), inset 0 1px rgb(255 255 255 / 20%);
+}
+.premium-home .premium-showcase {
+  filter: drop-shadow(0 16px 21px rgb(59 32 13 / 16%));
+}
+.premium-home .premium-showcase > div:nth-child(2) {
+  border-color: rgb(191 141 69 / 73%);
+  box-shadow: 0 14px 36px rgb(68 40 22 / 17%);
+}
+.premium-home .premium-showcase > div:nth-child(2) > div {
+  background: linear-gradient(135deg, #b1874f, #684324 52%, #2c1b12);
+}
+
+.premium-home .premium-stats {
+  background: #faf5ed;
+}
+.premium-home .premium-stat {
+  border-color: #e9dac4;
+  background: linear-gradient(155deg, #fff, #fffcf7);
+  box-shadow: 0 5px 14px rgb(91 54 26 / 8%);
+}
+.premium-home .premium-services {
+  background: linear-gradient(180deg, #fffaf2 0%, #fdf9f3 65%, #fff 100%);
+}
+.premium-home .premium-services h2 {
+  color: #2f1c12;
+}
+.premium-home .premium-service-card {
+  border: 1px solid #e6d8c5;
+  border-radius: 18px;
+  background: #fffefa;
+  box-shadow: 0 7px 24px rgb(77 43 23 / 9%);
+}
+.premium-home .premium-service-card:hover {
+  border-color: #d5aa6d;
+  box-shadow: 0 15px 30px rgb(61 33 20 / 15%);
+}
+.premium-home .premium-service-card > div:first-child > div:last-child {
+  background: #fff9ee;
+  color: #916024;
+  border: 1px solid #ecd9b9;
+}
+.premium-home .premium-service-card h3 {
+  color: #321e15;
+}
+.premium-home .premium-why-us {
+  background: linear-gradient(180deg, #fff, #fcf5e9);
+}
+.premium-home .premium-why-us > div > div:last-child > div {
+  border-color: #e5d4bb;
+  background: rgb(255 255 255 / 83%);
+  box-shadow: 0 9px 25px rgb(67 38 22 / 6%);
+}
+.premium-home .premium-why-us > div > div:last-child > div > div:first-child {
+  background: linear-gradient(145deg, #b37a35, #7b4b1e);
+}
+.premium-home .premium-cta-banner {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 84% 18%, rgb(166 109 44 / 22%), transparent 48%),
+    repeating-linear-gradient(112deg, transparent 0 68px, rgb(255 255 255 / 1.5%) 69px 70px),
+    linear-gradient(135deg, #29180f, #3d2416 60%, #20120c);
+}
+.premium-home .premium-cta-banner h2 {
+  color: #fff6e6;
+}
+.premium-home #galeri .rounded-2xl {
+  border-color: #e5d5be;
+}
+.premium-home #galeri button:focus-visible,
+.premium-home .premium-service-card:focus-visible {
+  outline: 3px solid #bd8b45;
+  outline-offset: 3px;
+}
+.premium-home .mobile-bottom-bar {
+  border-top-color: rgb(184 132 62 / 30%);
+  background: rgb(255 251 245 / 97%);
+  box-shadow: 0 -6px 25px rgb(45 29 17 / 10%);
+}
+
+@media (min-width: 640px) {
+  .premium-home .premium-hero-heading {
+    font-size: clamp(2.2rem, 3.1vw, 3rem);
+  }
+}
+@media (max-width: 639px) {
+  .premium-home .premium-hero {
+    background-image:
+      linear-gradient(135deg, rgb(255 250 241 / 97%), rgb(246 235 217 / 92%)),
+      url("/images/son-calismalar/mutfak-dolabi-genel.webp");
+  }
+  .premium-home .premium-hero-heading {
+    font-size: clamp(1.85rem, 7.6vw, 2.15rem);
+    line-height: 1.16;
+  }
+  .premium-home .premium-hero-actions > div {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .premium-home .premium-hero-actions > div > a {
+    min-height: 46px;
+  }
+  .premium-home .premium-service-card {
+    flex-direction: row;
+    min-height: 126px;
+  }
+  .premium-home .premium-service-card > div:first-child {
+    aspect-ratio: auto;
+    min-height: 126px;
+    width: 39%;
+    flex: 0 0 39%;
+  }
+  .premium-home .premium-service-card > div:nth-child(2) {
+    justify-content: center;
+    padding: 12px;
+  }
+  .premium-home .premium-service-card h3 {
+    font-size: .89rem;
+  }
+  .premium-home .premium-service-card p {
+    font-size: .73rem;
+    line-height: 1.4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .premium-home .premium-service-card,
+  .premium-home .premium-hero-actions a {
+    transition: none;
+  }
+}
